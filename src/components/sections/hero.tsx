@@ -38,30 +38,18 @@ export function Hero({ className }: HeroProps) {
 
   return (
     <section className={cn("relative min-h-screen flex items-center bg-neural-primary overflow-hidden", className)}>
-      {/* Neural Network Background */}
+      {/* Clean Neural Background */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-neural-primary via-neural-light to-neural-primary" />
-        {/* Animated particles */}
+        <div className="absolute inset-0 bg-neural-primary" />
+        {/* Subtle grid pattern */}
+        <div className="absolute inset-0" style={{
+          backgroundImage: `radial-gradient(circle at 1px 1px, rgba(204, 225, 223, 0.05) 1px, transparent 0)`,
+          backgroundSize: '24px 24px'
+        }} />
+        {/* Minimal accent lines */}
         <div className="absolute inset-0">
-          {[...Array(20)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-1 h-1 bg-neural-accent rounded-full opacity-40"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-              }}
-              animate={{
-                y: [0, -30, 0],
-                opacity: [0.2, 0.8, 0.2],
-              }}
-              transition={{
-                duration: 3 + Math.random() * 2,
-                repeat: Infinity,
-                delay: Math.random() * 2,
-              }}
-            />
-          ))}
+          <div className="absolute top-32 left-0 w-full h-px bg-gradient-to-r from-transparent via-neural-accent/10 to-transparent" />
+          <div className="absolute bottom-32 left-0 w-full h-px bg-gradient-to-r from-transparent via-neural-accent/10 to-transparent" />
         </div>
       </div>
 
