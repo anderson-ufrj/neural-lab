@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://neural-lab.vercel.app
+
+# Sitemaps
+Sitemap: https://neural-lab.vercel.app/sitemap.xml
