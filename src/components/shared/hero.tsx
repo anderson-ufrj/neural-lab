@@ -1,8 +1,12 @@
+'use client';
+
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Sparkles } from 'lucide-react';
+import { useLanguage } from '@/contexts/language-context';
 
 export function Hero() {
+  const { t } = useLanguage();
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background inspired by concrete */}
@@ -32,28 +36,27 @@ export function Hero() {
               borderRadius: '2rem 0.5rem 2rem 0.5rem'
             }}>
               <Sparkles className="w-4 h-4 text-green-500" />
-              <span className="text-sm font-medium text-green-200 tracking-wide">ENGENHARIA DE IA • BRASIL</span>
+              <span className="text-sm font-medium text-green-200 tracking-wide">{t('hero.badge')}</span>
             </div>
           </div>
           
           {/* Main heading */}
           <h1 className="text-center text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6">
-            <span className="block mb-2">A informação</span>
+            <span className="block mb-2">{t('hero.title.line1')}</span>
             <span className="block bg-gradient-to-r from-green-400 via-emerald-500 to-teal-500 bg-clip-text text-transparent mb-4">
-              agora é orgânica
+              {t('hero.title.line2')}
             </span>
           </h1>
           
           <div className="text-center mb-8">
             <p className="text-2xl sm:text-3xl font-light text-gray-300 italic">
-              Construímos o futuro com Inteligência Artificial
+              {t('hero.subtitle')}
             </p>
           </div>
           
           {/* Subheading */}
           <p className="text-center text-lg sm:text-xl text-gray-400 mb-12 max-w-3xl mx-auto font-light">
-            Das montanhas de Minas ao mundo, criamos sistemas de IA que crescem naturalmente 
-            com seus dados, transformando informação em inteligência orgânica.
+            {t('hero.description')}
           </p>
           
           {/* CTAs */}
@@ -64,8 +67,8 @@ export function Hero() {
               className="bg-gradient-to-r from-green-700 to-emerald-700 hover:from-green-800 hover:to-emerald-800 text-white border-0 shadow-2xl shadow-green-900/50 font-semibold"
               style={{ borderRadius: '0.5rem 1.5rem 0.5rem 1.5rem' }}
             >
-              <Link href="/contato" className="inline-flex items-center gap-2">
-                Iniciar Projeto
+              <Link href="#contact" className="inline-flex items-center gap-2">
+                {t('hero.cta.primary')}
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </Button>
@@ -76,15 +79,15 @@ export function Hero() {
               className="border-gray-600 text-gray-300 hover:bg-gray-800 hover:text-green-200"
               style={{ borderRadius: '1.5rem 0.5rem 1.5rem 0.5rem' }}
             >
-              <Link href="/portfolio">
-                Ver Cases de Sucesso
+              <Link href="#portfolio">
+                {t('hero.cta.secondary')}
               </Link>
             </Button>
           </div>
           
           {/* Trust indicators */}
           <div className="mt-16 pt-8 border-t border-gray-700">
-            <p className="text-center text-sm text-gray-400 mb-6 font-light">Inteligência que cresce organicamente</p>
+            <p className="text-center text-sm text-gray-400 mb-6 font-light">{t('hero.trust')}</p>
             <div className="flex flex-wrap items-center justify-center gap-8 opacity-60">
               <div className="text-gray-400 font-medium tracking-wider">MINERAÇÃO.AI</div>
               <div className="text-gray-400 font-medium tracking-wider">AGROTECH.BR</div>

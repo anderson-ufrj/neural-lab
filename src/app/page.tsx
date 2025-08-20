@@ -1,21 +1,32 @@
 import type { Metadata } from 'next';
+import { LanguageProvider } from '@/contexts/language-context';
 import { Navbar } from '@/components/shared/navbar';
-import { Hero } from '@/components/shared/hero';
+import { HeroSection } from '@/components/sections/hero-section';
+import { ServicesOverview } from '@/components/sections/services-overview';
+import { CaseStudies } from '@/components/sections/case-studies';
+import { AboutStory } from '@/components/sections/about-story';
+import { ContactSection } from '@/components/sections/contact-section';
 import { Footer } from '@/components/shared/footer';
 
 export const metadata: Metadata = {
-  title: 'Neural LAB - Construímos sistemas de IA que se explicam',
-  description: 'Entre o cálculo e o sonho, habita a inteligência. Especialistas em desenvolvimento de sistemas de IA explicável.',
+  title: 'Neural LAB - AI Development Studio from Brazil',
+  description: 'We help founders and business leaders launch new products or transform their workflows with AI. From Brazil to the world.',
 };
 
 export default function HomePage() {
   return (
-    <>
-      <Navbar />
-      <main>
-        <Hero />
-      </main>
-      <Footer />
-    </>
+    <LanguageProvider>
+      <div className="min-h-screen bg-gray-50">
+        <Navbar />
+        <main>
+          <HeroSection />
+          <ServicesOverview />
+          <CaseStudies />
+          <AboutStory />
+          <ContactSection />
+        </main>
+        <Footer />
+      </div>
+    </LanguageProvider>
   );
 }
