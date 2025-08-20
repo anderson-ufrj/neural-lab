@@ -5,21 +5,21 @@ import { ArrowRight, Sparkles } from 'lucide-react';
 export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background inspired by concrete and Brazilian mountains */}
-      <div className="absolute inset-0 bg-gradient-to-br from-zinc-900 via-stone-800 to-zinc-900" />
+      {/* Background inspired by concrete */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900" />
       
       {/* Concrete texture overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-transparent via-amber-600/5 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-transparent via-green-800/8 to-transparent" />
       
-      {/* Curved elements inspired by Niemeyer */}
-      <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-gradient-to-bl from-amber-500/10 to-orange-600/5 blur-3xl" />
-      <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-gradient-to-tr from-amber-600/8 to-yellow-500/5 blur-3xl" />
+      {/* Organic curved elements */}
+      <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-gradient-to-bl from-green-700/15 to-emerald-800/8 blur-3xl" />
+      <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-gradient-to-tr from-green-800/12 to-teal-700/6 blur-3xl" />
       
       {/* Concrete grid pattern */}
       <div className="absolute inset-0 opacity-20">
         <div className="h-full w-full" style={{
-          backgroundImage: `linear-gradient(rgba(120,113,108,0.1) 1px, transparent 1px),
-                           linear-gradient(90deg, rgba(120,113,108,0.1) 1px, transparent 1px)`,
+          backgroundImage: `linear-gradient(rgba(107,114,128,0.1) 1px, transparent 1px),
+                           linear-gradient(90deg, rgba(107,114,128,0.1) 1px, transparent 1px)`,
           backgroundSize: '40px 40px'
         }} />
       </div>
@@ -28,26 +28,32 @@ export function Hero() {
         <div className="mx-auto max-w-4xl">
           {/* Badge */}
           <div className="flex justify-center mb-8">
-            <div className="inline-flex items-center gap-2 px-6 py-3 bg-stone-800/50 border border-amber-600/30 backdrop-blur-sm" style={{
+            <div className="inline-flex items-center gap-2 px-6 py-3 bg-slate-800/60 border border-green-700/40 backdrop-blur-sm" style={{
               borderRadius: '2rem 0.5rem 2rem 0.5rem'
             }}>
-              <Sparkles className="w-4 h-4 text-amber-500" />
-              <span className="text-sm font-medium text-amber-100 tracking-wide">ENGENHARIA DE IA • BRASIL</span>
+              <Sparkles className="w-4 h-4 text-green-500" />
+              <span className="text-sm font-medium text-green-200 tracking-wide">ENGENHARIA DE IA • BRASIL</span>
             </div>
           </div>
           
           {/* Main heading */}
-          <h1 className="text-center text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-8">
-            <span className="block">Construímos o futuro</span>
-            <span className="block bg-gradient-to-r from-amber-400 via-yellow-500 to-orange-500 bg-clip-text text-transparent">
-              com Inteligência Artificial
+          <h1 className="text-center text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6">
+            <span className="block mb-2">A informação</span>
+            <span className="block bg-gradient-to-r from-green-400 via-emerald-500 to-teal-500 bg-clip-text text-transparent mb-4">
+              agora é orgânica
             </span>
           </h1>
           
+          <div className="text-center mb-8">
+            <p className="text-2xl sm:text-3xl font-light text-gray-300 italic">
+              Construímos o futuro com Inteligência Artificial
+            </p>
+          </div>
+          
           {/* Subheading */}
-          <p className="text-center text-xl sm:text-2xl text-stone-300 mb-12 max-w-3xl mx-auto font-light">
-            Construímos soluções sólidas em IA. Das montanhas de Minas ao mundo, 
-            criamos sistemas que transformam negócios com a confiabilidade do concreto armado.
+          <p className="text-center text-lg sm:text-xl text-gray-400 mb-12 max-w-3xl mx-auto font-light">
+            Das montanhas de Minas ao mundo, criamos sistemas de IA que crescem naturalmente 
+            com seus dados, transformando informação em inteligência orgânica.
           </p>
           
           {/* CTAs */}
@@ -55,7 +61,7 @@ export function Hero() {
             <Button 
               asChild 
               size="lg" 
-              className="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white border-0 shadow-2xl shadow-amber-900/40 font-semibold"
+              className="bg-gradient-to-r from-green-700 to-emerald-700 hover:from-green-800 hover:to-emerald-800 text-white border-0 shadow-2xl shadow-green-900/50 font-semibold"
               style={{ borderRadius: '0.5rem 1.5rem 0.5rem 1.5rem' }}
             >
               <Link href="/contato" className="inline-flex items-center gap-2">
@@ -67,7 +73,7 @@ export function Hero() {
               asChild 
               variant="outline" 
               size="lg"
-              className="border-stone-600 text-stone-300 hover:bg-stone-800 hover:text-amber-100"
+              className="border-gray-600 text-gray-300 hover:bg-gray-800 hover:text-green-200"
               style={{ borderRadius: '1.5rem 0.5rem 1.5rem 0.5rem' }}
             >
               <Link href="/portfolio">
@@ -77,13 +83,13 @@ export function Hero() {
           </div>
           
           {/* Trust indicators */}
-          <div className="mt-16 pt-8 border-t border-stone-700">
-            <p className="text-center text-sm text-stone-400 mb-6 font-light">Soluções construídas com solidez brasileira</p>
+          <div className="mt-16 pt-8 border-t border-gray-700">
+            <p className="text-center text-sm text-gray-400 mb-6 font-light">Inteligência que cresce organicamente</p>
             <div className="flex flex-wrap items-center justify-center gap-8 opacity-60">
-              <div className="text-stone-400 font-medium tracking-wider">MINERAÇÃO.AI</div>
-              <div className="text-stone-400 font-medium tracking-wider">CONSTRUTEC</div>
-              <div className="text-stone-400 font-medium tracking-wider">AGROTECH.BR</div>
-              <div className="text-stone-400 font-medium tracking-wider">INFRALAB</div>
+              <div className="text-gray-400 font-medium tracking-wider">MINERAÇÃO.AI</div>
+              <div className="text-gray-400 font-medium tracking-wider">AGROTECH.BR</div>
+              <div className="text-gray-400 font-medium tracking-wider">BIOLAB.AI</div>
+              <div className="text-gray-400 font-medium tracking-wider">ECOTECH</div>
             </div>
           </div>
         </div>

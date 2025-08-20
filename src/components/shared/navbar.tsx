@@ -26,12 +26,12 @@ export function Navbar() {
 
   return (
     <header className={`fixed top-0 z-50 w-full transition-all duration-300 ${
-      scrolled ? 'bg-zinc-900/95 backdrop-blur-md border-b border-stone-700' : 'bg-transparent'
+      scrolled ? 'bg-gray-900/95 backdrop-blur-md border-b border-gray-700' : 'bg-transparent'
     }`}>
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex h-16 items-center justify-between" aria-label="Global">
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-2 group">
-            <div className="w-8 h-8 bg-gradient-to-br from-amber-600 to-orange-600 flex items-center justify-center" style={{ borderRadius: '0.25rem 0.75rem 0.25rem 0.75rem' }}>
+            <div className="w-8 h-8 bg-gradient-to-br from-green-700 to-emerald-700 flex items-center justify-center" style={{ borderRadius: '0.25rem 0.75rem 0.25rem 0.75rem' }}>
               <Zap className="w-5 h-5 text-white" />
             </div>
             <span className="text-xl font-bold text-white">Neural LAB</span>
@@ -41,7 +41,7 @@ export function Navbar() {
         <div className="flex lg:hidden">
           <button
             type="button"
-            className="-m-2.5 inline-flex items-center justify-center p-2.5 text-stone-300 hover:text-amber-100 transition-colors"
+            className="-m-2.5 inline-flex items-center justify-center p-2.5 text-gray-300 hover:text-green-200 transition-colors"
             style={{ borderRadius: '0.375rem 0.875rem 0.375rem 0.875rem' }}
             onClick={() => setIsOpen(!isOpen)}
             aria-expanded={isOpen}
@@ -62,7 +62,7 @@ export function Navbar() {
             <Link
               key={item.name}
               href={item.href}
-              className="text-sm font-semibold leading-6 text-stone-300 hover:text-amber-100 transition-colors tracking-wide"
+              className="text-sm font-semibold leading-6 text-gray-300 hover:text-green-200 transition-colors tracking-wide"
             >
               {item.name}
             </Link>
@@ -72,7 +72,7 @@ export function Navbar() {
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <Button 
             asChild 
-            className="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white border-0 shadow-lg shadow-amber-900/30 font-semibold"
+            className="bg-gradient-to-r from-green-700 to-emerald-700 hover:from-green-800 hover:to-emerald-800 text-white border-0 shadow-lg shadow-green-900/40 font-semibold"
             style={{ borderRadius: '0.375rem 1rem 0.375rem 1rem' }}
           >
             <Link href="/contato">Fale Conosco</Link>
@@ -83,12 +83,12 @@ export function Navbar() {
       {/* Mobile menu */}
       {isOpen && (
         <div className="lg:hidden" id="mobile-menu">
-          <div className="space-y-1 px-4 pb-3 pt-2 border-t border-stone-700 bg-zinc-900/95 backdrop-blur-md">
+          <div className="space-y-1 px-4 pb-3 pt-2 border-t border-gray-700 bg-gray-900/95 backdrop-blur-md">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="block px-3 py-2 text-base font-medium text-stone-300 hover:bg-stone-800 hover:text-amber-100 transition-colors"
+                className="block px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-green-200 transition-colors"
                 style={{ borderRadius: '0.25rem 0.75rem 0.25rem 0.75rem' }}
                 onClick={() => setIsOpen(false)}
               >
@@ -98,7 +98,7 @@ export function Navbar() {
             <div className="px-4 py-3">
               <Button 
                 asChild 
-                className="w-full bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white border-0 shadow-lg shadow-amber-900/30 font-semibold"
+                className="w-full bg-gradient-to-r from-green-700 to-emerald-700 hover:from-green-800 hover:to-emerald-800 text-white border-0 shadow-lg shadow-green-900/40 font-semibold"
                 style={{ borderRadius: '0.375rem 1rem 0.375rem 1rem' }}
               >
                 <Link href="/contato">Fale Conosco</Link>
