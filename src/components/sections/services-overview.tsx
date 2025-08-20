@@ -6,6 +6,9 @@ import { GlassCard } from '@/components/ui/glass-card';
 import { Parallax } from '@/components/ui/parallax';
 import { motion } from 'framer-motion';
 import { MorphingBlob } from '@/components/ui/morphing-blob';
+import { BreathingCard } from '@/components/ui/breathing-card';
+import { FloatingElements } from '@/components/ui/floating-elements';
+import { TextReveal } from '@/components/ui/text-reveal';
 
 export function ServicesOverview() {
   const { t } = useLanguage();
@@ -37,6 +40,8 @@ export function ServicesOverview() {
   
   return (
     <section id="services" className="py-20 bg-gradient-to-br from-blue-50 via-white to-purple-50 relative overflow-hidden">
+      {/* Floating Elements */}
+      <FloatingElements count={8} />
       {/* Morphing Background Blobs */}
       <MorphingBlob 
         className="top-10 left-10" 
@@ -62,12 +67,12 @@ export function ServicesOverview() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+          <TextReveal className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
             {t('services.title')}
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          </TextReveal>
+          <TextReveal className="text-xl text-gray-600 max-w-3xl mx-auto" delay={0.3}>
             {t('services.subtitle')}
-          </p>
+          </TextReveal>
         </motion.div>
         
         <div className="grid lg:grid-cols-2 gap-12">
@@ -75,7 +80,8 @@ export function ServicesOverview() {
             const Icon = service.icon;
             return (
               <Parallax key={index} speed={index % 2 === 0 ? -0.3 : 0.3}>
-                <GlassCard className="p-8 group">
+                <BreathingCard intensity={1.01} duration={6 + index}>
+                  <GlassCard className="p-8 group">
                   <div className="flex items-center mb-6">
                     <motion.div 
                       className="w-12 h-12 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl flex items-center justify-center mr-4 shadow-lg"
@@ -108,7 +114,8 @@ export function ServicesOverview() {
                       </motion.li>
                     ))}
                   </ul>
-                </GlassCard>
+                  </GlassCard>
+                </BreathingCard>
               </Parallax>
             );
           })}

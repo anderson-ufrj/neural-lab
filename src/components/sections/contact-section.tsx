@@ -5,26 +5,31 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Mail, MapPin, Phone } from 'lucide-react';
+import { FloatingElements } from '@/components/ui/floating-elements';
+import { TextReveal } from '@/components/ui/text-reveal';
+import { BreathingCard } from '@/components/ui/breathing-card';
 
 export function ContactSection() {
   const { t } = useLanguage();
   
   return (
-    <section id="contact" className="py-20">
+    <section id="contact" className="py-20 relative overflow-hidden">
+      <FloatingElements count={5} />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+          <TextReveal className="text-4xl sm:text-5xl font-bold text-white mb-6">
             {t('contact.title')}
-          </h2>
-          <p className="text-xl text-green-400 font-light">
+          </TextReveal>
+          <TextReveal className="text-xl text-green-400 font-light" delay={0.3}>
             {t('contact.subtitle')}
-          </p>
+          </TextReveal>
         </div>
         
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <div className="bg-gray-800/50 border border-gray-700 p-8" 
-               style={{ borderRadius: '1rem 0.5rem 1rem 0.5rem' }}>
+          <BreathingCard intensity={1.005} duration={7}>
+            <div className="bg-gray-800/50 border border-gray-700 p-8" 
+                 style={{ borderRadius: '1rem 0.5rem 1rem 0.5rem' }}>
             <form className="space-y-6">
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
@@ -83,7 +88,8 @@ export function ContactSection() {
                 {t('contact.form.submit')}
               </Button>
             </form>
-          </div>
+            </div>
+          </BreathingCard>
           
           {/* Contact Info */}
           <div className="space-y-8">

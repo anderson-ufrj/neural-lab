@@ -3,12 +3,16 @@
 import { useLanguage } from '@/contexts/language-context';
 import { motion } from 'framer-motion';
 import { Parallax } from '@/components/ui/parallax';
+import { FloatingElements } from '@/components/ui/floating-elements';
+import { TextReveal } from '@/components/ui/text-reveal';
+import { BreathingCard } from '@/components/ui/breathing-card';
 
 export function AboutStory() {
   const { t } = useLanguage();
   
   return (
-    <section id="about" className="py-20 bg-gradient-to-br from-white to-gray-50">
+    <section id="about" className="py-20 bg-gradient-to-br from-white to-gray-50 relative overflow-hidden">
+      <FloatingElements count={4} />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           className="text-center mb-16"
@@ -17,9 +21,9 @@ export function AboutStory() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+          <TextReveal className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
             {t('about.title')}
-          </h2>
+          </TextReveal>
         </motion.div>
         
         <Parallax speed={-0.1}>
@@ -42,7 +46,8 @@ export function AboutStory() {
             {t('about.paragraph3')}
           </p>
           
-          <div className="bg-gray-50 rounded-2xl p-8 my-12">
+          <BreathingCard intensity={1.005} duration={8}>
+            <div className="bg-gray-50 rounded-2xl p-8 my-12">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">
               {t('about.approach.title')}
             </h3>
@@ -80,7 +85,8 @@ export function AboutStory() {
                 </p>
               </div>
             </div>
-          </div>
+            </div>
+          </BreathingCard>
           
           <p className="text-lg text-gray-600 leading-relaxed">
             {t('about.paragraph4')}
