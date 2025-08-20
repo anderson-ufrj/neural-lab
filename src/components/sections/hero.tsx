@@ -3,7 +3,7 @@
 import * as React from "react"
 import Link from "next/link"
 import { useTranslations } from 'next-intl'
-import { ArrowRight, Code, Database, Zap } from "lucide-react"
+import { ArrowRight, Activity, Database, Users, Zap } from "lucide-react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
@@ -15,10 +15,11 @@ interface HeroProps {
 export function Hero({ className }: HeroProps) {
   const t = useTranslations('hero')
 
-  const metrics = [
-    { value: '50+', label: t('metrics.projects'), icon: Code },
+  const labMetrics = [
+    { value: '4', label: t('metrics.experiments'), icon: Activity },
+    { value: '10M+', label: t('metrics.data_processed'), icon: Database },
     { value: '99.9%', label: t('metrics.uptime'), icon: Zap },
-    { value: '10ms', label: t('metrics.latency'), icon: Database },
+    { value: '3', label: t('metrics.agents'), icon: Users },
   ]
 
   const fadeInUp = {
@@ -36,39 +37,74 @@ export function Hero({ className }: HeroProps) {
   }
 
   return (
-    <section className={cn("relative min-h-screen flex items-center bg-background", className)}>
-      {/* Background clean */}
+    <section className={cn("relative min-h-screen flex items-center bg-neural-primary overflow-hidden", className)}>
+      {/* Neural Network Background */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-background to-neural-muted/10" />
+        <div className="absolute inset-0 bg-gradient-to-br from-neural-primary via-neural-light to-neural-primary" />
+        {/* Animated particles */}
+        <div className="absolute inset-0">
+          {[...Array(20)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-1 h-1 bg-neural-accent rounded-full opacity-40"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+              }}
+              animate={{
+                y: [0, -30, 0],
+                opacity: [0.2, 0.8, 0.2],
+              }}
+              transition={{
+                duration: 3 + Math.random() * 2,
+                repeat: Infinity,
+                delay: Math.random() * 2,
+              }}
+            />
+          ))}
+        </div>
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div 
-          className="max-w-5xl mx-auto text-center lg:text-left"
+          className="max-w-6xl mx-auto text-center lg:text-left"
           variants={stagger}
           initial="initial"
           animate="animate"
         >
+          {/* Lab Status Indicator */}
+          <motion.div variants={fadeInUp} className="mb-6 inline-flex items-center gap-3">
+            <div className="w-3 h-3 bg-neural-accent rounded-full animate-pulse" />
+            <span className="text-neural-accent font-mono text-sm tracking-wider uppercase">
+              {t('lab_status')}
+            </span>
+          </motion.div>
+
           {/* Logo/Brand */}
           <motion.div variants={fadeInUp} className="mb-8 inline-block">
-            <h1 className="text-6xl md:text-7xl lg:text-8xl font-black font-display tracking-tighter leading-none">
-              <span className="text-neural block">NEURAL</span>
-              <span className="text-neural-accent block -mt-2">LAB</span>
+            <h1 className="text-6xl md:text-7xl lg:text-9xl font-black font-display tracking-tighter leading-none">
+              <span className="text-neural-text-inverse block">NEURAL</span>
+              <span className="text-neural-accent block -mt-4 lg:-mt-6">LAB</span>
             </h1>
             
-            <p className="text-sm md:text-base font-medium tracking-[0.3em] mt-4 text-neural-text-secondary uppercase">
+            <p className="text-xs md:text-sm font-medium tracking-[0.3em] mt-4 text-neural-accent/80 uppercase">
               {t('subtitle')}
             </p>
           </motion.div>
           
-          {/* Main headline */}
-          <motion.div variants={fadeInUp} className="mb-8">
-            <h2 className="text-xl md:text-2xl lg:text-3xl text-neural-text-secondary mb-6 leading-relaxed max-w-4xl">
+          {/* Mission Statement */}
+          <motion.div variants={fadeInUp} className="mb-8 space-y-6">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl text-neural-text-inverse mb-6 leading-relaxed max-w-5xl font-light">
               {t('headline')}
             </h2>
-            <p className="text-base md:text-lg text-neural-text-secondary/80 leading-relaxed max-w-3xl">
+            
+            <p className="text-lg md:text-xl text-neural-accent/90 leading-relaxed max-w-4xl">
               {t('description')}
             </p>
+            
+            <blockquote className="text-base md:text-lg text-neural-text-inverse/80 italic border-l-2 border-neural-accent pl-6 max-w-3xl">
+              "{t('manifesto')}"
+            </blockquote>
           </motion.div>
           
           {/* CTA Buttons */}
@@ -76,41 +112,50 @@ export function Hero({ className }: HeroProps) {
             variants={fadeInUp}
             className="flex flex-col sm:flex-row gap-4 mb-16 justify-center lg:justify-start"
           >
-            <Button variant="primary" size="lg" className="group" asChild>
-              <Link href="/contact">
+            <Button 
+              size="lg" 
+              className="group bg-neural-accent text-neural-primary hover:bg-neural-accent/90 font-semibold"
+              asChild
+            >
+              <Link href="/experiments">
                 {t('cta.primary')}
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
-            <Button variant="outline" size="lg" asChild>
-              <Link href="/cases">
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="border-neural-accent text-neural-accent hover:bg-neural-accent/10"
+              asChild
+            >
+              <Link href="/contact">
                 {t('cta.secondary')}
               </Link>
             </Button>
           </motion.div>
           
-          {/* Metrics */}
+          {/* Lab Metrics */}
           <motion.div 
             variants={stagger}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-16 border-t border-neural/10"
+            className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 pt-16 border-t border-neural-accent/20"
           >
-            {metrics.map((metric, index) => {
+            {labMetrics.map((metric, index) => {
               const Icon = metric.icon
               return (
                 <motion.div 
                   key={index}
                   variants={fadeInUp}
-                  className="flex flex-col items-center lg:items-start group"
+                  className="flex flex-col items-center lg:items-start group bg-neural-light/30 p-4 rounded-lg hover:bg-neural-light/40 transition-colors"
                 >
                   <div className="flex items-center space-x-3 mb-2">
-                    <div className="p-2 bg-neural-accent/10 rounded-lg group-hover:bg-neural-accent/20 transition-colors">
-                      <Icon className="h-5 w-5 text-neural-accent" />
+                    <div className="p-2 bg-neural-accent/20 rounded-lg group-hover:bg-neural-accent/30 transition-colors">
+                      <Icon className="h-4 w-4 md:h-5 md:w-5 text-neural-accent" />
                     </div>
-                    <div className="text-2xl md:text-3xl font-bold text-neural font-display">
+                    <div className="text-xl md:text-2xl lg:text-3xl font-bold text-neural-text-inverse font-display">
                       {metric.value}
                     </div>
                   </div>
-                  <div className="text-sm text-neural-text-secondary font-medium">
+                  <div className="text-xs md:text-sm text-neural-accent/80 font-medium text-center lg:text-left">
                     {metric.label}
                   </div>
                 </motion.div>
@@ -120,14 +165,21 @@ export function Hero({ className }: HeroProps) {
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
+      {/* Neural Scroll Indicator */}
       <motion.div 
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden lg:block"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden lg:flex flex-col items-center gap-2"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
       >
-        <div className="w-6 h-10 border-2 border-neural-accent/30 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-neural-accent/50 rounded-full mt-2" />
+        <div className="text-xs text-neural-accent/60 uppercase tracking-wider font-mono">
+          Explore
+        </div>
+        <div className="w-6 h-10 border-2 border-neural-accent/40 rounded-full flex justify-center relative">
+          <motion.div 
+            className="w-1 h-3 bg-neural-accent rounded-full mt-2"
+            animate={{ opacity: [0.3, 1, 0.3] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
+          />
         </div>
       </motion.div>
     </section>

@@ -8,17 +8,20 @@
   },
   "hero": {
     "title": "NEURAL LAB",
-    "subtitle": "ENGENHARIA DE IA",
-    "headline": "Construímos pipelines de dados e sistemas de IA que resolvem problemas reais de engenharia.",
-    "description": "Especializados em arquiteturas robustas, MLOps e soluções de dados que escalam em produção.",
+    "subtitle": "LABORATÓRIO DE INTELIGÊNCIA ARTIFICIAL",
+    "headline": "Onde a consciência artificial encontra a sabedoria humana",
+    "description": "Experimentamos nas fronteiras da IA. Descobrimos padrões nos dados. Aplicamos ciência para transformar realidades.",
+    "manifesto": "Entre o tensor e o teorema, construímos pontes entre algoritmos e ética.",
+    "lab_status": "LABORATÓRIO ATIVO",
     "cta": {
-      "primary": "Vamos conversar",
-      "secondary": "Ver projetos"
+      "primary": "Explorar Experimentos",
+      "secondary": "Agendar Conversa Técnica"
     },
     "metrics": {
-      "projects": "Projetos em Produção",
-      "uptime": "Uptime",
-      "latency": "Latência Média"
+      "experiments": "Experimentos Ativos",
+      "data_processed": "Dados Processados/mês", 
+      "uptime": "Uptime do Lab",
+      "agents": "Agentes IA"
     }
   },
   "services": {
