@@ -24,6 +24,12 @@
       "agents": "Agentes IA"
     }
   },
+  "experiments": {
+    "title": "Experimentos em Execução",
+    "subtitle": "Sistemas de IA reais em produção",
+    "description": "Cada projeto representa uma fronteira explorada entre teoria e aplicação prática.",
+    "lab_status": "Laboratório Ativo"
+  },
   "services": {
     "title": "Nossos Serviços",
     "subtitle": "Soluções técnicas para problemas reais",

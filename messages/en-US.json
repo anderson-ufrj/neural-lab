@@ -24,6 +24,12 @@
       "agents": "AI Agents"
     }
   },
+  "experiments": {
+    "title": "Running Experiments",
+    "subtitle": "Real AI systems in production",
+    "description": "Each project represents a frontier explored between theory and practical application.",
+    "lab_status": "Laboratory Active"
+  },
   "services": {
     "title": "Our Services",
     "subtitle": "Technical solutions for real problems",
