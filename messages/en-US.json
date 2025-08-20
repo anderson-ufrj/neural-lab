@@ -1,0 +1,80 @@
+{
+  "navigation": {
+    "services": "Services",
+    "cases": "Cases",
+    "about": "About",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "NEURAL LAB",
+    "subtitle": "ARTIFICIAL INTELLIGENCE LABORATORY",
+    "headline": "Where artificial consciousness meets human wisdom",
+    "description": "We experiment at the frontiers of AI. We discover patterns in data. We apply science to transform realities.",
+    "manifesto": "Between tensor and theorem, we build bridges between algorithms and ethics.",
+    "lab_status": "LABORATORY ACTIVE",
+    "cta": {
+      "primary": "Explore Experiments",
+      "secondary": "Schedule Technical Call"
+    },
+    "metrics": {
+      "experiments": "Active Experiments",
+      "data_processed": "Data Processed/month",
+      "uptime": "Lab Uptime",
+      "agents": "AI Agents"
+    }
+  },
+  "experiments": {
+    "title": "Running Experiments",
+    "subtitle": "Real AI systems in production",
+    "description": "Each project represents a frontier explored between theory and practical application.",
+    "lab_status": "Laboratory Active"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Technical solutions for real problems",
+    "data_engineering": {
+      "title": "Data Engineering",
+      "description": "Robust pipelines, optimized ETL/ELT, and architectures that scale with your business.",
+      "tech": "Python, Apache Airflow, dbt, BigQuery, Kafka"
+    },
+    "ml_engineering": {
+      "title": "ML Engineering",
+      "description": "From model to deployment: MLOps, monitoring, and AI systems in production.",
+      "tech": "MLflow, Kubeflow, Docker, Kubernetes, TensorFlow"
+    },
+    "consulting": {
+      "title": "Strategic Consulting",
+      "description": "Data architecture, technology roadmap, and existing systems audit.",
+      "tech": "Architecture, Cloud, Governance, Strategy"
+    }
+  },
+  "contact": {
+    "title": "Let's solve your problem",
+    "subtitle": "Tell us about your technical challenge",
+    "form": {
+      "company": "Company",
+      "email": "Email",
+      "problem": "What technical problem do you need to solve?",
+      "budget": "Estimated budget",
+      "timeline": "Expected timeline",
+      "stack": "Current stack (optional)",
+      "submit": "Send proposal"
+    }
+  },
+  "chat": {
+    "title": "Neural Assistant",
+    "subtitle": "Sales Engineer",
+    "placeholder": "Describe your technical problem...",
+    "initial_message": "Hi! I'm a sales engineer here. What technical problem are you trying to solve?"
+  },
+  "footer": {
+    "description": "Specialized in AI and data engineering for companies that need robust solutions.",
+    "links": {
+      "services": "Services",
+      "about": "About",
+      "blog": "Blog",
+      "contact": "Contact"
+    }
+  }
+}

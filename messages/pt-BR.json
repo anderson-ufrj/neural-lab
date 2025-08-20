@@ -1,0 +1,80 @@
+{
+  "navigation": {
+    "services": "Serviços",
+    "cases": "Cases",
+    "about": "Sobre",
+    "blog": "Blog",
+    "contact": "Contato"
+  },
+  "hero": {
+    "title": "NEURAL LAB",
+    "subtitle": "LABORATÓRIO DE INTELIGÊNCIA ARTIFICIAL",
+    "headline": "Onde a consciência artificial encontra a sabedoria humana",
+    "description": "Experimentamos nas fronteiras da IA. Descobrimos padrões nos dados. Aplicamos ciência para transformar realidades.",
+    "manifesto": "Entre o tensor e o teorema, construímos pontes entre algoritmos e ética.",
+    "lab_status": "LABORATÓRIO ATIVO",
+    "cta": {
+      "primary": "Explorar Experimentos",
+      "secondary": "Agendar Conversa Técnica"
+    },
+    "metrics": {
+      "experiments": "Experimentos Ativos",
+      "data_processed": "Dados Processados/mês", 
+      "uptime": "Uptime do Lab",
+      "agents": "Agentes IA"
+    }
+  },
+  "experiments": {
+    "title": "Experimentos em Execução",
+    "subtitle": "Sistemas de IA reais em produção",
+    "description": "Cada projeto representa uma fronteira explorada entre teoria e aplicação prática.",
+    "lab_status": "Laboratório Ativo"
+  },
+  "services": {
+    "title": "Nossos Serviços",
+    "subtitle": "Soluções técnicas para problemas reais",
+    "data_engineering": {
+      "title": "Engenharia de Dados",
+      "description": "Pipelines robustos, ETL/ELT otimizados e arquiteturas que escalam com seu negócio.",
+      "tech": "Python, Apache Airflow, dbt, BigQuery, Kafka"
+    },
+    "ml_engineering": {
+      "title": "ML Engineering",
+      "description": "Do modelo ao deploy: MLOps, monitoramento e sistemas de IA em produção.",
+      "tech": "MLflow, Kubeflow, Docker, Kubernetes, TensorFlow"
+    },
+    "consulting": {
+      "title": "Consultoria Estratégica",
+      "description": "Arquitetura de dados, roadmap tecnológico e auditoria de sistemas existentes.",
+      "tech": "Arquitetura, Cloud, Governança, Estratégia"
+    }
+  },
+  "contact": {
+    "title": "Vamos resolver seu problema",
+    "subtitle": "Conte-nos sobre seu desafio técnico",
+    "form": {
+      "company": "Empresa",
+      "email": "Email",
+      "problem": "Qual problema técnico você precisa resolver?",
+      "budget": "Orçamento estimado",
+      "timeline": "Prazo esperado",
+      "stack": "Stack atual (opcional)",
+      "submit": "Enviar proposta"
+    }
+  },
+  "chat": {
+    "title": "Neural Assistant",
+    "subtitle": "Engenheiro de vendas",
+    "placeholder": "Descreva seu problema técnico...",
+    "initial_message": "Oi! Sou engenheiro de vendas aqui. Qual problema técnico você está tentando resolver?"
+  },
+  "footer": {
+    "description": "Especializados em IA e engenharia de dados para empresas que precisam de soluções robustas.",
+    "links": {
+      "services": "Serviços",
+      "about": "Sobre",
+      "blog": "Blog",
+      "contact": "Contato"
+    }
+  }
+}
