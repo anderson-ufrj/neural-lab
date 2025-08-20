@@ -5,6 +5,7 @@ import { Brain, Rocket, ArrowRight } from 'lucide-react';
 import { GlassCard } from '@/components/ui/glass-card';
 import { Parallax } from '@/components/ui/parallax';
 import { motion } from 'framer-motion';
+import { MorphingBlob } from '@/components/ui/morphing-blob';
 
 export function ServicesOverview() {
   const { t } = useLanguage();
@@ -36,9 +37,22 @@ export function ServicesOverview() {
   
   return (
     <section id="services" className="py-20 bg-gradient-to-br from-blue-50 via-white to-purple-50 relative overflow-hidden">
-      {/* Background gradient blobs */}
-      <div className="absolute top-0 left-0 w-72 h-72 bg-gradient-to-br from-blue-200/30 to-purple-200/30 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-br from-purple-200/30 to-pink-200/30 rounded-full blur-3xl" />
+      {/* Morphing Background Blobs */}
+      <MorphingBlob 
+        className="top-10 left-10" 
+        size={250} 
+        color="bg-gradient-to-br from-blue-300/25 to-purple-300/25"
+      />
+      <MorphingBlob 
+        className="bottom-10 right-10" 
+        size={300} 
+        color="bg-gradient-to-bl from-purple-300/25 to-pink-300/25"
+      />
+      <MorphingBlob 
+        className="top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" 
+        size={200} 
+        color="bg-gradient-to-r from-teal-300/15 to-blue-300/15"
+      />
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 

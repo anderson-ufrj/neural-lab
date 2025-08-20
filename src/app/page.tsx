@@ -8,6 +8,7 @@ import { AboutStory } from '@/components/sections/about-story';
 import { ContactSection } from '@/components/sections/contact-section';
 import { Footer } from '@/components/shared/footer';
 import { SmoothScroll } from '@/components/ui/smooth-scroll';
+import { CursorGradient } from '@/components/ui/cursor-gradient';
 
 export const metadata: Metadata = {
   title: 'Neural LAB - AI Development Studio from Brazil',
@@ -18,7 +19,8 @@ export default function HomePage() {
   return (
     <LanguageProvider>
       <SmoothScroll>
-        <div className="min-h-screen bg-gray-50">
+        <CursorGradient />
+        <div className="min-h-screen bg-gray-50 relative">
           <Navbar />
           <main>
             <HeroSection />

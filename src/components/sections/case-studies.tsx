@@ -4,6 +4,7 @@ import { useLanguage } from '@/contexts/language-context';
 import { ExternalLink, TrendingUp, Clock, Users } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Parallax } from '@/components/ui/parallax';
+import { TiltCard } from '@/components/ui/tilt-card';
 
 export function CaseStudies() {
   const { t } = useLanguage();
@@ -125,7 +126,8 @@ export function CaseStudies() {
               
               {/* Metrics */}
               <div className={index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}>
-                <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
+                <TiltCard className="transform-gpu">
+                  <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
                   <h4 className="text-xl font-bold text-gray-900 mb-8">{t('cases.results')}</h4>
                   <div className="space-y-8">
                     {case_.metrics.map((metric, metricIndex) => {
@@ -142,8 +144,9 @@ export function CaseStudies() {
                         </div>
                       );
                     })}
+                    </div>
                   </div>
-                </div>
+                </TiltCard>
               </div>
               </motion.div>
             </Parallax>

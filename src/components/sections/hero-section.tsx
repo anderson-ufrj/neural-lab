@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import { NeuralNetwork } from '@/components/ui/neural-network';
 import { TypingAnimation } from '@/components/ui/typing-animation';
 import { MagneticButton } from '@/components/ui/magnetic-button';
+import { MorphingBlob } from '@/components/ui/morphing-blob';
 
 export function HeroSection() {
   const { t } = useLanguage();
@@ -14,6 +15,23 @@ export function HeroSection() {
     <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Neural Network Background */}
       <NeuralNetwork />
+      
+      {/* Morphing Blobs */}
+      <MorphingBlob 
+        className="top-20 -left-20" 
+        size={400} 
+        color="bg-gradient-to-br from-purple-400/20 to-blue-500/20"
+      />
+      <MorphingBlob 
+        className="-top-10 -right-32" 
+        size={350} 
+        color="bg-gradient-to-bl from-pink-400/20 to-purple-500/20"
+      />
+      <MorphingBlob 
+        className="bottom-20 right-10" 
+        size={300} 
+        color="bg-gradient-to-tl from-blue-400/15 to-teal-500/15"
+      />
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <motion.h1 
           className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 leading-tight"
