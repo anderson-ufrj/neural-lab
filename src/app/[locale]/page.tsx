@@ -1,12 +1,12 @@
 import { MainLayout } from "@/components/layout/main-layout"
-import { Hero } from "@/components/sections/hero"
-import { Experiments } from "@/components/sections/experiments"
+import { HeroV2 } from "@/components/sections/hero-v2"
+import { ExperimentsV2 } from "@/components/sections/experiments-v2"
 
 export default function Home() {
   return (
     <MainLayout>
-      <Hero />
-      <Experiments />
+      <HeroV2 />
+      <ExperimentsV2 />
     </MainLayout>
   );
 }
