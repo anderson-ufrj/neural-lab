@@ -1,26 +1,107 @@
 @import "tailwindcss";
 
 :root {
+  /* Light mode - Neural Lab colors */
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #111111;
+  
+  /* Neural Lab palette exata */
+  --neural-primary: #111111;
+  --neural-secondary: #2a2a2a;
+  --neural-accent: #cce1df;
+  --neural-muted: #ecf4f3;
+  --neural-dark: #000000;
+  --neural-text-inverse: #ffffff;
 }
 
 @theme inline {
+  /* Background and foreground */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  
+  /* Neural Lab color system */
+  --color-neural-DEFAULT: var(--neural-primary);
+  --color-neural-light: var(--neural-secondary);
+  --color-neural-dark: var(--neural-dark);
+  --color-neural-accent: var(--neural-accent);
+  --color-neural-muted: var(--neural-muted);
+  --color-neural-text-primary: var(--neural-primary);
+  --color-neural-text-secondary: var(--neural-secondary);
+  --color-neural-text-inverse: var(--neural-text-inverse);
+  
+  /* Fonts */
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-display: var(--font-sora), var(--font-inter), sans-serif;
+  
+  /* Animations */
+  --animate-fade-in-up: fade-in-up 0.5s ease-out;
+  --animate-pulse-subtle: pulse-subtle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Dark mode */
+[data-theme="dark"] {
+  --background: #111111;
+  --foreground: #ffffff;
+  --neural-primary: #ffffff;
+  --neural-secondary: #cce1df;
+  --neural-accent: #cce1df;
+  --neural-muted: #2a2a2a;
+  --neural-text-primary: #ffffff;
+  --neural-text-secondary: #cce1df;
+  --neural-text-inverse: #111111;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #111111;
+    --foreground: #ffffff;
   }
 }
 
+/* Keyframes */
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* Base styles */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Mobile-first responsive base */
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Focus states for accessibility */
+:focus-visible {
+  outline: 2px solid var(--neural-accent);
+  outline-offset: 2px;
 }
