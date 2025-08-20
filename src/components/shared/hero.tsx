@@ -5,37 +5,49 @@ import { ArrowRight, Sparkles } from 'lucide-react';
 export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background gradient inspired by Brazilian sunset */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900" />
+      {/* Background inspired by concrete and Brazilian mountains */}
+      <div className="absolute inset-0 bg-gradient-to-br from-zinc-900 via-stone-800 to-zinc-900" />
       
-      {/* Animated gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-transparent via-purple-500/10 to-transparent animate-pulse" />
+      {/* Concrete texture overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-transparent via-amber-600/5 to-transparent" />
       
-      {/* Grid pattern */}
-      <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
+      {/* Curved elements inspired by Niemeyer */}
+      <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-gradient-to-bl from-amber-500/10 to-orange-600/5 blur-3xl" />
+      <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-gradient-to-tr from-amber-600/8 to-yellow-500/5 blur-3xl" />
+      
+      {/* Concrete grid pattern */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="h-full w-full" style={{
+          backgroundImage: `linear-gradient(rgba(120,113,108,0.1) 1px, transparent 1px),
+                           linear-gradient(90deg, rgba(120,113,108,0.1) 1px, transparent 1px)`,
+          backgroundSize: '40px 40px'
+        }} />
+      </div>
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         <div className="mx-auto max-w-4xl">
           {/* Badge */}
           <div className="flex justify-center mb-8">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 backdrop-blur-sm">
-              <Sparkles className="w-4 h-4 text-purple-400" />
-              <span className="text-sm font-medium text-purple-300">AI Studio from Brazil 🇧🇷</span>
+            <div className="inline-flex items-center gap-2 px-6 py-3 bg-stone-800/50 border border-amber-600/30 backdrop-blur-sm" style={{
+              borderRadius: '2rem 0.5rem 2rem 0.5rem'
+            }}>
+              <Sparkles className="w-4 h-4 text-amber-500" />
+              <span className="text-sm font-medium text-amber-100 tracking-wide">ENGENHARIA DE IA • BRASIL</span>
             </div>
           </div>
           
           {/* Main heading */}
           <h1 className="text-center text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-8">
             <span className="block">Construímos o futuro</span>
-            <span className="block bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-amber-400 via-yellow-500 to-orange-500 bg-clip-text text-transparent">
               com Inteligência Artificial
             </span>
           </h1>
           
           {/* Subheading */}
-          <p className="text-center text-xl sm:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto">
-            Transformamos ideias em soluções inteligentes. Do Brasil para o mundo, 
-            criamos sistemas de IA que impulsionam negócios.
+          <p className="text-center text-xl sm:text-2xl text-stone-300 mb-12 max-w-3xl mx-auto font-light">
+            Construímos soluções sólidas em IA. Das montanhas de Minas ao mundo, 
+            criamos sistemas que transformam negócios com a confiabilidade do concreto armado.
           </p>
           
           {/* CTAs */}
@@ -43,7 +55,8 @@ export function Hero() {
             <Button 
               asChild 
               size="lg" 
-              className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white border-0 shadow-lg shadow-purple-500/25"
+              className="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white border-0 shadow-2xl shadow-amber-900/40 font-semibold"
+              style={{ borderRadius: '0.5rem 1.5rem 0.5rem 1.5rem' }}
             >
               <Link href="/contato" className="inline-flex items-center gap-2">
                 Iniciar Projeto
@@ -54,7 +67,8 @@ export function Hero() {
               asChild 
               variant="outline" 
               size="lg"
-              className="border-gray-700 text-gray-300 hover:bg-gray-800 hover:text-white"
+              className="border-stone-600 text-stone-300 hover:bg-stone-800 hover:text-amber-100"
+              style={{ borderRadius: '1.5rem 0.5rem 1.5rem 0.5rem' }}
             >
               <Link href="/portfolio">
                 Ver Cases de Sucesso
@@ -63,13 +77,13 @@ export function Hero() {
           </div>
           
           {/* Trust indicators */}
-          <div className="mt-16 pt-8 border-t border-gray-800">
-            <p className="text-center text-sm text-gray-400 mb-6">Confiado por empresas inovadoras</p>
-            <div className="flex flex-wrap items-center justify-center gap-8 opacity-50">
-              <div className="text-gray-400 font-semibold">StartupX</div>
-              <div className="text-gray-400 font-semibold">TechCorp</div>
-              <div className="text-gray-400 font-semibold">InnovaBR</div>
-              <div className="text-gray-400 font-semibold">FutureLab</div>
+          <div className="mt-16 pt-8 border-t border-stone-700">
+            <p className="text-center text-sm text-stone-400 mb-6 font-light">Soluções construídas com solidez brasileira</p>
+            <div className="flex flex-wrap items-center justify-center gap-8 opacity-60">
+              <div className="text-stone-400 font-medium tracking-wider">MINERAÇÃO.AI</div>
+              <div className="text-stone-400 font-medium tracking-wider">CONSTRUTEC</div>
+              <div className="text-stone-400 font-medium tracking-wider">AGROTECH.BR</div>
+              <div className="text-stone-400 font-medium tracking-wider">INFRALAB</div>
             </div>
           </div>
         </div>
