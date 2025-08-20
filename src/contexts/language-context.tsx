@@ -24,7 +24,6 @@ const translations = {
     'hero.subtitle': 'Ajudamos fundadores e líderes empresariais a lançar novos produtos ou transformar seus fluxos de trabalho com Inteligência Artificial.',
     'hero.cta.primary': 'Começar Projeto',
     'hero.cta.secondary': 'Conversar',
-    'hero.trust': 'Confiado por empresas brasileiras inovadoras',
     
     // Services
     'services.title': 'Como podemos ajudar',
@@ -121,7 +120,6 @@ const translations = {
     'hero.subtitle': 'We help founders and business leaders launch new products or transform their workflows with Artificial Intelligence.',
     'hero.cta.primary': 'Start Project',
     'hero.cta.secondary': 'Let\'s Talk',
-    'hero.trust': 'Trusted by innovative Brazilian companies',
     
     // Services
     'services.title': 'How we can help',

@@ -37,19 +37,6 @@ export function HeroSection() {
           </Button>
         </div>
         
-        {/* Trust indicators */}
-        <div className="border-t border-gray-200 pt-12">
-          <p className="text-sm text-gray-500 mb-8 uppercase tracking-wider font-medium">
-            {t('hero.trust')}
-          </p>
-          <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
-            <div className="text-gray-400 font-semibold text-lg">PETROBRAS</div>
-            <div className="text-gray-400 font-semibold text-lg">VALE</div>
-            <div className="text-gray-400 font-semibold text-lg">AMBEV</div>
-            <div className="text-gray-400 font-semibold text-lg">ITAÚ</div>
-            <div className="text-gray-400 font-semibold text-lg">EMBRAER</div>
-          </div>
-        </div>
       </div>
     </section>
   );
