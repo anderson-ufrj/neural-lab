@@ -1,0 +1,52 @@
+{
+  "navigation": {
+    "home": "Início",
+    "about": "Sobre",
+    "services": "Serviços",
+    "portfolio": "Portfólio",
+    "blog": "Blog",
+    "contact": "Contato"
+  },
+  "hero": {
+    "title": "Construímos sistemas de IA que se explicam.",
+    "slogan": "Entre o cálculo e o sonho, habita a inteligência.",
+    "cta_services": "Conheça nossos serviços",
+    "cta_portfolio": "Ver portfólio"
+  },
+  "about": {
+    "title": "Sobre a Neural LAB",
+    "mission": "Nossa missão é democratizar a inteligência artificial através de sistemas transparentes e explicáveis.",
+    "founder": "Fundada com o propósito de criar soluções de IA que não apenas funcionem, mas que possam ser compreendidas e confiáveis.",
+    "principles": [
+      "Transparência em algoritmos",
+      "Ética na implementação",
+      "Inovação responsável"
+    ]
+  },
+  "services": {
+    "title": "Nossos Serviços",
+    "subtitle": "Soluções completas em inteligência artificial"
+  },
+  "portfolio": {
+    "title": "Portfólio",
+    "subtitle": "Projetos que demonstram nossa expertise"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Insights e conhecimento em IA",
+    "empty": "Em breve, artigos sobre inteligência artificial e tecnologia."
+  },
+  "contact": {
+    "title": "Contato",
+    "subtitle": "Vamos conversar sobre seu projeto",
+    "form": {
+      "name": "Nome",
+      "email": "E-mail",
+      "message": "Mensagem",
+      "submit": "Enviar mensagem"
+    }
+  },
+  "footer": {
+    "rights": "© 2025 Neural LAB. Todos os direitos reservados."
+  }
+}

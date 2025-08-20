@@ -39,3 +39,29 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# contentlayer
+.contentlayer
+
+# Claude Code files
+.claude/
+CLAUDE.md
+*.claude
+.claude-*
+
+# VS Code
+.vscode/
+
+# IDEs
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+Thumbs.db
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db

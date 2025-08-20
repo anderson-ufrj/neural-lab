@@ -1,0 +1,52 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "We build AI systems that explain themselves.",
+    "slogan": "Between calculation and dream, intelligence resides.",
+    "cta_services": "See our services",
+    "cta_portfolio": "View portfolio"
+  },
+  "about": {
+    "title": "About Neural LAB",
+    "mission": "Our mission is to democratize artificial intelligence through transparent and explainable systems.",
+    "founder": "Founded with the purpose of creating AI solutions that not only work, but can be understood and trusted.",
+    "principles": [
+      "Algorithmic transparency",
+      "Ethical implementation",
+      "Responsible innovation"
+    ]
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Complete artificial intelligence solutions"
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "subtitle": "Projects that demonstrate our expertise"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "AI insights and knowledge",
+    "empty": "Coming soon, articles about artificial intelligence and technology."
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Let's talk about your project",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Send message"
+    }
+  },
+  "footer": {
+    "rights": "© 2025 Neural LAB. All rights reserved."
+  }
+}
