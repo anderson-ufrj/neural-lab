@@ -2,6 +2,8 @@
 
 import { useLanguage } from '@/contexts/language-context';
 import { ExternalLink, TrendingUp, Clock, Users } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Parallax } from '@/components/ui/parallax';
 
 export function CaseStudies() {
   const { t } = useLanguage();
@@ -46,20 +48,33 @@ export function CaseStudies() {
   ];
   
   return (
-    <section className="py-20 bg-gray-50">
+    <section id="portfolio" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
             {t('cases.title')}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             {t('cases.subtitle')}
           </p>
-        </div>
+        </motion.div>
         
         <div className="space-y-20">
           {cases.map((case_, index) => (
-            <div key={index} className={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-dense' : ''}`}>
+            <Parallax key={index} speed={index % 2 === 0 ? -0.2 : 0.2}>
+              <motion.div 
+                className={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-dense' : ''}`}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+                viewport={{ once: true }}
+              >
               {/* Content */}
               <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
                 <div className="flex items-center mb-6">
@@ -130,7 +145,8 @@ export function CaseStudies() {
                   </div>
                 </div>
               </div>
-            </div>
+              </motion.div>
+            </Parallax>
           ))}
         </div>
       </div>

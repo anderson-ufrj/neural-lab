@@ -1,20 +1,35 @@
 'use client';
 
 import { useLanguage } from '@/contexts/language-context';
+import { motion } from 'framer-motion';
+import { Parallax } from '@/components/ui/parallax';
 
 export function AboutStory() {
   const { t } = useLanguage();
   
   return (
-    <section className="py-20 bg-white">
+    <section id="about" className="py-20 bg-gradient-to-br from-white to-gray-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
             {t('about.title')}
           </h2>
-        </div>
+        </motion.div>
         
-        <div className="prose prose-lg prose-gray max-w-none">
+        <Parallax speed={-0.1}>
+          <motion.div 
+            className="prose prose-lg prose-gray max-w-none"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
           <p className="text-xl text-gray-600 leading-relaxed mb-8">
             {t('about.paragraph1')}
           </p>
@@ -70,7 +85,8 @@ export function AboutStory() {
           <p className="text-lg text-gray-600 leading-relaxed">
             {t('about.paragraph4')}
           </p>
-        </div>
+          </motion.div>
+        </Parallax>
       </div>
     </section>
   );

@@ -7,6 +7,7 @@ import { CaseStudies } from '@/components/sections/case-studies';
 import { AboutStory } from '@/components/sections/about-story';
 import { ContactSection } from '@/components/sections/contact-section';
 import { Footer } from '@/components/shared/footer';
+import { SmoothScroll } from '@/components/ui/smooth-scroll';
 
 export const metadata: Metadata = {
   title: 'Neural LAB - AI Development Studio from Brazil',
@@ -16,17 +17,19 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <LanguageProvider>
-      <div className="min-h-screen bg-gray-50">
-        <Navbar />
-        <main>
-          <HeroSection />
-          <ServicesOverview />
-          <CaseStudies />
-          <AboutStory />
-          <ContactSection />
-        </main>
-        <Footer />
-      </div>
+      <SmoothScroll>
+        <div className="min-h-screen bg-gray-50">
+          <Navbar />
+          <main>
+            <HeroSection />
+            <ServicesOverview />
+            <CaseStudies />
+            <AboutStory />
+            <ContactSection />
+          </main>
+          <Footer />
+        </div>
+      </SmoothScroll>
     </LanguageProvider>
   );
 }
