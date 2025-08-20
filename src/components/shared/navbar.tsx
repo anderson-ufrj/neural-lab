@@ -3,9 +3,9 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/language-context';
 import { LanguageSwitcher } from '@/components/ui/language-switcher';
+import { MagneticButton } from '@/components/ui/magnetic-button';
 
 export function Navbar() {
   const { t } = useLanguage();
@@ -69,9 +69,9 @@ export function Navbar() {
         
         <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-4">
           <LanguageSwitcher />
-          <Button asChild>
+          <MagneticButton className="bg-gray-900 hover:bg-gray-800 text-white px-4 py-2 rounded-lg font-medium transition-colors">
             <a href="#contact">{t('nav.cta')}</a>
-          </Button>
+          </MagneticButton>
         </div>
       </nav>
       
@@ -93,9 +93,9 @@ export function Navbar() {
               <div className="flex items-center justify-center mb-3">
                 <LanguageSwitcher />
               </div>
-              <Button asChild className="w-full">
+              <MagneticButton className="w-full bg-gray-900 hover:bg-gray-800 text-white px-4 py-2 rounded-lg font-medium transition-colors">
                 <a href="#contact">{t('nav.cta')}</a>
-              </Button>
+              </MagneticButton>
             </div>
           </div>
         </div>

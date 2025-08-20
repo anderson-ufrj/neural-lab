@@ -1,41 +1,58 @@
 'use client';
 
 import { useLanguage } from '@/contexts/language-context';
-import { Button } from '@/components/ui/button';
 import { ArrowRight, MessageCircle } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { NeuralNetwork } from '@/components/ui/neural-network';
+import { TypingAnimation } from '@/components/ui/typing-animation';
+import { MagneticButton } from '@/components/ui/magnetic-button';
 
 export function HeroSection() {
   const { t } = useLanguage();
   
   return (
-    <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto text-center">
-        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 leading-tight">
-          {t('hero.title')}
-        </h1>
+    <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      {/* Neural Network Background */}
+      <NeuralNetwork />
+      <div className="relative z-10 max-w-4xl mx-auto text-center">
+        <motion.h1 
+          className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 leading-tight"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <TypingAnimation 
+            text={t('hero.title')}
+            speed={50}
+            delay={500}
+          />
+        </motion.h1>
         
-        <p className="text-xl sm:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
+        <motion.p 
+          className="text-xl sm:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 2.5 }}
+        >
           {t('hero.subtitle')}
-        </p>
+        </motion.p>
         
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-          <Button 
-            size="lg"
-            className="bg-gray-900 hover:bg-gray-800 text-white px-8 py-4 text-lg font-semibold"
-          >
+        <motion.div 
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 3.2 }}
+        >
+          <MagneticButton className="bg-gray-900 hover:bg-gray-800 text-white px-8 py-4 text-lg font-semibold rounded-lg transition-colors">
             {t('hero.cta.primary')}
             <ArrowRight className="ml-2 w-5 h-5" />
-          </Button>
+          </MagneticButton>
           
-          <Button 
-            variant="outline" 
-            size="lg"
-            className="border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-4 text-lg"
-          >
+          <MagneticButton className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-4 text-lg font-medium rounded-lg bg-white transition-colors">
             <MessageCircle className="mr-2 w-5 h-5" />
             {t('hero.cta.secondary')}
-          </Button>
-        </div>
+          </MagneticButton>
+        </motion.div>
         
       </div>
     </section>
