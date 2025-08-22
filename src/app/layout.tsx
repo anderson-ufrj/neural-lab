@@ -1,20 +1,9 @@
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Neural LAB',
-  description: 'Construímos sistemas de IA que se explicam.',
-};
-
+// This file is required by Next.js but should not render anything
+// The actual layout is in [locale]/layout.tsx
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <html>
-      <body>
-        {children}
-      </body>
-    </html>
-  );
+  return children;
 }
