@@ -1,26 +1,26 @@
 'use client';
 
-import { useLanguage } from '@/contexts/language-context';
+import { useTranslations } from 'next-intl';
 import { CheckCircle, Code, Zap } from 'lucide-react';
 
 export function AboutSection() {
-  const { t } = useLanguage();
+  const t = useTranslations('about');
   
   const features = [
     {
       icon: CheckCircle,
-      title: t('about.feature1.title'),
-      description: t('about.feature1.desc')
+      title: t('feature1.title'),
+      description: t('feature1.desc')
     },
     {
       icon: Code,
-      title: t('about.feature2.title'),
-      description: t('about.feature2.desc')
+      title: t('feature2.title'),
+      description: t('feature2.desc')
     },
     {
       icon: Zap,
-      title: t('about.feature3.title'),
-      description: t('about.feature3.desc')
+      title: t('feature3.title'),
+      description: t('feature3.desc')
     }
   ];
   
@@ -29,13 +29,13 @@ export function AboutSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
-            {t('about.title')}
+            {t('title')}
           </h2>
           <p className="text-xl text-green-400 font-light mb-8">
-            {t('about.subtitle')}
+            {t('subtitle')}
           </p>
           <p className="text-lg text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            {t('about.description')}
+            {t('description')}
           </p>
         </div>
         

@@ -1,6 +1,6 @@
 'use client';
 
-import { useLanguage } from '@/contexts/language-context';
+import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -10,7 +10,7 @@ import { TextReveal } from '@/components/ui/text-reveal';
 import { BreathingCard } from '@/components/ui/breathing-card';
 
 export function ContactSection() {
-  const { t } = useLanguage();
+  const t = useTranslations('contact'); const tFooter = useTranslations('footer');
   
   return (
     <section id="contact" className="py-20 relative overflow-hidden">
@@ -18,10 +18,10 @@ export function ContactSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <TextReveal className="text-4xl sm:text-5xl font-bold text-white mb-6">
-            {t('contact.title')}
+            {t('title')}
           </TextReveal>
           <TextReveal className="text-xl text-green-400 font-light" delay={0.3}>
-            {t('contact.subtitle')}
+            {t('subtitle')}
           </TextReveal>
         </div>
         
@@ -34,7 +34,7 @@ export function ContactSection() {
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                    {t('contact.form.name')}
+                    {t('form.name')}
                   </label>
                   <Input 
                     id="name"
@@ -45,7 +45,7 @@ export function ContactSection() {
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                    {t('contact.form.email')}
+                    {t('form.email')}
                   </label>
                   <Input 
                     id="email"
@@ -58,7 +58,7 @@ export function ContactSection() {
               
               <div>
                 <label htmlFor="company" className="block text-sm font-medium text-gray-300 mb-2">
-                  {t('contact.form.company')}
+                  {t('form.company')}
                 </label>
                 <Input 
                   id="company"
@@ -70,7 +70,7 @@ export function ContactSection() {
               
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-                  {t('contact.form.message')}
+                  {t('form.message')}
                 </label>
                 <Textarea 
                   id="message"
@@ -85,7 +85,7 @@ export function ContactSection() {
                 className="w-full bg-gradient-to-r from-green-700 to-emerald-700 hover:from-green-800 hover:to-emerald-800 text-white border-0 shadow-lg shadow-green-900/40 font-semibold"
                 style={{ borderRadius: '0.5rem 1rem 0.5rem 1rem' }}
               >
-                {t('contact.form.submit')}
+                {t('form.submit')}
               </Button>
             </form>
             </div>
@@ -130,7 +130,7 @@ export function ContactSection() {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-white">Localização</h3>
-                  <p className="text-gray-400">{t('footer.location')}</p>
+                  <p className="text-gray-400">{tFooter('location')}</p>
                 </div>
               </div>
             </div>

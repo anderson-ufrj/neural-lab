@@ -48,6 +48,24 @@ next-env.d.ts
 CLAUDE.md
 *.claude
 .claude-*
+claude.md
+.claude.md
+**/.claude/
+**/claude.md
+**/CLAUDE.md
+**/.claude.md
+
+# AI/LLM related logs and cache
+.ai-cache/
+.llm-logs/
+ai-sessions/
+claude-sessions/
+ai-history/
+
+# Development tools
+.cursor/
+cursor.log
+.anthropic/
 
 # VS Code
 .vscode/
@@ -65,3 +83,13 @@ Thumbs.db
 .Spotlight-V100
 .Trashes
 ehthumbs.db
+
+# Project planning
+ROADMAP.md
+roadmap.md
+**/ROADMAP.md
+**/roadmap.md
+NEXT-STEPS.md
+next-steps.md
+**/NEXT-STEPS.md
+**/next-steps.md

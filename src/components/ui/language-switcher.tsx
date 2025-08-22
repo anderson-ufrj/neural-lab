@@ -1,35 +1,39 @@
 'use client';
 
-import { useLanguage } from '@/contexts/language-context';
+import { useLocale } from 'next-intl';
+import { Link, usePathname } from '@/i18n/navigation';
 import { Globe } from 'lucide-react';
 
 export function LanguageSwitcher() {
-  const { language, setLanguage } = useLanguage();
+  const locale = useLocale();
+  const pathname = usePathname();
   
   return (
     <div className="flex items-center gap-2">
-      <Globe className="w-4 h-4 text-gray-500" />
-      <div className="flex bg-gray-100 rounded-lg p-1">
-        <button
-          onClick={() => setLanguage('pt')}
+      <Globe className="w-4 h-4 text-gray-500 dark:text-gray-400" />
+      <div className="flex bg-gray-100 dark:bg-gray-800 rounded-lg p-1">
+        <Link
+          href={pathname}
+          locale="pt"
           className={`px-3 py-1 text-sm font-medium rounded-md transition-all duration-200 ${
-            language === 'pt'
-              ? 'bg-white text-gray-900 shadow-sm'
-              : 'text-gray-600 hover:text-gray-900'
+            locale === 'pt'
+              ? 'bg-white dark:bg-gray-700 text-gray-900 dark:text-white shadow-sm'
+              : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
           }`}
         >
           PT
-        </button>
-        <button
-          onClick={() => setLanguage('en')}
+        </Link>
+        <Link
+          href={pathname}
+          locale="en"
           className={`px-3 py-1 text-sm font-medium rounded-md transition-all duration-200 ${
-            language === 'en'
-              ? 'bg-white text-gray-900 shadow-sm'
-              : 'text-gray-600 hover:text-gray-900'
+            locale === 'en'
+              ? 'bg-white dark:bg-gray-700 text-gray-900 dark:text-white shadow-sm'
+              : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
           }`}
         >
           EN
-        </button>
+        </Link>
       </div>
     </div>
   );

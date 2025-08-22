@@ -1,0 +1,169 @@
+{
+  "nav": {
+    "about": "Sobre",
+    "services": "Serviços",
+    "portfolio": "Portfolio",
+    "contact": "Nosso Time",
+    "cta": "Fale Conosco"
+  },
+  "hero": {
+    "title": "Estúdio de desenvolvimento com expertise em IA",
+    "subtitle": "Ajudamos fundadores e líderes empresariais a lançar novos produtos ou transformar seus fluxos de trabalho com Inteligência Artificial.",
+    "cta": {
+      "primary": "Começar Projeto",
+      "secondary": "Conversar"
+    }
+  },
+  "services": {
+    "title": "Como podemos ajudar",
+    "subtitle": "Oferecemos duas categorias principais de serviços para transformar sua visão em realidade.",
+    "ai": {
+      "title": "Soluções de IA",
+      "description": "Desenvolvemos sistemas de inteligência artificial personalizados que crescem organicamente com seus dados e necessidades específicas.",
+      "feature1": "Desenvolvimento de modelos de ML personalizados",
+      "feature2": "Sistemas RAG e processamento de linguagem natural",
+      "feature3": "Automação inteligente de processos",
+      "feature4": "Integração com APIs e sistemas existentes"
+    },
+    "product": {
+      "title": "Desenvolvimento de Produto",
+      "description": "Construímos produtos digitais completos do zero, combinando design excepcional com engenharia sólida e inteligência artificial.",
+      "feature1": "MVP e prototipagem rápida",
+      "feature2": "Desenvolvimento full-stack escalável",
+      "feature3": "Design de experiência do usuário",
+      "feature4": "Infraestrutura cloud e DevOps"
+    }
+  },
+  "cases": {
+    "title": "Nosso Trabalho",
+    "subtitle": "Cases de sucesso que demonstram nosso impacto no mundo real.",
+    "results": "Resultados",
+    "cidadao": {
+      "title": "Plataforma de Transparência Governamental",
+      "description": "Desenvolvemos o primeiro sistema multi-agente de IA para transparência pública no Brasil, democratizando o acesso à informação governamental através de agentes especializados.",
+      "metric1": {
+        "label": "Agentes IA especializados",
+        "value": "3"
+      },
+      "metric2": {
+        "label": "Redução no tempo de análise",
+        "value": "85%"
+      },
+      "metric3": {
+        "label": "Tempo de desenvolvimento",
+        "value": "4 meses"
+      },
+      "testimonial": {
+        "text": "A Neural LAB transformou nossa visão de transparência governamental em uma plataforma real e funcional. A expertise em IA foi fundamental.",
+        "author": "Equipe Cidadão.AI",
+        "role": "Projeto de Transparência"
+      }
+    },
+    "ale": {
+      "title": "Assistente de Produtividade Pessoal",
+      "description": "Criamos um assistente inteligente que maximiza a produtividade através de IA conversacional, integrando-se naturalmente aos fluxos de trabalho existentes.",
+      "metric1": {
+        "label": "Aumento na produtividade",
+        "value": "60%"
+      },
+      "metric2": {
+        "label": "Tempo de resposta médio",
+        "value": "<2s"
+      },
+      "metric3": {
+        "label": "Satisfação do usuário",
+        "value": "95%"
+      },
+      "testimonial": {
+        "text": "O Alê Assistant revolucionou minha rotina de trabalho. É como ter um assistente pessoal que entende exatamente o que preciso.",
+        "author": "Alexandre Silva",
+        "role": "Empreendedor"
+      }
+    }
+  },
+  "about": {
+    "title": "Nossa História",
+    "paragraph1": "A Neural LAB nasceu da frustração com agências tradicionais que tratam projetos de IA como commodities. Vimos muitos projetos falharem não por falta de tecnologia, mas por falta de verdadeiro entendimento das necessidades do cliente.",
+    "paragraph2": "Baseados em Belo Horizonte, no coração das montanhas de Minas Gerais, combinamos a solidez da engenharia brasileira com a inovação da inteligência artificial moderna. Nossa abordagem é diferente: não somos apenas fornecedores, somos parceiros.",
+    "paragraph3": "Cada projeto é uma oportunidade de criar algo verdadeiramente único. Trabalhamos lado a lado com nossos clientes, entendendo profundamente seus desafios e objetivos antes de escrever a primeira linha de código.",
+    "paragraph4": "Se você está procurando uma parceria verdadeira para transformar sua visão em realidade, vamos conversar. Estamos aqui para construir o futuro, um projeto de cada vez.",
+    "approach": {
+      "title": "Nossa Abordagem",
+      "ownership": {
+        "title": "Senso de Propriedade",
+        "description": "Tratamos cada projeto como se fosse nosso. Seu sucesso é nosso sucesso."
+      },
+      "partnership": {
+        "title": "Parceria Verdadeira",
+        "description": "Trabalhamos como uma extensão da sua equipe, não apenas como fornecedores."
+      },
+      "quality": {
+        "title": "Qualidade Sem Compromisso",
+        "description": "Código limpo, arquitetura sólida e soluções que escalam com seu negócio."
+      },
+      "innovation": {
+        "title": "Inovação Responsável",
+        "description": "Usamos as tecnologias mais avançadas, mas sempre com propósito e responsabilidade."
+      }
+    }
+  },
+  "contact": {
+    "title": "Vamos Conversar",
+    "subtitle": "Pronto para transformar sua visão em realidade?",
+    "form": {
+      "name": "Nome",
+      "email": "Email",
+      "company": "Empresa",
+      "message": "Conte-nos sobre seu projeto",
+      "submit": "Enviar Mensagem"
+    }
+  },
+  "footer": {
+    "description": "Inteligência Artificial que cresce organicamente com seus dados e necessidades.",
+    "nav": "Navegação",
+    "navServices": "Serviços",
+    "navPortfolio": "Portfolio",
+    "navAbout": "Sobre",
+    "navContact": "Nosso Time",
+    "solutions": "Soluções",
+    "solution1": "Engenharia de IA",
+    "solution2": "Sistemas MLOps",
+    "solution3": "Inteligência Orgânica",
+    "solution4": "Consultoria Estratégica",
+    "contact": "Contato",
+    "location": "Muzambinho, Minas Gerais",
+    "copyright": "© 2025 Neural LAB. Inteligência que cresce organicamente.",
+    "privacy": "Política de Privacidade",
+    "terms": "Termos de Uso"
+  },
+  "chat": {
+    "welcome": "Olá! Sou a IA do Neural LAB. Como posso ajudar você hoje? 🤖",
+    "placeholder": "Digite sua mensagem...",
+    "online": "Sempre online"
+  },
+  "anderson": {
+    "title": "Engenheiro de Sistemas de IA",
+    "location": "Muzambinho, Minas Gerais",
+    "education": "Estudante de Ciências da Computação",
+    "bio": {
+      "title": "Sobre Anderson",
+      "paragraph1": "Engenheiro de Sistemas de Inteligência Artificial apaixonado por criar soluções que transformam dados em insights valiosos. Atualmente cursando Ciências da Computação, com foco em Machine Learning e desenvolvimento de sistemas inteligentes.",
+      "paragraph2": "Fundador do Neural LAB, combino conhecimento acadêmico sólido com experiência prática no desenvolvimento de produtos de IA. Acredito que a inteligência artificial deve crescer organicamente, adaptando-se às necessidades específicas de cada projeto.",
+      "paragraph3": "Quando não estou codificando ou estudando novos algoritmos, gosto de explorar as montanhas de Minas Gerais e refletir sobre como a tecnologia pode melhorar a vida das pessoas. Cada projeto é uma oportunidade de aprender e criar algo verdadeiramente impactante."
+    },
+    "skills": "Habilidades Técnicas",
+    "achievements": "Conquistas e Projetos",
+    "achievement1": {
+      "title": "Neural LAB - Estúdio de IA",
+      "description": "Fundação do Neural LAB, focado em desenvolver soluções de IA personalizadas que crescem organicamente com os dados dos clientes."
+    },
+    "achievement2": {
+      "title": "Cidadão.AI - Transparência Pública",
+      "description": "Desenvolvimento do primeiro sistema multi-agente do Brasil para transparência governamental, democratizando acesso à informação."
+    },
+    "achievement3": {
+      "title": "Início da Jornada em IA",
+      "description": "Início dos estudos formais em Ciências da Computação com especialização em Inteligência Artificial e Machine Learning."
+    }
+  }
+}

@@ -42,7 +42,7 @@ export function MorphingBlob({
       path.style.transition = 'all 3s ease-in-out';
       path.setAttribute('d', nextShape);
       
-      setTimeout(animateMorph, 3000 + Math.random() * 2000); // Random delay between 3-5s
+      setTimeout(animateMorph, 3000 + (currentIndex * 500)); // Predictable delay based on index
     };
 
     // Start animation after 1s

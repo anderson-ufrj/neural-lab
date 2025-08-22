@@ -1,77 +1,64 @@
 'use client';
 
-import { useLanguage } from '@/contexts/language-context';
-import { ArrowRight, MessageCircle } from 'lucide-react';
+import { useTranslations } from 'next-intl';
+import { Activity, Terminal } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { NeuralNetwork } from '@/components/ui/neural-network';
-import { TypingAnimation } from '@/components/ui/typing-animation';
-import { MagneticButton } from '@/components/ui/magnetic-button';
-import { MorphingBlob } from '@/components/ui/morphing-blob';
 
 export function HeroSection() {
-  const { t } = useLanguage();
+  const t = useTranslations('hero');
   
   return (
-    <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-      {/* Neural Network Background */}
-      <NeuralNetwork />
+    <section className="relative pt-32 pb-20 bg-white dark:bg-gray-900 overflow-hidden">
+      {/* Grid overlay - matching site pattern */}
+      <div className="absolute inset-0" style={{
+        backgroundImage: 'linear-gradient(90deg, rgba(156,163,175,0.5) 1px, transparent 1px), linear-gradient(180deg, rgba(156,163,175,0.5) 1px, transparent 1px)',
+        backgroundSize: '40px 40px'
+      }} />
       
-      {/* Morphing Blobs */}
-      <MorphingBlob 
-        className="top-20 -left-20" 
-        size={400} 
-        color="bg-gradient-to-br from-purple-400/20 to-blue-500/20"
-      />
-      <MorphingBlob 
-        className="-top-10 -right-32" 
-        size={350} 
-        color="bg-gradient-to-bl from-pink-400/20 to-purple-500/20"
-      />
-      <MorphingBlob 
-        className="bottom-20 right-10" 
-        size={300} 
-        color="bg-gradient-to-tl from-blue-400/15 to-teal-500/15"
-      />
-      <div className="relative z-10 max-w-4xl mx-auto text-center">
-        <motion.h1 
-          className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 leading-tight"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <TypingAnimation 
-            text={t('hero.title')}
-            speed={50}
-            delay={500}
-          />
-        </motion.h1>
+      {/* Container corners - industrial theme */}
+      <div className="absolute top-4 left-4 w-4 h-4 border-l-2 border-t-2 border-gray-400/30"></div>
+      <div className="absolute top-4 right-4 w-4 h-4 border-r-2 border-t-2 border-gray-400/30"></div>
+      <div className="absolute bottom-4 left-4 w-4 h-4 border-l-2 border-b-2 border-gray-400/30"></div>
+      <div className="absolute bottom-4 right-4 w-4 h-4 border-r-2 border-b-2 border-gray-400/30"></div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <motion.p 
-          className="text-xl sm:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 2.5 }}
-        >
-          {t('hero.subtitle')}
-        </motion.p>
-        
+        {/* Industrial header - signature pattern */}
         <motion.div 
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 3.2 }}
+          className="inline-flex items-center gap-2 bg-gray-800 dark:bg-gray-700 text-white px-4 py-2 text-xs font-mono uppercase tracking-wider mb-8 border-l-4 border-green-500"
+          style={{ borderRadius: '0.25rem 0.75rem 0.25rem 0.75rem' }}
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
         >
-          <MagneticButton className="bg-gray-900 hover:bg-gray-800 text-white px-8 py-4 text-lg font-semibold rounded-lg transition-colors">
-            {t('hero.cta.primary')}
-            <ArrowRight className="ml-2 w-5 h-5" />
-          </MagneticButton>
-          
-          <MagneticButton className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-4 text-lg font-medium rounded-lg bg-white transition-colors">
-            <MessageCircle className="mr-2 w-5 h-5" />
-            {t('hero.cta.secondary')}
-          </MagneticButton>
+          <Terminal className="w-3 h-3" />
+          COMMAND BRIDGE • NEURAL LAB SYSTEMS • ONLINE
+          <Activity className="w-3 h-3 animate-pulse text-green-400" />
         </motion.div>
-        
+
+        <div className="text-center mb-16">
+          
+          {/* Main heading - following site typography */}
+          <motion.h1 
+            className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            {t('title')}
+          </motion.h1>
+          
+          {/* Subtitle with green accent - matching site pattern */}
+          <motion.p
+            className="text-xl text-green-400 font-light"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            {t('subtitle')}
+          </motion.p>
+        </div>
+          
       </div>
     </section>
   );

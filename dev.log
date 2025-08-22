@@ -1,0 +1,992 @@
+
+> neural-lab@0.1.0 dev
+> next dev --turbopack
+
+   ▲ Next.js 15.5.0 (Turbopack)
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.1.211:3000
+
+ ✓ Starting...
+ ✓ Compiled middleware in 133ms
+ ✓ Ready in 913ms
+ ○ Compiling /[locale] ...
+ ✓ Compiled /[locale] in 2.6s
+ ⨯ Error: Cannot find module '../messages/undefined.json'
+    at <unknown> (.next/server/chunks/ssr/[root-of-the-server]__6ae79b79._.js:48:18)
+    at LocaleLayout (src/app/[locale]/layout.tsx:59:37)
+  57 |   // Providing all messages to the client
+  58 |   // side is the easiest way to get started
+> 59 |   const messages = await getMessages();
+     |                                     ^
+  60 |
+  61 |   return (
+  62 |     <html lang={locale}> {
+  code: 'MODULE_NOT_FOUND',
+  digest: '2168382103'
+}
+ GET /pt 500 in 3523ms
+ ✓ Compiled in 83ms
+ ✓ Compiled /[locale] in 23ms
+ ⨯ Error: No locale was returned from `getRequestConfig`.
+
+See https://next-intl.dev/docs/usage/configuration#i18n-request
+    at async LocaleLayout (src/app/[locale]/layout.tsx:59:20)
+  57 |   // Providing all messages to the client
+  58 |   // side is the easiest way to get started
+> 59 |   const messages = await getMessages({ locale });
+     |                    ^
+  60 |
+  61 |   return (
+  62 |     <html lang={locale}> {
+  digest: '3875568627'
+}
+ GET /pt 500 in 322ms
+ ✓ Compiled in 82ms
+ ✓ Compiled /[locale] in 28ms
+Loading locale: pt
+ ⨯ Error: No locale was returned from `getRequestConfig`.
+
+See https://next-intl.dev/docs/usage/configuration#i18n-request
+    at async LocaleLayout (src/app/[locale]/layout.tsx:59:20)
+  57 |   // Providing all messages to the client
+  58 |   // side is the easiest way to get started
+> 59 |   const messages = await getMessages({ locale });
+     |                    ^
+  60 |
+  61 |   return (
+  62 |     <html lang={locale}> {
+  digest: '3024740790'
+}
+ GET /pt 500 in 304ms
+ ✓ Compiled /[locale] in 13ms
+Error: MISSING_MESSAGE: Could not resolve `nav.nav.cta` in messages for locale `pt`.
+    at Navbar (src/components/shared/navbar.tsx:75:33)
+  73 |           <LanguageSwitcher />
+  74 |           <MagneticButton className="bg-gray-900 hover:bg-gray-800 text-white px-4 py-2 rounded-lg font-medium transition-colors">
+> 75 |             <a href="#contact">{t('nav.cta')}</a>
+     |                                 ^
+  76 |           </MagneticButton>
+  77 |         </div>
+  78 |       </nav> {
+  code: 'MISSING_MESSAGE',
+  originalMessage: 'Could not resolve `nav.nav.cta` in messages for locale `pt`.'
+}
+Error: MISSING_MESSAGE: Could not resolve `footer.navServices` in messages for locale `pt`.
+    at Footer (src/components/shared/footer.tsx:52:153)
+  50 |             <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-4 transition-colors duration-300">{t('nav')}</h3>
+  51 |             <ul className="space-y-3">
+> 52 |               <li><a href="#services" className="text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">{t('navServices')}</a></li>
+     |                                                                                                                                                         ^
+  53 |               <li><a href="#portfolio" className="text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">{t('navPortfolio')}</a></li>
+  54 |               <li><a href="#about" className="text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">{t('navAbout')}</a></li>
+  55 |               <li><a href="#anderson" className="text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">{t('navContact')}</a></li> {
+  code: 'MISSING_MESSAGE',
+  originalMessage: 'Could not resolve `footer.navServices` in messages for locale `pt`.'
+}
+Error: MISSING_MESSAGE: Could not resolve `footer.navPortfolio` in messages for locale `pt`.
+    at Footer (src/components/shared/footer.tsx:53:154)
+  51 |             <ul className="space-y-3">
+  52 |               <li><a href="#services" className="text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">{t('navServices')}</a></li>
+> 53 |               <li><a href="#portfolio" className="text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">{t('navPortfolio')}</a></li>
+     |                                                                                                                                                          ^
+  54 |               <li><a href="#about" className="text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">{t('navAbout')}</a></li>
+  55 |               <li><a href="#anderson" className="text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">{t('navContact')}</a></li>
+  56 |             </ul> {
+  code: 'MISSING_MESSAGE',
+  originalMessage: 'Could not resolve `footer.navPortfolio` in messages for locale `pt`.'
+}
+Error: MISSING_MESSAGE: Could not resolve `footer.navAbout` in messages for locale `pt`.
+    at Footer (src/components/shared/footer.tsx:54:150)
+  52 |               <li><a href="#services" className="text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">{t('navServices')}</a></li>
+  53 |               <li><a href="#portfolio" className="text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">{t('navPortfolio')}</a></li>
+> 54 |               <li><a href="#about" className="text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">{t('navAbout')}</a></li>
+     |                                                                                                                                                      ^
+  55 |               <li><a href="#anderson" className="text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">{t('navContact')}</a></li>
+  56 |             </ul>
+  57 |           </div> {
+  code: 'MISSING_MESSAGE',
+  originalMessage: 'Could not resolve `footer.navAbout` in messages for locale `pt`.'
+}
+Error: MISSING_MESSAGE: Could not resolve `footer.navContact` in messages for locale `pt`.
+    at Footer (src/components/shared/footer.tsx:55:153)
+  53 |               <li><a href="#portfolio" className="text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">{t('navPortfolio')}</a></li>
+  54 |               <li><a href="#about" className="text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">{t('navAbout')}</a></li>
+> 55 |               <li><a href="#anderson" className="text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">{t('navContact')}</a></li>
+     |                                                                                                                                                         ^
+  56 |             </ul>
+  57 |           </div>
+  58 |            {
+  code: 'MISSING_MESSAGE',
+  originalMessage: 'Could not resolve `footer.navContact` in messages for locale `pt`.'
+}
+ GET /pt 200 in 562ms
+ ✓ Compiled /[locale] in 25ms
+Error: INVALID_KEY: Namespace keys can not contain the character "." as this is used to express nesting. Please remove it or replace it with another character.
+
+Invalid key: nav.cta (at nav)
+
+If you're migrating from a flat structure, you can convert your messages as follows:
+
+import {set} from "lodash";
+
+const input = {
+  "one.one": "1.1",
+  "one.two": "1.2",
+  "two.one.one": "2.1.1"
+};
+
+const output = Object.entries(input).reduce(
+  (acc, [key, value]) => set(acc, key, value),
+  {}
+);
+
+// Output:
+//
+// {
+//   "one": {
+//     "one": "1.1",
+//     "two": "1.2"
+//   },
+//   "two": {
+//     "one": {
+//       "one": "2.1.1"
+//     }
+//   }
+// }
+
+    at async LocaleLayout (src/app/[locale]/layout.tsx:59:20)
+  57 |   // Providing all messages to the client
+  58 |   // side is the easiest way to get started
+> 59 |   const messages = await getMessages({ locale });
+     |                    ^
+  60 |
+  61 |   return (
+  62 |     <html lang={locale}> {
+  code: 'INVALID_KEY',
+  originalMessage: 'Namespace keys can not contain the character "." as this is used to express nesting. Please remove it or replace it with another character.\n' +
+    '\n' +
+    'Invalid key: nav.cta (at nav)\n' +
+    '\n' +
+    "If you're migrating from a flat structure, you can convert your messages as follows:\n" +
+    '\n' +
+    'import {set} from "lodash";\n' +
+    '\n' +
+    'const input = {\n' +
+    '  "one.one": "1.1",\n' +
+    '  "one.two": "1.2",\n' +
+    '  "two.one.one": "2.1.1"\n' +
+    '};\n' +
+    '\n' +
+    'const output = Object.entries(input).reduce(\n' +
+    '  (acc, [key, value]) => set(acc, key, value),\n' +
+    '  {}\n' +
+    ');\n' +
+    '\n' +
+    '// Output:\n' +
+    '//\n' +
+    '// {\n' +
+    '//   "one": {\n' +
+    '//     "one": "1.1",\n' +
+    '//     "two": "1.2"\n' +
+    '//   },\n' +
+    '//   "two": {\n' +
+    '//     "one": {\n' +
+    '//       "one": "2.1.1"\n' +
+    '//     }\n' +
+    '//   }\n' +
+    '// }\n'
+}
+[Error: INVALID_KEY: Namespace keys can not contain the character "." as this is used to express nesting. Please remove it or replace it with another character.
+
+Invalid key: nav.cta (at nav)
+
+If you're migrating from a flat structure, you can convert your messages as follows:
+
+import {set} from "lodash";
+
+const input = {
+  "one.one": "1.1",
+  "one.two": "1.2",
+  "two.one.one": "2.1.1"
+};
+
+const output = Object.entries(input).reduce(
+  (acc, [key, value]) => set(acc, key, value),
+  {}
+);
+
+// Output:
+//
+// {
+//   "one": {
+//     "one": "1.1",
+//     "two": "1.2"
+//   },
+//   "two": {
+//     "one": {
+//       "one": "2.1.1"
+//     }
+//   }
+// }
+] {
+  code: 'INVALID_KEY',
+  originalMessage: 'Namespace keys can not contain the character "." as this is used to express nesting. Please remove it or replace it with another character.\n' +
+    '\n' +
+    'Invalid key: nav.cta (at nav)\n' +
+    '\n' +
+    "If you're migrating from a flat structure, you can convert your messages as follows:\n" +
+    '\n' +
+    'import {set} from "lodash";\n' +
+    '\n' +
+    'const input = {\n' +
+    '  "one.one": "1.1",\n' +
+    '  "one.two": "1.2",\n' +
+    '  "two.one.one": "2.1.1"\n' +
+    '};\n' +
+    '\n' +
+    'const output = Object.entries(input).reduce(\n' +
+    '  (acc, [key, value]) => set(acc, key, value),\n' +
+    '  {}\n' +
+    ');\n' +
+    '\n' +
+    '// Output:\n' +
+    '//\n' +
+    '// {\n' +
+    '//   "one": {\n' +
+    '//     "one": "1.1",\n' +
+    '//     "two": "1.2"\n' +
+    '//   },\n' +
+    '//   "two": {\n' +
+    '//     "one": {\n' +
+    '//       "one": "2.1.1"\n' +
+    '//     }\n' +
+    '//   }\n' +
+    '// }\n'
+}
+[Error: INVALID_KEY: Namespace keys can not contain the character "." as this is used to express nesting. Please remove it or replace it with another character.
+
+Invalid key: nav.cta (at nav)
+
+If you're migrating from a flat structure, you can convert your messages as follows:
+
+import {set} from "lodash";
+
+const input = {
+  "one.one": "1.1",
+  "one.two": "1.2",
+  "two.one.one": "2.1.1"
+};
+
+const output = Object.entries(input).reduce(
+  (acc, [key, value]) => set(acc, key, value),
+  {}
+);
+
+// Output:
+//
+// {
+//   "one": {
+//     "one": "1.1",
+//     "two": "1.2"
+//   },
+//   "two": {
+//     "one": {
+//       "one": "2.1.1"
+//     }
+//   }
+// }
+] {
+  code: 'INVALID_KEY',
+  originalMessage: 'Namespace keys can not contain the character "." as this is used to express nesting. Please remove it or replace it with another character.\n' +
+    '\n' +
+    'Invalid key: nav.cta (at nav)\n' +
+    '\n' +
+    "If you're migrating from a flat structure, you can convert your messages as follows:\n" +
+    '\n' +
+    'import {set} from "lodash";\n' +
+    '\n' +
+    'const input = {\n' +
+    '  "one.one": "1.1",\n' +
+    '  "one.two": "1.2",\n' +
+    '  "two.one.one": "2.1.1"\n' +
+    '};\n' +
+    '\n' +
+    'const output = Object.entries(input).reduce(\n' +
+    '  (acc, [key, value]) => set(acc, key, value),\n' +
+    '  {}\n' +
+    ');\n' +
+    '\n' +
+    '// Output:\n' +
+    '//\n' +
+    '// {\n' +
+    '//   "one": {\n' +
+    '//     "one": "1.1",\n' +
+    '//     "two": "1.2"\n' +
+    '//   },\n' +
+    '//   "two": {\n' +
+    '//     "one": {\n' +
+    '//       "one": "2.1.1"\n' +
+    '//     }\n' +
+    '//   }\n' +
+    '// }\n'
+}
+ ✓ Compiled in 6ms
+ GET /pt 200 in 244ms
+ ✓ Compiled /[locale] in 12ms
+Error: INVALID_KEY: Namespace keys can not contain the character "." as this is used to express nesting. Please remove it or replace it with another character.
+
+Invalid key: nav.cta (at nav)
+
+If you're migrating from a flat structure, you can convert your messages as follows:
+
+import {set} from "lodash";
+
+const input = {
+  "one.one": "1.1",
+  "one.two": "1.2",
+  "two.one.one": "2.1.1"
+};
+
+const output = Object.entries(input).reduce(
+  (acc, [key, value]) => set(acc, key, value),
+  {}
+);
+
+// Output:
+//
+// {
+//   "one": {
+//     "one": "1.1",
+//     "two": "1.2"
+//   },
+//   "two": {
+//     "one": {
+//       "one": "2.1.1"
+//     }
+//   }
+// }
+
+    at async LocaleLayout (src/app/[locale]/layout.tsx:59:20)
+  57 |   // Providing all messages to the client
+  58 |   // side is the easiest way to get started
+> 59 |   const messages = await getMessages({ locale });
+     |                    ^
+  60 |
+  61 |   return (
+  62 |     <html lang={locale}> {
+  code: 'INVALID_KEY',
+  originalMessage: 'Namespace keys can not contain the character "." as this is used to express nesting. Please remove it or replace it with another character.\n' +
+    '\n' +
+    'Invalid key: nav.cta (at nav)\n' +
+    '\n' +
+    "If you're migrating from a flat structure, you can convert your messages as follows:\n" +
+    '\n' +
+    'import {set} from "lodash";\n' +
+    '\n' +
+    'const input = {\n' +
+    '  "one.one": "1.1",\n' +
+    '  "one.two": "1.2",\n' +
+    '  "two.one.one": "2.1.1"\n' +
+    '};\n' +
+    '\n' +
+    'const output = Object.entries(input).reduce(\n' +
+    '  (acc, [key, value]) => set(acc, key, value),\n' +
+    '  {}\n' +
+    ');\n' +
+    '\n' +
+    '// Output:\n' +
+    '//\n' +
+    '// {\n' +
+    '//   "one": {\n' +
+    '//     "one": "1.1",\n' +
+    '//     "two": "1.2"\n' +
+    '//   },\n' +
+    '//   "two": {\n' +
+    '//     "one": {\n' +
+    '//       "one": "2.1.1"\n' +
+    '//     }\n' +
+    '//   }\n' +
+    '// }\n'
+}
+[Error: INVALID_KEY: Namespace keys can not contain the character "." as this is used to express nesting. Please remove it or replace it with another character.
+
+Invalid key: nav.cta (at nav)
+
+If you're migrating from a flat structure, you can convert your messages as follows:
+
+import {set} from "lodash";
+
+const input = {
+  "one.one": "1.1",
+  "one.two": "1.2",
+  "two.one.one": "2.1.1"
+};
+
+const output = Object.entries(input).reduce(
+  (acc, [key, value]) => set(acc, key, value),
+  {}
+);
+
+// Output:
+//
+// {
+//   "one": {
+//     "one": "1.1",
+//     "two": "1.2"
+//   },
+//   "two": {
+//     "one": {
+//       "one": "2.1.1"
+//     }
+//   }
+// }
+] {
+  code: 'INVALID_KEY',
+  originalMessage: 'Namespace keys can not contain the character "." as this is used to express nesting. Please remove it or replace it with another character.\n' +
+    '\n' +
+    'Invalid key: nav.cta (at nav)\n' +
+    '\n' +
+    "If you're migrating from a flat structure, you can convert your messages as follows:\n" +
+    '\n' +
+    'import {set} from "lodash";\n' +
+    '\n' +
+    'const input = {\n' +
+    '  "one.one": "1.1",\n' +
+    '  "one.two": "1.2",\n' +
+    '  "two.one.one": "2.1.1"\n' +
+    '};\n' +
+    '\n' +
+    'const output = Object.entries(input).reduce(\n' +
+    '  (acc, [key, value]) => set(acc, key, value),\n' +
+    '  {}\n' +
+    ');\n' +
+    '\n' +
+    '// Output:\n' +
+    '//\n' +
+    '// {\n' +
+    '//   "one": {\n' +
+    '//     "one": "1.1",\n' +
+    '//     "two": "1.2"\n' +
+    '//   },\n' +
+    '//   "two": {\n' +
+    '//     "one": {\n' +
+    '//       "one": "2.1.1"\n' +
+    '//     }\n' +
+    '//   }\n' +
+    '// }\n'
+}
+[Error: INVALID_KEY: Namespace keys can not contain the character "." as this is used to express nesting. Please remove it or replace it with another character.
+
+Invalid key: nav.cta (at nav)
+
+If you're migrating from a flat structure, you can convert your messages as follows:
+
+import {set} from "lodash";
+
+const input = {
+  "one.one": "1.1",
+  "one.two": "1.2",
+  "two.one.one": "2.1.1"
+};
+
+const output = Object.entries(input).reduce(
+  (acc, [key, value]) => set(acc, key, value),
+  {}
+);
+
+// Output:
+//
+// {
+//   "one": {
+//     "one": "1.1",
+//     "two": "1.2"
+//   },
+//   "two": {
+//     "one": {
+//       "one": "2.1.1"
+//     }
+//   }
+// }
+] {
+  code: 'INVALID_KEY',
+  originalMessage: 'Namespace keys can not contain the character "." as this is used to express nesting. Please remove it or replace it with another character.\n' +
+    '\n' +
+    'Invalid key: nav.cta (at nav)\n' +
+    '\n' +
+    "If you're migrating from a flat structure, you can convert your messages as follows:\n" +
+    '\n' +
+    'import {set} from "lodash";\n' +
+    '\n' +
+    'const input = {\n' +
+    '  "one.one": "1.1",\n' +
+    '  "one.two": "1.2",\n' +
+    '  "two.one.one": "2.1.1"\n' +
+    '};\n' +
+    '\n' +
+    'const output = Object.entries(input).reduce(\n' +
+    '  (acc, [key, value]) => set(acc, key, value),\n' +
+    '  {}\n' +
+    ');\n' +
+    '\n' +
+    '// Output:\n' +
+    '//\n' +
+    '// {\n' +
+    '//   "one": {\n' +
+    '//     "one": "1.1",\n' +
+    '//     "two": "1.2"\n' +
+    '//   },\n' +
+    '//   "two": {\n' +
+    '//     "one": {\n' +
+    '//       "one": "2.1.1"\n' +
+    '//     }\n' +
+    '//   }\n' +
+    '// }\n'
+}
+ GET /pt 200 in 126ms
+ ⨯ The requested resource "/assets/tech/fastapi-logo.png" has type "image/svg+xml" but dangerouslyAllowSVG is disabled. Consider adding the "unoptimized" property to the <Image>.
+ ✓ Compiled /[locale] in 13ms
+Error: INVALID_KEY: Namespace keys can not contain the character "." as this is used to express nesting. Please remove it or replace it with another character.
+
+Invalid key: nav.cta (at nav)
+
+If you're migrating from a flat structure, you can convert your messages as follows:
+
+import {set} from "lodash";
+
+const input = {
+  "one.one": "1.1",
+  "one.two": "1.2",
+  "two.one.one": "2.1.1"
+};
+
+const output = Object.entries(input).reduce(
+  (acc, [key, value]) => set(acc, key, value),
+  {}
+);
+
+// Output:
+//
+// {
+//   "one": {
+//     "one": "1.1",
+//     "two": "1.2"
+//   },
+//   "two": {
+//     "one": {
+//       "one": "2.1.1"
+//     }
+//   }
+// }
+
+    at async LocaleLayout (src/app/[locale]/layout.tsx:59:20)
+  57 |   // Providing all messages to the client
+  58 |   // side is the easiest way to get started
+> 59 |   const messages = await getMessages({ locale });
+     |                    ^
+  60 |
+  61 |   return (
+  62 |     <html lang={locale}> {
+  code: 'INVALID_KEY',
+  originalMessage: 'Namespace keys can not contain the character "." as this is used to express nesting. Please remove it or replace it with another character.\n' +
+    '\n' +
+    'Invalid key: nav.cta (at nav)\n' +
+    '\n' +
+    "If you're migrating from a flat structure, you can convert your messages as follows:\n" +
+    '\n' +
+    'import {set} from "lodash";\n' +
+    '\n' +
+    'const input = {\n' +
+    '  "one.one": "1.1",\n' +
+    '  "one.two": "1.2",\n' +
+    '  "two.one.one": "2.1.1"\n' +
+    '};\n' +
+    '\n' +
+    'const output = Object.entries(input).reduce(\n' +
+    '  (acc, [key, value]) => set(acc, key, value),\n' +
+    '  {}\n' +
+    ');\n' +
+    '\n' +
+    '// Output:\n' +
+    '//\n' +
+    '// {\n' +
+    '//   "one": {\n' +
+    '//     "one": "1.1",\n' +
+    '//     "two": "1.2"\n' +
+    '//   },\n' +
+    '//   "two": {\n' +
+    '//     "one": {\n' +
+    '//       "one": "2.1.1"\n' +
+    '//     }\n' +
+    '//   }\n' +
+    '// }\n'
+}
+[Error: INVALID_KEY: Namespace keys can not contain the character "." as this is used to express nesting. Please remove it or replace it with another character.
+
+Invalid key: nav.cta (at nav)
+
+If you're migrating from a flat structure, you can convert your messages as follows:
+
+import {set} from "lodash";
+
+const input = {
+  "one.one": "1.1",
+  "one.two": "1.2",
+  "two.one.one": "2.1.1"
+};
+
+const output = Object.entries(input).reduce(
+  (acc, [key, value]) => set(acc, key, value),
+  {}
+);
+
+// Output:
+//
+// {
+//   "one": {
+//     "one": "1.1",
+//     "two": "1.2"
+//   },
+//   "two": {
+//     "one": {
+//       "one": "2.1.1"
+//     }
+//   }
+// }
+] {
+  code: 'INVALID_KEY',
+  originalMessage: 'Namespace keys can not contain the character "." as this is used to express nesting. Please remove it or replace it with another character.\n' +
+    '\n' +
+    'Invalid key: nav.cta (at nav)\n' +
+    '\n' +
+    "If you're migrating from a flat structure, you can convert your messages as follows:\n" +
+    '\n' +
+    'import {set} from "lodash";\n' +
+    '\n' +
+    'const input = {\n' +
+    '  "one.one": "1.1",\n' +
+    '  "one.two": "1.2",\n' +
+    '  "two.one.one": "2.1.1"\n' +
+    '};\n' +
+    '\n' +
+    'const output = Object.entries(input).reduce(\n' +
+    '  (acc, [key, value]) => set(acc, key, value),\n' +
+    '  {}\n' +
+    ');\n' +
+    '\n' +
+    '// Output:\n' +
+    '//\n' +
+    '// {\n' +
+    '//   "one": {\n' +
+    '//     "one": "1.1",\n' +
+    '//     "two": "1.2"\n' +
+    '//   },\n' +
+    '//   "two": {\n' +
+    '//     "one": {\n' +
+    '//       "one": "2.1.1"\n' +
+    '//     }\n' +
+    '//   }\n' +
+    '// }\n'
+}
+[Error: INVALID_KEY: Namespace keys can not contain the character "." as this is used to express nesting. Please remove it or replace it with another character.
+
+Invalid key: nav.cta (at nav)
+
+If you're migrating from a flat structure, you can convert your messages as follows:
+
+import {set} from "lodash";
+
+const input = {
+  "one.one": "1.1",
+  "one.two": "1.2",
+  "two.one.one": "2.1.1"
+};
+
+const output = Object.entries(input).reduce(
+  (acc, [key, value]) => set(acc, key, value),
+  {}
+);
+
+// Output:
+//
+// {
+//   "one": {
+//     "one": "1.1",
+//     "two": "1.2"
+//   },
+//   "two": {
+//     "one": {
+//       "one": "2.1.1"
+//     }
+//   }
+// }
+] {
+  code: 'INVALID_KEY',
+  originalMessage: 'Namespace keys can not contain the character "." as this is used to express nesting. Please remove it or replace it with another character.\n' +
+    '\n' +
+    'Invalid key: nav.cta (at nav)\n' +
+    '\n' +
+    "If you're migrating from a flat structure, you can convert your messages as follows:\n" +
+    '\n' +
+    'import {set} from "lodash";\n' +
+    '\n' +
+    'const input = {\n' +
+    '  "one.one": "1.1",\n' +
+    '  "one.two": "1.2",\n' +
+    '  "two.one.one": "2.1.1"\n' +
+    '};\n' +
+    '\n' +
+    'const output = Object.entries(input).reduce(\n' +
+    '  (acc, [key, value]) => set(acc, key, value),\n' +
+    '  {}\n' +
+    ');\n' +
+    '\n' +
+    '// Output:\n' +
+    '//\n' +
+    '// {\n' +
+    '//   "one": {\n' +
+    '//     "one": "1.1",\n' +
+    '//     "two": "1.2"\n' +
+    '//   },\n' +
+    '//   "two": {\n' +
+    '//     "one": {\n' +
+    '//       "one": "2.1.1"\n' +
+    '//     }\n' +
+    '//   }\n' +
+    '// }\n'
+}
+ ✓ Compiled in 4ms
+ GET /pt 200 in 178ms
+ ✓ Compiled /[locale] in 20ms
+Error: INVALID_KEY: Namespace keys can not contain the character "." as this is used to express nesting. Please remove it or replace it with another character.
+
+Invalid key: nav.cta (at nav)
+
+If you're migrating from a flat structure, you can convert your messages as follows:
+
+import {set} from "lodash";
+
+const input = {
+  "one.one": "1.1",
+  "one.two": "1.2",
+  "two.one.one": "2.1.1"
+};
+
+const output = Object.entries(input).reduce(
+  (acc, [key, value]) => set(acc, key, value),
+  {}
+);
+
+// Output:
+//
+// {
+//   "one": {
+//     "one": "1.1",
+//     "two": "1.2"
+//   },
+//   "two": {
+//     "one": {
+//       "one": "2.1.1"
+//     }
+//   }
+// }
+
+    at async LocaleLayout (src/app/[locale]/layout.tsx:59:20)
+  57 |   // Providing all messages to the client
+  58 |   // side is the easiest way to get started
+> 59 |   const messages = await getMessages({ locale });
+     |                    ^
+  60 |
+  61 |   return (
+  62 |     <html lang={locale}> {
+  code: 'INVALID_KEY',
+  originalMessage: 'Namespace keys can not contain the character "." as this is used to express nesting. Please remove it or replace it with another character.\n' +
+    '\n' +
+    'Invalid key: nav.cta (at nav)\n' +
+    '\n' +
+    "If you're migrating from a flat structure, you can convert your messages as follows:\n" +
+    '\n' +
+    'import {set} from "lodash";\n' +
+    '\n' +
+    'const input = {\n' +
+    '  "one.one": "1.1",\n' +
+    '  "one.two": "1.2",\n' +
+    '  "two.one.one": "2.1.1"\n' +
+    '};\n' +
+    '\n' +
+    'const output = Object.entries(input).reduce(\n' +
+    '  (acc, [key, value]) => set(acc, key, value),\n' +
+    '  {}\n' +
+    ');\n' +
+    '\n' +
+    '// Output:\n' +
+    '//\n' +
+    '// {\n' +
+    '//   "one": {\n' +
+    '//     "one": "1.1",\n' +
+    '//     "two": "1.2"\n' +
+    '//   },\n' +
+    '//   "two": {\n' +
+    '//     "one": {\n' +
+    '//       "one": "2.1.1"\n' +
+    '//     }\n' +
+    '//   }\n' +
+    '// }\n'
+}
+[Error: INVALID_KEY: Namespace keys can not contain the character "." as this is used to express nesting. Please remove it or replace it with another character.
+
+Invalid key: nav.cta (at nav)
+
+If you're migrating from a flat structure, you can convert your messages as follows:
+
+import {set} from "lodash";
+
+const input = {
+  "one.one": "1.1",
+  "one.two": "1.2",
+  "two.one.one": "2.1.1"
+};
+
+const output = Object.entries(input).reduce(
+  (acc, [key, value]) => set(acc, key, value),
+  {}
+);
+
+// Output:
+//
+// {
+//   "one": {
+//     "one": "1.1",
+//     "two": "1.2"
+//   },
+//   "two": {
+//     "one": {
+//       "one": "2.1.1"
+//     }
+//   }
+// }
+] {
+  code: 'INVALID_KEY',
+  originalMessage: 'Namespace keys can not contain the character "." as this is used to express nesting. Please remove it or replace it with another character.\n' +
+    '\n' +
+    'Invalid key: nav.cta (at nav)\n' +
+    '\n' +
+    "If you're migrating from a flat structure, you can convert your messages as follows:\n" +
+    '\n' +
+    'import {set} from "lodash";\n' +
+    '\n' +
+    'const input = {\n' +
+    '  "one.one": "1.1",\n' +
+    '  "one.two": "1.2",\n' +
+    '  "two.one.one": "2.1.1"\n' +
+    '};\n' +
+    '\n' +
+    'const output = Object.entries(input).reduce(\n' +
+    '  (acc, [key, value]) => set(acc, key, value),\n' +
+    '  {}\n' +
+    ');\n' +
+    '\n' +
+    '// Output:\n' +
+    '//\n' +
+    '// {\n' +
+    '//   "one": {\n' +
+    '//     "one": "1.1",\n' +
+    '//     "two": "1.2"\n' +
+    '//   },\n' +
+    '//   "two": {\n' +
+    '//     "one": {\n' +
+    '//       "one": "2.1.1"\n' +
+    '//     }\n' +
+    '//   }\n' +
+    '// }\n'
+}
+[Error: INVALID_KEY: Namespace keys can not contain the character "." as this is used to express nesting. Please remove it or replace it with another character.
+
+Invalid key: nav.cta (at nav)
+
+If you're migrating from a flat structure, you can convert your messages as follows:
+
+import {set} from "lodash";
+
+const input = {
+  "one.one": "1.1",
+  "one.two": "1.2",
+  "two.one.one": "2.1.1"
+};
+
+const output = Object.entries(input).reduce(
+  (acc, [key, value]) => set(acc, key, value),
+  {}
+);
+
+// Output:
+//
+// {
+//   "one": {
+//     "one": "1.1",
+//     "two": "1.2"
+//   },
+//   "two": {
+//     "one": {
+//       "one": "2.1.1"
+//     }
+//   }
+// }
+] {
+  code: 'INVALID_KEY',
+  originalMessage: 'Namespace keys can not contain the character "." as this is used to express nesting. Please remove it or replace it with another character.\n' +
+    '\n' +
+    'Invalid key: nav.cta (at nav)\n' +
+    '\n' +
+    "If you're migrating from a flat structure, you can convert your messages as follows:\n" +
+    '\n' +
+    'import {set} from "lodash";\n' +
+    '\n' +
+    'const input = {\n' +
+    '  "one.one": "1.1",\n' +
+    '  "one.two": "1.2",\n' +
+    '  "two.one.one": "2.1.1"\n' +
+    '};\n' +
+    '\n' +
+    'const output = Object.entries(input).reduce(\n' +
+    '  (acc, [key, value]) => set(acc, key, value),\n' +
+    '  {}\n' +
+    ');\n' +
+    '\n' +
+    '// Output:\n' +
+    '//\n' +
+    '// {\n' +
+    '//   "one": {\n' +
+    '//     "one": "1.1",\n' +
+    '//     "two": "1.2"\n' +
+    '//   },\n' +
+    '//   "two": {\n' +
+    '//     "one": {\n' +
+    '//       "one": "2.1.1"\n' +
+    '//     }\n' +
+    '//   }\n' +
+    '// }\n'
+}
+ GET /pt 200 in 157ms
+ ⨯ The requested resource "/assets/tech/vercel.png" has type "image/svg+xml" but dangerouslyAllowSVG is disabled. Consider adding the "unoptimized" property to the <Image>.
+ ✓ Compiled /[locale] in 23ms
+ ✓ Compiled in 6ms
+ GET /pt 200 in 184ms
+ ✓ Compiled /[locale] in 23ms
+ GET /pt 200 in 123ms
+ ⨯ The requested resource "/assets/tech/git-logo.png" has type "image/svg+xml" but dangerouslyAllowSVG is disabled. Consider adding the "unoptimized" property to the <Image>.
+Error: MISSING_MESSAGE: Could not resolve `nav.nav.cta` in messages for locale `pt`.
+    at Navbar (src/components/shared/navbar.tsx:75:33)
+  73 |           <LanguageSwitcher />
+  74 |           <MagneticButton className="bg-gray-900 hover:bg-gray-800 text-white px-4 py-2 rounded-lg font-medium transition-colors">
+> 75 |             <a href="#contact">{t('nav.cta')}</a>
+     |                                 ^
+  76 |           </MagneticButton>
+  77 |         </div>
+  78 |       </nav> {
+  code: 'MISSING_MESSAGE',
+  originalMessage: 'Could not resolve `nav.nav.cta` in messages for locale `pt`.'
+}
+ GET /pt 200 in 539ms
+ ✓ Compiled in 86ms
+ ⨯ The requested resource "/assets/tech/fastapi-logo.png" has type "image/svg+xml" but dangerouslyAllowSVG is disabled. Consider adding the "unoptimized" property to the <Image>.
+[?25h

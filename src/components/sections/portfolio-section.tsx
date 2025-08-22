@@ -1,13 +1,14 @@
 'use client';
 
-import { useLanguage } from '@/contexts/language-context';
+import { useTranslations, useLocale } from 'next-intl';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { getCases } from '@/lib/content';
 import { ExternalLink, Code } from 'lucide-react';
 import Link from 'next/link';
 
 export function PortfolioSection() {
-  const { t, language } = useLanguage();
+  const t = useTranslations('portfolio');
+  const language = useLocale();
   const cases = getCases(language).sort((a, b) => a.order - b.order);
   
   return (
@@ -15,10 +16,10 @@ export function PortfolioSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
-            {t('portfolio.title')}
+            {t('title')}
           </h2>
           <p className="text-xl text-green-400 font-light">
-            {t('portfolio.subtitle')}
+            {t('subtitle')}
           </p>
         </div>
         

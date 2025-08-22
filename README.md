@@ -12,7 +12,7 @@ We build AI systems that explain themselves. Between calculation and dream, inte
 - **Linguagem / Language**: TypeScript
 - **Estilização / Styling**: Tailwind CSS + shadcn/ui
 - **Internacionalização / Internationalization**: next-intl (PT/EN)
-- **Conteúdo / Content**: Contentlayer + MDX
+- **Conteúdo / Content**: JSON-based translations
 - **Deploy**: Vercel (otimizado)
 
 ## 📁 Estrutura do Projeto / Project Structure
@@ -20,23 +20,20 @@ We build AI systems that explain themselves. Between calculation and dream, inte
 ```
 src/
 ├── app/
-│   ├── (lang)/[locale]/          # Rotas localizadas / Localized routes
+│   ├── [locale]/                # Rotas localizadas / Localized routes  
 │   │   ├── layout.tsx           # Layout principal / Main layout
-│   │   ├── page.tsx             # Página inicial / Home page
-│   │   ├── sobre/               # Sobre nós / About us
-│   │   ├── servicos/            # Serviços / Services
-│   │   ├── portfolio/           # Portfólio / Portfolio
-│   │   ├── blog/                # Blog
-│   │   └── contato/             # Contato / Contact
-│   ├── layout.tsx               # Root layout
-│   └── robots.txt               # SEO
+│   │   └── page.tsx             # Página inicial / Home page
+│   ├── layout.tsx               # Root redirect layout
+│   └── middleware.ts            # Locale detection
 ├── components/
 │   ├── ui/                      # Componentes base (shadcn/ui)
 │   └── shared/                  # Componentes compartilhados
-├── content/
-│   ├── pt/                      # Conteúdo em português
-│   └── en/                      # English content
-├── i18n/                        # Traduções / Translations
+├── messages/                    # Arquivos de tradução / Translation files
+│   ├── pt.json                  # Traduções em português
+│   └── en.json                  # English translations
+├── i18n/                        # Configuração next-intl
+│   ├── request.ts              # Configuração do servidor
+│   └── routing.ts              # Roteamento e locales
 ├── lib/                         # Utilitários / Utilities
 └── styles/                      # Estilos globais / Global styles
 ```
@@ -76,43 +73,56 @@ npm run contentlayer # Processar MDX / Process MDX content
 
 ## 🌐 Internacionalização / Internationalization
 
-O projeto suporta dois idiomas:
-The project supports two languages:
+O projeto usa **next-intl** para suporte completo a internacionalização:
+The project uses **next-intl** for complete internationalization support:
 
 - **Português (PT)**: `/pt/*` - idioma padrão / default language
 - **English (EN)**: `/en/*`
 
+### Estrutura de Traduções / Translation Structure
+
+- **Arquivos de tradução**: `src/messages/{locale}.json`
+- **Configuração**: `src/i18n/routing.ts` e `src/i18n/request.ts`
+- **Middleware**: Detecção automática de locale
+
+### Uso em Componentes / Component Usage
+
+```typescript
+import { useTranslations } from 'next-intl';
+
+function MyComponent() {
+  const t = useTranslations('section'); // namespace da seção
+  return <h1>{t('title')}</h1>;
+}
+```
+
 ### Adicionando Traduções / Adding Translations
 
-1. Edite os arquivos em `src/i18n/` / Edit files in `src/i18n/`
-2. Use `useTranslations()` nos componentes / Use `useTranslations()` in components
-3. O switch de idioma está sempre visível / Language switcher is always visible
+1. Edite os arquivos JSON em `src/messages/`
+2. Use `useTranslations('namespace')` nos componentes  
+3. Organize as traduções por seções (hero, nav, footer, etc.)
 
-## 📝 Conteúdo MDX / MDX Content
+## 📝 Gerenciamento de Conteúdo / Content Management
 
-### Serviços / Services
+### Traduções Estruturadas / Structured Translations
 
-Adicione novos serviços em:
-Add new services in:
+O conteúdo é gerenciado através de arquivos JSON estruturados:
+Content is managed through structured JSON files:
 
-- `src/content/pt/services/`
-- `src/content/en/services/`
+- **Navegação**: `nav` namespace
+- **Hero Section**: `hero` namespace  
+- **Serviços**: `services` namespace
+- **Cases**: `cases` namespace
+- **Sobre**: `about` namespace
+- **Contato**: `contact` namespace
+- **Rodapé**: `footer` namespace
 
-### Cases do Portfólio / Portfolio Cases
+### Adicionando Novo Conteúdo / Adding New Content
 
-Adicione novos cases em:
-Add new cases in:
-
-- `src/content/pt/cases/`
-- `src/content/en/cases/`
-
-### Posts do Blog / Blog Posts
-
-Adicione novos posts em:
-Add new posts in:
-
-- `src/content/pt/blog/`
-- `src/content/en/blog/`
+1. Edite `src/messages/pt.json` e `src/messages/en.json`
+2. Organize o conteúdo em namespaces lógicos
+3. Use a estrutura aninhada para organização
+4. Teste as traduções com `useTranslations('namespace')`
 
 ## 🎨 Design System
 

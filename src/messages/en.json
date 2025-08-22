@@ -1,0 +1,169 @@
+{
+  "nav": {
+    "about": "About",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "contact": "Our Team",
+    "cta": "Get in Touch"
+  },
+  "hero": {
+    "title": "Development studio with AI expertise",
+    "subtitle": "We help founders and business leaders launch new products or transform their workflows with Artificial Intelligence.",
+    "cta": {
+      "primary": "Start Project",
+      "secondary": "Let's Talk"
+    }
+  },
+  "services": {
+    "title": "How we can help",
+    "subtitle": "We offer two main service categories to transform your vision into reality.",
+    "ai": {
+      "title": "AI Solutions",
+      "description": "We develop custom artificial intelligence systems that grow organically with your data and specific needs.",
+      "feature1": "Custom ML model development",
+      "feature2": "RAG systems and natural language processing",
+      "feature3": "Intelligent process automation",
+      "feature4": "Integration with APIs and existing systems"
+    },
+    "product": {
+      "title": "Product Development",
+      "description": "We build complete digital products from scratch, combining exceptional design with solid engineering and artificial intelligence.",
+      "feature1": "MVP and rapid prototyping",
+      "feature2": "Scalable full-stack development",
+      "feature3": "User experience design",
+      "feature4": "Cloud infrastructure and DevOps"
+    }
+  },
+  "cases": {
+    "title": "Our Work",
+    "subtitle": "Success cases that demonstrate our real-world impact.",
+    "results": "Results",
+    "cidadao": {
+      "title": "Government Transparency Platform",
+      "description": "We developed Brazil's first multi-agent AI system for public transparency, democratizing access to government information through specialized agents.",
+      "metric1": {
+        "label": "Specialized AI agents",
+        "value": "3"
+      },
+      "metric2": {
+        "label": "Analysis time reduction",
+        "value": "85%"
+      },
+      "metric3": {
+        "label": "Development time",
+        "value": "4 months"
+      },
+      "testimonial": {
+        "text": "Neural LAB transformed our vision of government transparency into a real, functional platform. The AI expertise was fundamental.",
+        "author": "Cidadão.AI Team",
+        "role": "Transparency Project"
+      }
+    },
+    "ale": {
+      "title": "Personal Productivity Assistant",
+      "description": "We created an intelligent assistant that maximizes productivity through conversational AI, integrating naturally with existing workflows.",
+      "metric1": {
+        "label": "Productivity increase",
+        "value": "60%"
+      },
+      "metric2": {
+        "label": "Average response time",
+        "value": "<2s"
+      },
+      "metric3": {
+        "label": "User satisfaction",
+        "value": "95%"
+      },
+      "testimonial": {
+        "text": "Alê Assistant revolutionized my work routine. It's like having a personal assistant who understands exactly what I need.",
+        "author": "Alexandre Silva",
+        "role": "Entrepreneur"
+      }
+    }
+  },
+  "about": {
+    "title": "Our Story",
+    "paragraph1": "Neural LAB was born from frustration with traditional agencies that treat AI projects like commodities. We've seen too many projects fail not due to lack of technology, but lack of true understanding of client needs.",
+    "paragraph2": "Based in Belo Horizonte, in the heart of Minas Gerais mountains, we combine the solidity of Brazilian engineering with modern artificial intelligence innovation. Our approach is different: we're not just suppliers, we're partners.",
+    "paragraph3": "Each project is an opportunity to create something truly unique. We work side by side with our clients, deeply understanding their challenges and objectives before writing the first line of code.",
+    "paragraph4": "If you're looking for a true partnership to transform your vision into reality, let's talk. We're here to build the future, one project at a time.",
+    "approach": {
+      "title": "Our Approach",
+      "ownership": {
+        "title": "Sense of Ownership",
+        "description": "We treat each project as if it were our own. Your success is our success."
+      },
+      "partnership": {
+        "title": "True Partnership",
+        "description": "We work as an extension of your team, not just as suppliers."
+      },
+      "quality": {
+        "title": "Uncompromised Quality",
+        "description": "Clean code, solid architecture, and solutions that scale with your business."
+      },
+      "innovation": {
+        "title": "Responsible Innovation",
+        "description": "We use the most advanced technologies, but always with purpose and responsibility."
+      }
+    }
+  },
+  "contact": {
+    "title": "Let's Talk",
+    "subtitle": "Ready to transform your vision into reality?",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "company": "Company",
+      "message": "Tell us about your project",
+      "submit": "Send Message"
+    }
+  },
+  "footer": {
+    "description": "Artificial Intelligence that grows organically with your data and needs.",
+    "nav": "Navigation",
+    "navServices": "Services",
+    "navPortfolio": "Portfolio",
+    "navAbout": "About",
+    "navContact": "Our Team",
+    "solutions": "Solutions",
+    "solution1": "AI Engineering",
+    "solution2": "MLOps Systems",
+    "solution3": "Organic Intelligence",
+    "solution4": "Strategic Consulting",
+    "contact": "Contact",
+    "location": "Muzambinho, Minas Gerais",
+    "copyright": "© 2025 Neural LAB. Intelligence that grows organically.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use"
+  },
+  "chat": {
+    "welcome": "Hello! I'm Neural LAB's AI. How can I help you today? 🤖",
+    "placeholder": "Type your message...",
+    "online": "Always online"
+  },
+  "anderson": {
+    "title": "AI Systems Engineer",
+    "location": "Muzambinho, Minas Gerais",
+    "education": "Computer Science Student",
+    "bio": {
+      "title": "About Anderson",
+      "paragraph1": "AI Systems Engineer passionate about creating solutions that transform data into valuable insights. Currently studying Computer Science, with a focus on Machine Learning and intelligent systems development.",
+      "paragraph2": "Founder of Neural LAB, I combine solid academic knowledge with practical experience in AI product development. I believe artificial intelligence should grow organically, adapting to the specific needs of each project.",
+      "paragraph3": "When I'm not coding or studying new algorithms, I enjoy exploring the mountains of Minas Gerais and reflecting on how technology can improve people's lives. Each project is an opportunity to learn and create something truly impactful."
+    },
+    "skills": "Technical Skills",
+    "achievements": "Achievements and Projects",
+    "achievement1": {
+      "title": "Neural LAB - AI Studio",
+      "description": "Founded Neural LAB, focused on developing personalized AI solutions that grow organically with client data."
+    },
+    "achievement2": {
+      "title": "Cidadão.AI - Public Transparency",
+      "description": "Developed Brazil's first multi-agent system for government transparency, democratizing access to information."
+    },
+    "achievement3": {
+      "title": "AI Journey Beginning",
+      "description": "Started formal studies in Computer Science with specialization in Artificial Intelligence and Machine Learning."
+    }
+  }
+}

@@ -3,10 +3,10 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Sparkles } from 'lucide-react';
-import { useLanguage } from '@/contexts/language-context';
+import { useTranslations } from 'next-intl';
 
 export function Hero() {
-  const { t } = useLanguage();
+  const t = useTranslations('hero');
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background inspired by concrete */}
@@ -36,27 +36,27 @@ export function Hero() {
               borderRadius: '2rem 0.5rem 2rem 0.5rem'
             }}>
               <Sparkles className="w-4 h-4 text-green-500" />
-              <span className="text-sm font-medium text-green-200 tracking-wide">{t('hero.badge')}</span>
+              <span className="text-sm font-medium text-green-200 tracking-wide">{t('badge')}</span>
             </div>
           </div>
           
           {/* Main heading */}
           <h1 className="text-center text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6">
-            <span className="block mb-2">{t('hero.title.line1')}</span>
+            <span className="block mb-2">{t('title.line1')}</span>
             <span className="block bg-gradient-to-r from-green-400 via-emerald-500 to-teal-500 bg-clip-text text-transparent mb-4">
-              {t('hero.title.line2')}
+              {t('title.line2')}
             </span>
           </h1>
           
           <div className="text-center mb-8">
             <p className="text-2xl sm:text-3xl font-light text-gray-300 italic">
-              {t('hero.subtitle')}
+              {t('subtitle')}
             </p>
           </div>
           
           {/* Subheading */}
           <p className="text-center text-lg sm:text-xl text-gray-400 mb-12 max-w-3xl mx-auto font-light">
-            {t('hero.description')}
+            {t('description')}
           </p>
           
           {/* CTAs */}
@@ -68,7 +68,7 @@ export function Hero() {
               style={{ borderRadius: '0.5rem 1.5rem 0.5rem 1.5rem' }}
             >
               <Link href="#contact" className="inline-flex items-center gap-2">
-                {t('hero.cta.primary')}
+                {t('cta.primary')}
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </Button>
@@ -80,14 +80,14 @@ export function Hero() {
               style={{ borderRadius: '1.5rem 0.5rem 1.5rem 0.5rem' }}
             >
               <Link href="#portfolio">
-                {t('hero.cta.secondary')}
+                {t('cta.secondary')}
               </Link>
             </Button>
           </div>
           
           {/* Trust indicators */}
           <div className="mt-16 pt-8 border-t border-gray-700">
-            <p className="text-center text-sm text-gray-400 mb-6 font-light">{t('hero.trust')}</p>
+            <p className="text-center text-sm text-gray-400 mb-6 font-light">{t('trust')}</p>
             <div className="flex flex-wrap items-center justify-center gap-8 opacity-60">
               <div className="text-gray-400 font-medium tracking-wider">MINERAÇÃO.AI</div>
               <div className="text-gray-400 font-medium tracking-wider">AGROTECH.BR</div>

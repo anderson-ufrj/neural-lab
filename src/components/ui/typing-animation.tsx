@@ -11,10 +11,13 @@ interface TypingAnimationProps {
 
 export function TypingAnimation({ text, className = '', speed = 100, delay = 0 }: TypingAnimationProps) {
   const [displayedText, setDisplayedText] = useState('');
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [showCursor, setShowCursor] = useState(true);
 
   useEffect(() => {
+    // Reset when text changes
+    setDisplayedText('');
+    setShowCursor(true);
+
     // Cursor blink effect
     const cursorInterval = setInterval(() => {
       setShowCursor(prev => !prev);
@@ -22,10 +25,11 @@ export function TypingAnimation({ text, className = '', speed = 100, delay = 0 }
 
     // Start typing after delay
     const startTimeout = setTimeout(() => {
+      let index = 0;
       const typingInterval = setInterval(() => {
-        if (currentIndex < text.length) {
-          setDisplayedText(prev => prev + text[currentIndex]);
-          setCurrentIndex(prev => prev + 1);
+        if (index < text.length) {
+          setDisplayedText(text.slice(0, index + 1));
+          index++;
         } else {
           clearInterval(typingInterval);
           // Stop cursor blinking when done
@@ -42,7 +46,7 @@ export function TypingAnimation({ text, className = '', speed = 100, delay = 0 }
       clearTimeout(startTimeout);
       clearInterval(cursorInterval);
     };
-  }, [text, speed, delay, currentIndex]);
+  }, [text, speed, delay]); // Removed currentIndex from dependencies
 
   return (
     <span className={className}>
