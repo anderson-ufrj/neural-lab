@@ -1,18 +1,20 @@
-import { Metadata } from 'next';
-import { useTranslations } from 'next-intl';
+'use client';
+
+import { useEffect } from 'react';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import Link from 'next/link';
 import { ArrowLeft, ExternalLink, Github, Users, Shield, BarChart3, Clock } from 'lucide-react';
 import { Navbar } from '@/components/shared/navbar';
 import { Footer } from '@/components/shared/footer';
-
-export const metadata: Metadata = {
-  title: 'Cidadão.AI - Transparência Governamental com IA | Neural LAB',
-  description: 'Sistema multi-agente de IA para análise de transparência governamental usando personas culturais brasileiras.',
-};
+import { useAnalytics } from '@/hooks/use-analytics';
 
 export default function CidadaoAIPage({ params }: { params: { locale: string } }) {
   unstable_setRequestLocale(params.locale);
+  const { trackProjectView, trackClick } = useAnalytics();
+  
+  useEffect(() => {
+    trackProjectView('cidadao-ai', 'Cidadão.AI');
+  }, [trackProjectView]);
   
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
@@ -69,6 +71,7 @@ export default function CidadaoAIPage({ params }: { params: { locale: string } }
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors"
+                onClick={() => trackClick('project_action', 'cidadao_ai_documentation')}
               >
                 <ExternalLink className="w-4 h-4" />
                 Ver Documentação
@@ -78,6 +81,7 @@ export default function CidadaoAIPage({ params }: { params: { locale: string } }
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-gray-800 hover:bg-gray-900 text-white rounded-lg transition-colors"
+                onClick={() => trackClick('project_action', 'cidadao_ai_github')}
               >
                 <Github className="w-4 h-4" />
                 Código Fonte

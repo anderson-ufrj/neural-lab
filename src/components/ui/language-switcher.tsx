@@ -3,10 +3,12 @@
 import { useLocale, useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { Globe } from 'lucide-react';
+import { useAnalytics } from '@/hooks/use-analytics';
 
 export function LanguageSwitcher() {
   const locale = useLocale();
   const t = useTranslations('common.language');
+  const { trackClick } = useAnalytics();
   
   return (
     <div className="flex items-center gap-2">
@@ -20,6 +22,7 @@ export function LanguageSwitcher() {
               ? 'bg-white dark:bg-gray-700 text-gray-900 dark:text-white shadow-sm'
               : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
           }`}
+          onClick={() => trackClick('language_switch', 'pt')}
         >
           {t('pt')}
         </Link>
@@ -31,6 +34,7 @@ export function LanguageSwitcher() {
               ? 'bg-white dark:bg-gray-700 text-gray-900 dark:text-white shadow-sm'
               : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
           }`}
+          onClick={() => trackClick('language_switch', 'en')}
         >
           {t('en')}
         </Link>

@@ -3,10 +3,12 @@
 import { useTranslations } from 'next-intl';
 import { Brain, Rocket, Cog, Activity, CheckCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useAnalytics } from '@/hooks/use-analytics';
 
 export function ServicesOverview() {
   const t = useTranslations('servicesOverview');
   const tServices = useTranslations('services');
+  const { trackClick } = useAnalytics();
   
   const services = [
     {
@@ -158,7 +160,10 @@ export function ServicesOverview() {
           <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
             {t('projectContact')}
           </p>
-          <button className="bg-yellow-500 hover:bg-yellow-400 text-gray-900 px-8 py-4 font-black text-lg tracking-wide transition-colors uppercase">
+          <button 
+            className="bg-yellow-500 hover:bg-yellow-400 text-gray-900 px-8 py-4 font-black text-lg tracking-wide transition-colors uppercase"
+            onClick={() => trackClick('cta_button', 'contact_engineering')}
+          >
             {t('contactEngineering')}
           </button>
         </div>

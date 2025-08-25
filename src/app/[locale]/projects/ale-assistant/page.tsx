@@ -1,19 +1,22 @@
-import { Metadata } from 'next';
+'use client';
+
+import { useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import Link from 'next/link';
 import { ArrowLeft, ExternalLink, Sparkles, Zap, Brain, MessageSquare } from 'lucide-react';
 import { Navbar } from '@/components/shared/navbar';
 import { Footer } from '@/components/shared/footer';
-
-export const metadata: Metadata = {
-  title: 'Alê Assistant - Assistente de Produtividade com IA | Neural LAB',
-  description: 'Assistente inteligente que maximiza a produtividade através de IA conversacional, integrando-se naturalmente aos fluxos de trabalho.',
-};
+import { useAnalytics } from '@/hooks/use-analytics';
 
 export default function AleAssistantPage({ params }: { params: { locale: string } }) {
   unstable_setRequestLocale(params.locale);
   const isPortuguese = params.locale === 'pt';
+  const { trackProjectView, trackClick } = useAnalytics();
+  
+  useEffect(() => {
+    trackProjectView('ale-assistant', 'Alê Assistant');
+  }, [trackProjectView]);
   
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
@@ -80,6 +83,7 @@ export default function AleAssistantPage({ params }: { params: { locale: string 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-colors"
+                onClick={() => trackClick('project_action', 'ale_assistant_try_now')}
               >
                 <ExternalLink className="w-4 h-4" />
                 {isPortuguese ? 'Experimentar Agora' : 'Try Now'}

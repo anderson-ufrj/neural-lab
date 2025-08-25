@@ -6,12 +6,14 @@ import { Menu, X } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { LanguageSwitcher } from '@/components/ui/language-switcher';
 import { ThemeToggle } from '@/components/ui/theme-toggle-wrapper';
+import { useAnalytics } from '@/hooks/use-analytics';
 
 export function Navbar() {
   const t = useTranslations('nav');
   const tCommon = useTranslations('common');
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { trackClick } = useAnalytics();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -62,6 +64,7 @@ export function Navbar() {
               key={item.name}
               href={item.href}
               className="text-sm font-semibold leading-6 text-gray-900 dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+              onClick={() => trackClick('nav_link', item.name)}
             >
               {item.name}
             </a>
@@ -83,7 +86,10 @@ export function Navbar() {
                 key={item.name}
                 href={item.href}
                 className="block px-3 py-2 text-base font-medium text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  setIsOpen(false);
+                  trackClick('nav_link_mobile', item.name);
+                }}
               >
                 {item.name}
               </a>

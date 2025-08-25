@@ -5,11 +5,13 @@ import { motion } from 'framer-motion';
 import { useTheme } from '@/contexts/theme-context';
 import { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
+import { useAnalytics } from '@/hooks/use-analytics';
 
 export function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const t = useTranslations('common');
+  const { trackClick } = useAnalytics();
 
   useEffect(() => {
     setMounted(true);
@@ -23,7 +25,10 @@ export function ThemeToggle() {
 
   return (
     <motion.button
-      onClick={toggleTheme}
+      onClick={() => {
+        toggleTheme();
+        trackClick('theme_toggle', theme === 'dark' ? 'light' : 'dark');
+      }}
       className="relative p-2 rounded-full bg-gray-200 dark:bg-gray-700 transition-colors duration-300"
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}

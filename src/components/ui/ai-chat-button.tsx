@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { MessageCircle, X, Send, Bot } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslations } from 'next-intl';
+import { useAnalytics } from '@/hooks/use-analytics';
 
 interface Message {
   id: string;
@@ -15,6 +16,7 @@ interface Message {
 export function AIChatButton() {
   const t = useTranslations('chat');
   const tCommon = useTranslations('common');
+  const { trackChatInteraction } = useAnalytics();
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     {
@@ -40,6 +42,9 @@ export function AIChatButton() {
     setMessages(prev => [...prev, userMessage]);
     setInputValue('');
     setIsTyping(true);
+    
+    // Track chat interaction
+    trackChatInteraction('message_sent', inputValue);
 
     // Simulate AI response
     setTimeout(() => {
@@ -70,7 +75,10 @@ export function AIChatButton() {
       {/* Floating Chat Button */}
       <motion.button
         className="fixed bottom-6 right-6 z-50 w-16 h-16 bg-gradient-to-r from-green-600 to-emerald-600 dark:from-green-500 dark:to-emerald-500 text-white rounded-full shadow-lg flex items-center justify-center"
-        onClick={() => setIsOpen(true)}
+        onClick={() => {
+          setIsOpen(true);
+          trackChatInteraction('chat_opened');
+        }}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         animate={{ 

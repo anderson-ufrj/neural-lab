@@ -5,10 +5,12 @@ import { ExternalLink, Github, Play, Info } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useLocale } from 'next-intl';
 import Link from 'next/link';
+import { useAnalytics } from '@/hooks/use-analytics';
 
 export function FeaturedProjects() {
   const t = useTranslations('featuredProjects');
   const locale = useLocale();
+  const { trackClick } = useAnalytics();
 
   const projects = [
     {
@@ -203,6 +205,7 @@ export function FeaturedProjects() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm"
+                        onClick={() => trackClick('project_link', `${project.title}_live_demo`)}
                       >
                         <ExternalLink className="w-4 h-4 mr-2" />
                         {t('liveDemo')}
@@ -214,6 +217,7 @@ export function FeaturedProjects() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-colors text-sm"
+                        onClick={() => trackClick('project_link', `${project.title}_github`)}
                       >
                         <Github className="w-4 h-4 mr-2" />
                         {t('sourceCode')}
@@ -274,7 +278,10 @@ export function FeaturedProjects() {
             <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
               {t('discussProject')}
             </p>
-            <button className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all">
+            <button 
+              className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all"
+              onClick={() => trackClick('cta_button', 'start_project')}
+            >
               {t('startProject')}
             </button>
           </div>
