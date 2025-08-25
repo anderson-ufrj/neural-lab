@@ -30,6 +30,15 @@ export default function HomePage() {
             <ServicesOverview />
           </ContainerSection>
           
+          {/* Portfolio Badge - Industrial Status */}
+          <ContainerSection variant="accent" size="small">
+            <div className="text-center py-4">
+              <div className="text-xs font-mono uppercase tracking-wider text-gray-500">
+                BAÍA DE SERVIÇOS • SOLUÇÕES DE ENGENHARIA • OPERACIONAL
+              </div>
+            </div>
+          </ContainerSection>
+          
           {/* Portfolio Container - Project Gallery */}
           <ContainerSection variant="primary" size="large" id="portfolio">
             <FeaturedProjects />
