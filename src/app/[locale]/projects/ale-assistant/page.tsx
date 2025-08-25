@@ -1,202 +1,192 @@
-'use client';
-
-import { useEffect } from 'react';
-import { useTranslations } from 'next-intl';
-import { unstable_setRequestLocale } from 'next-intl/server';
+import { setRequestLocale } from 'next-intl/server';
 import Link from 'next/link';
 import { ArrowLeft, ExternalLink, Sparkles, Zap, Brain, MessageSquare } from 'lucide-react';
 import { Navbar } from '@/components/shared/navbar';
 import { Footer } from '@/components/shared/footer';
-import { useAnalytics } from '@/hooks/use-analytics';
+import { ContainerCard } from '@/components/ui/container-card';
+import { ContainerSection } from '@/components/layout/container-section';
 
 export default function AleAssistantPage({ params }: { params: { locale: string } }) {
-  unstable_setRequestLocale(params.locale);
+  setRequestLocale(params.locale);
   const isPortuguese = params.locale === 'pt';
-  const { trackProjectView, trackClick } = useAnalytics();
-  
-  useEffect(() => {
-    trackProjectView('ale-assistant', 'Alê Assistant');
-  }, [trackProjectView]);
   
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
       <Navbar />
       
-      <main className="pt-24 pb-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Back button */}
-          <Link 
-            href={`/${params.locale}#portfolio`}
-            className="inline-flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white mb-8 transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            <span>{isPortuguese ? 'Voltar aos projetos' : 'Back to projects'}</span>
-          </Link>
+      <main className="space-y-0">
+        {/* Header Container */}
+        <ContainerSection variant="primary" size="large">
+          <div className="pt-16 pb-8">
+            <Link 
+              href={`/${params.locale}#portfolio`}
+              className="inline-flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white mb-8 transition-colors font-mono text-sm uppercase tracking-wider"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              <span>← PORTFOLIO</span>
+            </Link>
 
-          {/* Header */}
-          <div className="mb-12">
-            <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-              ⚡ Alê Assistant
-            </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 mb-6">
-              {isPortuguese 
-                ? 'Assistente pessoal que funciona'
-                : 'Personal assistant that works'}
-            </p>
-            
+            <div className="border-l-4 border-purple-500 pl-6">
+              <div className="text-xs font-mono uppercase tracking-wider text-purple-600 dark:text-purple-400 mb-2">
+                {isPortuguese ? 'PROJETO • PRODUTIVIDADE • PRODUÇÃO' : 'PROJECT • PRODUCTIVITY • PRODUCTION'}
+              </div>
+              <h1 className="text-4xl sm:text-5xl font-black text-gray-900 dark:text-white mb-4 tracking-tight">
+                ⚡ ALÊ ASSISTANT
+              </h1>
+              <p className="text-xl text-gray-600 dark:text-gray-300 font-mono">
+                {isPortuguese 
+                  ? 'ASSISTENTE PESSOAL QUE FUNCIONA'
+                  : 'PERSONAL ASSISTANT THAT WORKS'}
+              </p>
+            </div>
+
             {/* Quick stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-              <div className="bg-white dark:bg-gray-800 p-4 rounded-lg border border-gray-200 dark:border-gray-700">
-                <Zap className="w-5 h-5 text-purple-600 mb-2" />
-                <div className="text-2xl font-bold text-gray-900 dark:text-white">60%</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">
-                  {isPortuguese ? 'Aumento produtividade' : 'Productivity increase'}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+              <ContainerCard size="small" className="text-center">
+                <Zap className="w-6 h-6 text-purple-500 mx-auto mb-2" />
+                <div className="text-2xl font-black text-gray-900 dark:text-white font-mono">60%</div>
+                <div className="text-xs font-mono uppercase tracking-wider text-gray-600 dark:text-gray-400">
+                  {isPortuguese ? 'PRODUTIVIDADE' : 'PRODUCTIVITY'}
                 </div>
-              </div>
-              <div className="bg-white dark:bg-gray-800 p-4 rounded-lg border border-gray-200 dark:border-gray-700">
-                <Brain className="w-5 h-5 text-purple-600 mb-2" />
-                <div className="text-2xl font-bold text-gray-900 dark:text-white">&lt;2s</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">
-                  {isPortuguese ? 'Tempo resposta' : 'Response time'}
+              </ContainerCard>
+              <ContainerCard size="small" className="text-center">
+                <Brain className="w-6 h-6 text-purple-500 mx-auto mb-2" />
+                <div className="text-2xl font-black text-gray-900 dark:text-white font-mono">&lt;2s</div>
+                <div className="text-xs font-mono uppercase tracking-wider text-gray-600 dark:text-gray-400">
+                  {isPortuguese ? 'RESPOSTA' : 'RESPONSE'}
                 </div>
-              </div>
-              <div className="bg-white dark:bg-gray-800 p-4 rounded-lg border border-gray-200 dark:border-gray-700">
-                <Sparkles className="w-5 h-5 text-purple-600 mb-2" />
-                <div className="text-2xl font-bold text-gray-900 dark:text-white">95%</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">
-                  {isPortuguese ? 'Satisfação' : 'Satisfaction'}
+              </ContainerCard>
+              <ContainerCard size="small" className="text-center">
+                <Sparkles className="w-6 h-6 text-purple-500 mx-auto mb-2" />
+                <div className="text-2xl font-black text-gray-900 dark:text-white font-mono">95%</div>
+                <div className="text-xs font-mono uppercase tracking-wider text-gray-600 dark:text-gray-400">
+                  {isPortuguese ? 'SATISFAÇÃO' : 'SATISFACTION'}
                 </div>
-              </div>
-              <div className="bg-white dark:bg-gray-800 p-4 rounded-lg border border-gray-200 dark:border-gray-700">
-                <MessageSquare className="w-5 h-5 text-purple-600 mb-2" />
-                <div className="text-2xl font-bold text-gray-900 dark:text-white">GPT-4</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">
-                  {isPortuguese ? 'Modelo IA' : 'AI Model'}
+              </ContainerCard>
+              <ContainerCard size="small" className="text-center">
+                <MessageSquare className="w-6 h-6 text-purple-500 mx-auto mb-2" />
+                <div className="text-xl font-black text-gray-900 dark:text-white font-mono">GPT-4</div>
+                <div className="text-xs font-mono uppercase tracking-wider text-gray-600 dark:text-gray-400">
+                  {isPortuguese ? 'MODELO IA' : 'AI MODEL'}
                 </div>
-              </div>
+              </ContainerCard>
             </div>
 
             {/* Action buttons */}
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 mt-8">
               <a
                 href={`https://ale-assistant.vercel.app/${params.locale}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-colors"
-                onClick={() => trackClick('project_action', 'ale_assistant_try_now')}
+                className="inline-flex items-center gap-2 px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-mono font-black text-sm uppercase tracking-wider transition-colors"
               >
                 <ExternalLink className="w-4 h-4" />
-                {isPortuguese ? 'Experimentar Agora' : 'Try Now'}
+                {isPortuguese ? 'EXPERIMENTAR AGORA' : 'TRY NOW'}
               </a>
             </div>
           </div>
+        </ContainerSection>
 
-          {/* Content sections */}
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                {isPortuguese ? 'Sobre o Projeto' : 'About the Project'}
-              </h2>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+        {/* Content sections */}
+        <ContainerSection variant="neutral" size="large">
+          <div className="py-12">
+            <div className="text-center mb-12">
+              <div className="text-xs font-mono uppercase tracking-wider text-gray-500 mb-4">
                 {isPortuguese 
-                  ? 'Conversa natural, organiza tarefas, se conecta com suas ferramentas. Simples assim.'
-                  : 'Natural conversation, organizes tasks, connects with your tools. Simple as that.'}
-              </p>
-              <p className="text-gray-600 dark:text-gray-300">
-                {isPortuguese
-                  ? 'Pode testar no link acima.'
-                  : 'You can test it in the link above.'}
-              </p>
-            </div>
-
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                {isPortuguese ? 'Tecnologias Utilizadas' : 'Technologies Used'}
+                  ? 'ESPECIFICAÇÕES TÉCNICAS • SISTEMA OPERACIONAL'
+                  : 'TECHNICAL SPECIFICATIONS • OPERATIONAL SYSTEM'}
+              </div>
+              <h2 className="text-3xl font-black text-gray-900 dark:text-white uppercase tracking-tight">
+                {isPortuguese ? 'ARQUITETURA DO SISTEMA' : 'SYSTEM ARCHITECTURE'}
               </h2>
-              <div className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
-                  <span className="text-gray-600 dark:text-gray-300">Next.js 14 + TypeScript</span>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              <ContainerCard>
+                <div className="border-l-4 border-purple-500 pl-6">
+                  <div className="text-xs font-mono uppercase tracking-wider text-purple-600 mb-3">
+                    {isPortuguese ? 'CONCEITO • FUNCIONAMENTO' : 'CONCEPT • OPERATION'}
+                  </div>
+                  <h3 className="text-xl font-black text-gray-900 dark:text-white mb-4 uppercase">
+                    {isPortuguese ? 'ASSISTENTE INTELIGENTE' : 'INTELLIGENT ASSISTANT'}
+                  </h3>
+                  <div className="space-y-3 text-sm text-gray-600 dark:text-gray-300 font-mono leading-relaxed">
+                    <p>{isPortuguese 
+                      ? '→ CONVERSA NATURAL COM IA'
+                      : '→ NATURAL CONVERSATION WITH AI'}</p>
+                    <p>{isPortuguese 
+                      ? '→ ORGANIZAÇÃO DE TAREFAS'
+                      : '→ TASK ORGANIZATION'}</p> 
+                    <p>{isPortuguese 
+                      ? '→ INTEGRAÇÃO COM FERRAMENTAS'
+                      : '→ TOOL INTEGRATION'}</p>
+                    <p>{isPortuguese 
+                      ? '→ MÉTRICAS DE PRODUTIVIDADE'
+                      : '→ PRODUCTIVITY METRICS'}</p>
+                  </div>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
-                  <span className="text-gray-600 dark:text-gray-300">OpenAI GPT-4 API</span>
+              </ContainerCard>
+
+              <ContainerCard>
+                <div className="border-l-4 border-blue-500 pl-6">
+                  <div className="text-xs font-mono uppercase tracking-wider text-blue-600 mb-3">
+                    {isPortuguese ? 'STACK • TECNOLOGIAS IMPLANTADAS' : 'STACK • DEPLOYED TECHNOLOGIES'}
+                  </div>
+                  <h3 className="text-xl font-black text-gray-900 dark:text-white mb-4 uppercase">
+                    {isPortuguese ? 'INFRAESTRUTURA' : 'INFRASTRUCTURE'}
+                  </h3>
+                  <div className="space-y-2 text-sm font-mono text-gray-600 dark:text-gray-300">
+                    <div className="flex items-center gap-3">
+                      <div className="w-2 h-2 bg-purple-500"></div>
+                      <span>NEXT.JS 14 + TYPESCRIPT</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-2 h-2 bg-purple-500"></div>
+                      <span>OPENAI GPT-4 API</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-2 h-2 bg-purple-500"></div>
+                      <span>VERCEL AI SDK</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-2 h-2 bg-purple-500"></div>
+                      <span>TAILWIND CSS + RADIX UI</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-2 h-2 bg-purple-500"></div>
+                      <span>SUPABASE + POSTGRESQL</span>
+                    </div>
+                  </div>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
-                  <span className="text-gray-600 dark:text-gray-300">Vercel AI SDK</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
-                  <span className="text-gray-600 dark:text-gray-300">Tailwind CSS + Radix UI</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
-                  <span className="text-gray-600 dark:text-gray-300">Supabase + PostgreSQL</span>
-                </div>
-              </div>
+              </ContainerCard>
             </div>
           </div>
+        </ContainerSection>
 
-          {/* Features */}
-          <div className="bg-white dark:bg-gray-800 p-8 rounded-lg border border-gray-200 dark:border-gray-700">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-              {isPortuguese ? 'Funcionalidades Principais' : 'Main Features'}
-            </h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div>
-                <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
-                  💬 {isPortuguese ? 'Chat Inteligente' : 'Smart Chat'}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300">
-                  {isPortuguese
-                    ? 'Interface conversacional natural que entende contexto e oferece respostas precisas.'
-                    : 'Natural conversational interface that understands context and provides accurate responses.'}
-                </p>
-              </div>
-              <div>
-                <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
-                  📝 {isPortuguese ? 'Gestão de Tarefas' : 'Task Management'}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300">
-                  {isPortuguese
-                    ? 'Organização inteligente de tarefas com priorização automática baseada em IA.'
-                    : 'Smart task organization with automatic AI-based prioritization.'}
-                </p>
-              </div>
-              <div>
-                <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
-                  🔄 {isPortuguese ? 'Integrações' : 'Integrations'}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300">
-                  {isPortuguese
-                    ? 'Conecta-se com suas ferramentas favoritas: Google Calendar, Notion, Slack e mais.'
-                    : 'Connects with your favorite tools: Google Calendar, Notion, Slack and more.'}
-                </p>
-              </div>
-              <div>
-                <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
-                  📊 {isPortuguese ? 'Analytics Pessoal' : 'Personal Analytics'}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300">
-                  {isPortuguese
-                    ? 'Insights sobre sua produtividade com relatórios visuais e recomendações personalizadas.'
-                    : 'Productivity insights with visual reports and personalized recommendations.'}
-                </p>
-              </div>
+        {/* Status Final */}
+        <ContainerSection variant="accent" size="medium">
+          <div className="py-8 text-center">
+            <div className="text-xs font-mono uppercase tracking-wider text-purple-600 mb-4">
+              {isPortuguese 
+                ? 'STATUS DO SISTEMA: OPERACIONAL'
+                : 'SYSTEM STATUS: OPERATIONAL'}
             </div>
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <div className="w-3 h-3 bg-purple-500 rounded-full animate-pulse"></div>
+              <span className="text-2xl font-black text-gray-900 dark:text-white font-mono uppercase">
+                {isPortuguese 
+                  ? 'SISTEMA ATIVO • PRODUÇÃO'
+                  : 'SYSTEM ACTIVE • PRODUCTION'}
+              </span>
+              <div className="w-3 h-3 bg-purple-500 rounded-full animate-pulse"></div>
+            </div>
+            <p className="text-sm font-mono text-gray-600 dark:text-gray-400 max-w-md mx-auto">
+              {isPortuguese 
+                ? 'APLICAÇÃO FUNCIONANDO. ACESSE O LINK ACIMA PARA TESTAR.'
+                : 'APPLICATION RUNNING. ACCESS THE LINK ABOVE TO TEST.'}
+            </p>
           </div>
-
-          {/* Testimonial */}
-          <div className="mt-12 bg-gradient-to-r from-purple-600 to-purple-800 p-8 rounded-lg text-white">
-            <blockquote className="text-lg italic mb-4">
-              {isPortuguese
-                ? '"O Alê Assistant revolucionou minha rotina de trabalho. É como ter um assistente pessoal que entende exatamente o que preciso."'
-                : '"Alê Assistant revolutionized my work routine. It\'s like having a personal assistant who understands exactly what I need."'}
-            </blockquote>
-            <p className="font-semibold">— Alexandre Silva, {isPortuguese ? 'Empreendedor' : 'Entrepreneur'}</p>
-          </div>
-        </div>
+        </ContainerSection>
       </main>
       
       <Footer />

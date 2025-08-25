@@ -316,12 +316,13 @@
       "highlight4": "Segurança empresarial"
     },
     "neuralLab": {
-      "description": "Plataforma web moderna mostrando capacidades de desenvolvimento de IA com visualizações 3D",
-      "status": "Desenvolvimento",
-      "highlight1": "Visualizações 3D interativas de redes neurais",
-      "highlight2": "Sistema de layout inspirado em navio-contêiner",
-      "highlight3": "Suporte bilíngue (PT/EN)",
-      "highlight4": "Estética de engenharia moderna"
+      "title": "🧠 Neural LAB",
+      "description": "Este site. Meta, não é?",
+      "status": "Você está aqui",
+      "highlight1": "Redes neurais em 3D",
+      "highlight2": "Layout que funciona",
+      "highlight3": "Português e inglês",
+      "highlight4": "Rápido mesmo"
     },
     "aleAssistant": {
       "title": "⚡ Alê Assistant",

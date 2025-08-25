@@ -1,173 +1,174 @@
-'use client';
-
-import { useEffect } from 'react';
-import { unstable_setRequestLocale } from 'next-intl/server';
+import { setRequestLocale } from 'next-intl/server';
 import Link from 'next/link';
-import { ArrowLeft, ExternalLink, Github, Users, Shield, BarChart3, Clock } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Github, Users, Shield, BarChart3, Zap } from 'lucide-react';
 import { Navbar } from '@/components/shared/navbar';
 import { Footer } from '@/components/shared/footer';
-import { useAnalytics } from '@/hooks/use-analytics';
+import { ContainerCard } from '@/components/ui/container-card';
+import { ContainerSection } from '@/components/layout/container-section';
 
 export default function CidadaoAIPage({ params }: { params: { locale: string } }) {
-  unstable_setRequestLocale(params.locale);
-  const { trackProjectView, trackClick } = useAnalytics();
-  
-  useEffect(() => {
-    trackProjectView('cidadao-ai', 'Cidadão.AI');
-  }, [trackProjectView]);
+  setRequestLocale(params.locale);
   
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
       <Navbar />
       
-      <main className="pt-24 pb-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Back button */}
-          <Link 
-            href={`/${params.locale}#portfolio`}
-            className="inline-flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white mb-8 transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            <span>Voltar aos projetos</span>
-          </Link>
+      <main className="space-y-0">
+        {/* Header Container */}
+        <ContainerSection variant="primary" size="large">
+          <div className="pt-16 pb-8">
+            <Link 
+              href={`/${params.locale}#portfolio`}
+              className="inline-flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white mb-8 transition-colors font-mono text-sm uppercase tracking-wider"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              <span>← PORTFOLIO</span>
+            </Link>
 
-          {/* Header */}
-          <div className="mb-12">
-            <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-              🇧🇷 Cidadão.AI
-            </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 mb-6">
-              Transparência pública na prática
-            </p>
-            
+            <div className="border-l-4 border-blue-500 pl-6">
+              <div className="text-xs font-mono uppercase tracking-wider text-blue-600 dark:text-blue-400 mb-2">
+                PROJETO • TRANSPARÊNCIA PÚBLICA • PRODUÇÃO
+              </div>
+              <h1 className="text-4xl sm:text-5xl font-black text-gray-900 dark:text-white mb-4 tracking-tight">
+                🇧🇷 CIDADÃO.AI
+              </h1>
+              <p className="text-xl text-gray-600 dark:text-gray-300 font-mono">
+                SISTEMA MULTI-AGENTE PARA TRANSPARÊNCIA GOVERNAMENTAL
+              </p>
+            </div>
+
             {/* Quick stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-              <div className="bg-white dark:bg-gray-800 p-4 rounded-lg border border-gray-200 dark:border-gray-700">
-                <Users className="w-5 h-5 text-green-600 mb-2" />
-                <div className="text-2xl font-bold text-gray-900 dark:text-white">17+</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Agentes IA</div>
-              </div>
-              <div className="bg-white dark:bg-gray-800 p-4 rounded-lg border border-gray-200 dark:border-gray-700">
-                <BarChart3 className="w-5 h-5 text-green-600 mb-2" />
-                <div className="text-2xl font-bold text-gray-900 dark:text-white">85%</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Redução de tempo</div>
-              </div>
-              <div className="bg-white dark:bg-gray-800 p-4 rounded-lg border border-gray-200 dark:border-gray-700">
-                <Shield className="w-5 h-5 text-green-600 mb-2" />
-                <div className="text-2xl font-bold text-gray-900 dark:text-white">Enterprise</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Segurança</div>
-              </div>
-              <div className="bg-white dark:bg-gray-800 p-4 rounded-lg border border-gray-200 dark:border-gray-700">
-                <Clock className="w-5 h-5 text-green-600 mb-2" />
-                <div className="text-2xl font-bold text-gray-900 dark:text-white">4 meses</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Desenvolvimento</div>
-              </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+              <ContainerCard size="small" className="text-center">
+                <Users className="w-6 h-6 text-green-500 mx-auto mb-2" />
+                <div className="text-2xl font-black text-gray-900 dark:text-white font-mono">17+</div>
+                <div className="text-xs font-mono uppercase tracking-wider text-gray-600 dark:text-gray-400">AGENTES IA</div>
+              </ContainerCard>
+              <ContainerCard size="small" className="text-center">
+                <BarChart3 className="w-6 h-6 text-green-500 mx-auto mb-2" />
+                <div className="text-2xl font-black text-gray-900 dark:text-white font-mono">85%</div>
+                <div className="text-xs font-mono uppercase tracking-wider text-gray-600 dark:text-gray-400">REDUÇÃO TEMPO</div>
+              </ContainerCard>
+              <ContainerCard size="small" className="text-center">
+                <Shield className="w-6 h-6 text-green-500 mx-auto mb-2" />
+                <div className="text-xl font-black text-gray-900 dark:text-white font-mono">ENTERPRISE</div>
+                <div className="text-xs font-mono uppercase tracking-wider text-gray-600 dark:text-gray-400">SEGURANÇA</div>
+              </ContainerCard>
+              <ContainerCard size="small" className="text-center">
+                <Zap className="w-6 h-6 text-green-500 mx-auto mb-2" />
+                <div className="text-xl font-black text-gray-900 dark:text-white font-mono">PRODUÇÃO</div>
+                <div className="text-xs font-mono uppercase tracking-wider text-gray-600 dark:text-gray-400">STATUS</div>
+              </ContainerCard>
             </div>
 
             {/* Action buttons */}
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 mt-8">
               <a
                 href="https://anderson-ufrj.github.io/cidadao.ai-docs/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors"
-                onClick={() => trackClick('project_action', 'cidadao_ai_documentation')}
+                className="inline-flex items-center gap-2 px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-mono font-black text-sm uppercase tracking-wider transition-colors"
               >
                 <ExternalLink className="w-4 h-4" />
-                Ver Documentação
+                DOCUMENTAÇÃO
               </a>
               <a
                 href="https://github.com/anderson-ufrj/cidadao.ai"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-gray-800 hover:bg-gray-900 text-white rounded-lg transition-colors"
-                onClick={() => trackClick('project_action', 'cidadao_ai_github')}
+                className="inline-flex items-center gap-2 px-6 py-3 bg-gray-800 hover:bg-gray-900 text-white font-mono font-black text-sm uppercase tracking-wider transition-colors"
               >
                 <Github className="w-4 h-4" />
-                Código Fonte
+                CÓDIGO FONTE
               </a>
             </div>
           </div>
+        </ContainerSection>
 
-          {/* Content sections */}
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Sobre o Projeto</h2>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
-                Sistema multi-agente que analisa dados públicos usando personalidades da história do Brasil. 
-                Zumbi detecta anomalias, Anita analisa dados, Tiradentes gera relatórios.
-              </p>
-              <p className="text-gray-600 dark:text-gray-300">
-                Está funcionando. Pode testar.
-              </p>
+        {/* Content sections */}
+        <ContainerSection variant="neutral" size="large">
+          <div className="py-12">
+            <div className="text-center mb-12">
+              <div className="text-xs font-mono uppercase tracking-wider text-gray-500 mb-4">
+                ESPECIFICAÇÕES TÉCNICAS • SISTEMA OPERACIONAL
+              </div>
+              <h2 className="text-3xl font-black text-gray-900 dark:text-white uppercase tracking-tight">
+                ARQUITETURA DO SISTEMA
+              </h2>
             </div>
 
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Tecnologias Utilizadas</h2>
-              <div className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-green-600 rounded-full"></div>
-                  <span className="text-gray-600 dark:text-gray-300">Python + FastAPI</span>
+            <div className="grid md:grid-cols-2 gap-8">
+              <ContainerCard>
+                <div className="border-l-4 border-green-500 pl-6">
+                  <div className="text-xs font-mono uppercase tracking-wider text-green-600 mb-3">
+                    CONCEITO • FUNCIONAMENTO
+                  </div>
+                  <h3 className="text-xl font-black text-gray-900 dark:text-white mb-4 uppercase">
+                    AGENTES BRASILEIROS
+                  </h3>
+                  <div className="space-y-3 text-sm text-gray-600 dark:text-gray-300 font-mono leading-relaxed">
+                    <p>→ ZUMBI DOS PALMARES: Detecção de anomalias</p>
+                    <p>→ ANITA GARIBALDI: Análise de dados</p> 
+                    <p>→ TIRADENTES: Geração de relatórios</p>
+                    <p>→ SISTEMA MULTI-AGENTE COORDENADO</p>
+                  </div>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-green-600 rounded-full"></div>
-                  <span className="text-gray-600 dark:text-gray-300">LangChain + Groq</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-green-600 rounded-full"></div>
-                  <span className="text-gray-600 dark:text-gray-300">PostgreSQL + Redis</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-green-600 rounded-full"></div>
-                  <span className="text-gray-600 dark:text-gray-300">Docker + Kubernetes</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-green-600 rounded-full"></div>
-                  <span className="text-gray-600 dark:text-gray-300">Prometheus + Grafana</span>
-                </div>
-              </div>
-            </div>
-          </div>
+              </ContainerCard>
 
-          {/* Features */}
-          <div className="bg-white dark:bg-gray-800 p-8 rounded-lg border border-gray-200 dark:border-gray-700">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Funcionalidades Principais</h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div>
-                <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
-                  🔍 Análise Multi-Agente
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300">
-                  Sistema distribuído com agentes especializados em diferentes aspectos da transparência pública.
-                </p>
-              </div>
-              <div>
-                <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
-                  📊 Monitoramento em Tempo Real
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300">
-                  Stack completo de observabilidade com métricas, logs e traces para garantir performance.
-                </p>
-              </div>
-              <div>
-                <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
-                  🛡️ Segurança Enterprise
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300">
-                  Implementação robusta com autenticação JWT, rate limiting e criptografia de dados sensíveis.
-                </p>
-              </div>
-              <div>
-                <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
-                  🚀 API RESTful Completa
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300">
-                  Documentação interativa com Swagger UI e endpoints bem estruturados para integração.
-                </p>
-              </div>
+              <ContainerCard>
+                <div className="border-l-4 border-blue-500 pl-6">
+                  <div className="text-xs font-mono uppercase tracking-wider text-blue-600 mb-3">
+                    STACK • TECNOLOGIAS IMPLANTADAS
+                  </div>
+                  <h3 className="text-xl font-black text-gray-900 dark:text-white mb-4 uppercase">
+                    INFRAESTRUTURA
+                  </h3>
+                  <div className="space-y-2 text-sm font-mono text-gray-600 dark:text-gray-300">
+                    <div className="flex items-center gap-3">
+                      <div className="w-2 h-2 bg-green-500"></div>
+                      <span>PYTHON + FASTAPI</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-2 h-2 bg-green-500"></div>
+                      <span>LANGCHAIN + GROQ</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-2 h-2 bg-green-500"></div>
+                      <span>POSTGRESQL + REDIS</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-2 h-2 bg-green-500"></div>
+                      <span>DOCKER + KUBERNETES</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-2 h-2 bg-green-500"></div>
+                      <span>PROMETHEUS + GRAFANA</span>
+                    </div>
+                  </div>
+                </div>
+              </ContainerCard>
             </div>
           </div>
-        </div>
+        </ContainerSection>
+
+        {/* Status Final */}
+        <ContainerSection variant="accent" size="medium">
+          <div className="py-8 text-center">
+            <div className="text-xs font-mono uppercase tracking-wider text-green-600 mb-4">
+              STATUS DO SISTEMA: OPERACIONAL
+            </div>
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+              <span className="text-2xl font-black text-gray-900 dark:text-white font-mono uppercase">
+                SISTEMA ATIVO • PRODUÇÃO
+              </span>
+              <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+            </div>
+            <p className="text-sm font-mono text-gray-600 dark:text-gray-400 max-w-md mx-auto">
+              PLATAFORMA FUNCIONANDO. ACESSE OS LINKS ACIMA PARA TESTAR.
+            </p>
+          </div>
+        </ContainerSection>
       </main>
       
       <Footer />
