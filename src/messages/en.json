@@ -1,8 +1,10 @@
 {
   "common": {
     "brandName": "Neural LAB",
-    "email": "contact@neural-lab.com",
-    "phone": "+55 (31) 9999-9999",
+    "email": "anderson@neural-lab.com",
+    "phone": "+55 (35) 98471-8935",
+    "whatsapp": "+5535984718935",
+    "whatsappMessage": "Hello! Dédalo referred me to you! I came from the neural-lab.com website and would like to talk about AI solutions for my company. Can you help me?",
     "loading": "Loading...",
     "send": "Send",
     "sending": "Sending...",
@@ -186,16 +188,43 @@
     "terms": "Terms of Use"
   },
   "chat": {
-    "title": "Neural LAB AI",
-    "welcome": "Hello! I'm Neural LAB's AI. How can I help you today? 🤖",
+    "title": "Dédalo • Neural LAB AI",
+    "welcome": "👋 Hello! I'm **Dédalo**, Anderson's personal assistant at Neural LAB. \n\nMy mission is to understand your project and connect you directly with him when you're ready for a more detailed conversation. \n\nHow can I help you today?",
     "placeholder": "Type your message...",
     "online": "Always online",
+    "leadCapture": {
+      "needInfo": "📝 To help you better, I need to understand:",
+      "qualifiedLead": "🎆 **Perfect!** I can see you have a serious project in mind!\n\nBased on our conversation, I believe Anderson will have excellent solutions for you. \n\n✨ **Time to connect you two!**",
+      "hotLead": "🔥 **Qualified Lead Detected!** 🔥\n\nI identified that you have:\n• Defined project\n• Commercial urgency\n• Decision maker profile\n\n🚀 **I'll connect you DIRECTLY with Anderson!**",
+      "questions": {
+        "company": "• What's your company name?",
+        "role": "• What's your role in the company?",
+        "challenge": "• What's the main challenge you're facing?",
+        "timeline": "• What's the timeline to implement the solution?",
+        "budget": "• Have you already defined a budget for the project?"
+      },
+      "whatsappCTA": "💬 **Prefer to chat on WhatsApp?**\n\nClick the button below to talk directly with Anderson:",
+      "scheduleCTA": "📅 **How about we schedule a conversation?**\n\nI can reserve 30 minutes to discuss your project:"
+    },
     "responses": {
-      "services": "I understand your question! At Neural LAB, we develop custom AI solutions for businesses. What kind of project do you have in mind?",
-      "capabilities": "Great question! Our services include chatbot development, AI data analysis, and process automation. Would you like to know more about any specific one?",
-      "interest": "We're happy about your interest! We can schedule a conversation to discuss how AI can transform your business. What's the best time for you?",
-      "experience": "Excellent! We have experience in various sectors. Tell me more about your company and the challenges you face.",
-      "contact": "Perfect! Our team is ready to help. How about scheduling a call to better understand your needs?"
+      "services": "🎯 **Excellent!** At Neural LAB we develop AI solutions that really transform businesses:\n\n🤖 **Intelligent Chatbots** - Customer service automation\n📊 **Data Analysis** - Strategic insights\n⚡ **Process Automation** - Operational efficiency\n🔍 **RAG Systems** - Intelligent knowledge\n\nWhat kind of challenge is your company facing?",
+      "capabilities": "💡 **Our AI Superpowers:**\n\n🏗️ **MLOps & Deploy** - Robust infrastructure\n🧠 **Intelligent Agents** - Advanced automation\n📈 **Predictive Analytics** - Future vision\n🔄 **System Integration** - Total connectivity\n\n✨ **Success Cases:**\n• Cidadão.AI - 17+ specialized agents\n• Alê Assistant - 60% productivity increase\n\nIn which area can I help your company?",
+      "interest": "🚀 **That's great!** I see there's real interest in AI.\n\n**To design the perfect solution for you:**\n📝 Tell me about your company\n🎯 What's the main challenge\n⏰ Implementation timeline\n\n💬 **Want to speed up? Let's go to WhatsApp!**",
+      "experience": "🏆 **Our experience speaks for itself:**\n\n🏛️ **Public Sector** - Government transparency\n💼 **Enterprise** - Productivity and automation\n🔬 **Research** - Academic innovation\n⚖️ **Compliance** - Data governance\n\n**Some results:**\n• 85% reduction in analysis time\n• 95% user satisfaction\n• 60% productivity increase\n\nWhat sector does your company operate in?",
+      "contact": "🚀 **Perfect! I'll connect you with Anderson!** \n\nHe's the CEO and founder of Neural LAB, AI Systems specialist with over 50 delivered projects.\n\n💬 **Direct WhatsApp (Recommended)**\n• Personal response within 2 hours\n• More dynamic conversation\n• Can send files and examples\n\n📅 **Schedule Call**\n• Focused 30min meeting\n• Free technical analysis\n• Personalized roadmap\n\n📧 **Professional Email**\n• Complete formal proposal\n• Technical documentation\n\n**Which way do you prefer to talk with Anderson?**",
+      "pricing": "💰 **Smart Investment in AI:**\n\n📊 **Consulting** - From $600 USD\n🤖 **Chatbots** - From $2,000 USD\n📈 **Analytics** - From $3,000 USD\n🏗️ **Complete Systems** - From $6,000 USD\n\n✅ **Always included:**\n• Free project analysis\n• Functional prototype\n• 3 months support\n• Team training\n\n**Want to know the exact value for your case?**",
+      "urgency": "⚡ **I understand the urgency!** I'll accelerate your contact:\n\n🚀 **Express Process (72h):**\n1️⃣ WhatsApp NOW with Anderson\n2️⃣ Call today to understand the project\n3️⃣ Technical proposal in 24h\n4️⃣ Development start in 72h\n\n💬 **I'll connect you with Anderson NOW:**\nHe'll respond personally within 1 hour!",
+      "roi": "📈 **Real AI ROI in companies:**\n\n💵 **Average savings:** 40-60% in processes\n⏰ **Time reduction:** 70-85% in tasks\n📊 **Accuracy:** 95%+ in analysis\n🎯 **Satisfaction:** 90%+ clients\n\n**Real example - Cidadão.AI:**\n• 17 specialized agents\n• 85% reduction in analysis time\n• 300% ROI in 6 months\n\n**Want to calculate ROI for your company?**",
+      "competition": "🏆 **Why Neural LAB?**\n\n✅ **Technical differential:**\n• Systems that evolve with your data\n• 'Organic AI' approach\n• MLOps specialists\n\n✅ **Commercial differential:**\n• Always free analysis\n• Prototype before payment\n• Dedicated technical support\n• Prices up to 40% lower\n\n**Want to see a detailed comparison?**",
+      "team": "👨‍💻 **Our Specialized Team:**\n\n🧠 **Anderson Henrique - CEO & Lead**\n• AI Systems Specialist\n• Computer Scientist\n• +50 projects delivered\n\n🔬 **Expertise Areas:**\n• Machine Learning Engineering\n• MLOps & Cloud Architecture\n• LLMs & Generative AI\n• Data Science & Analytics\n\n**Want to know our complete experience?**",
+      "process": "🛠️ **Our Proven Methodology:**\n\n**PHASE 1: Discovery (1 week)**\n🔍 Complete problem mapping\n📋 Technical feasibility analysis\n📊 Success metrics definition\n\n**PHASE 2: Prototyping (2 weeks)**\n🚀 Functional MVP\n📈 Testing with real data\n🎯 Results validation\n\n**PHASE 3: Production (4-8 weeks)**\n⚡ Complete system\n🔧 Integration with your systems\n📚 Team training\n\n**Want to see how we apply it to your case?**"
+    },
+    "actions": {
+      "whatsapp": "💬 Talk to Anderson",
+      "schedule": "📅 Schedule with Anderson",
+      "email": "📧 Email Anderson",
+      "portfolio": "🏆 See Portfolio",
+      "pricing": "💰 Talk about Pricing"
     }
   },
   "projects": {
