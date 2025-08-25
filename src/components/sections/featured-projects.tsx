@@ -98,6 +98,9 @@ export function FeaturedProjects() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Industrial */}
         <div className="text-center mb-16">
+          <div className="text-xs font-mono uppercase tracking-wider text-gray-500 mb-4">
+            BAÍA DE SERVIÇOS • SOLUÇÕES DE ENGENHARIA • OPERACIONAL
+          </div>
           <h2 className="text-4xl font-black text-gray-900 dark:text-white mb-4 uppercase tracking-tight">
             {t('title')}
           </h2>
