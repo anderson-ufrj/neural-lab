@@ -32,7 +32,7 @@ export function HeroSection() {
           transition={{ duration: 0.6 }}
         >
           <Terminal className="w-3 h-3" />
-          COMMAND BRIDGE • NEURAL LAB SYSTEMS • ONLINE
+          {t('status')}
           <Activity className="w-3 h-3 animate-pulse text-green-400" />
         </motion.div>
 

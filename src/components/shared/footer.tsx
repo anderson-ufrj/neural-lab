@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl';
 
 export function Footer() {
   const t = useTranslations('footer');
+  const tCommon = useTranslations('common');
 
   return (
     <footer className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 transition-colors duration-300">
@@ -14,7 +15,7 @@ export function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="flex items-center mb-4">
-              <span className="text-2xl font-bold text-gray-900 dark:text-white transition-colors duration-300">Neural LAB</span>
+              <span className="text-2xl font-bold text-gray-900 dark:text-white transition-colors duration-300">{tCommon('brandName')}</span>
             </div>
             <p className="text-gray-600 dark:text-gray-300 text-sm mb-6 max-w-md transition-colors duration-300">
               {t('description')}
@@ -37,7 +38,7 @@ export function Footer() {
                 <Linkedin className="w-5 h-5" />
               </a>
               <a 
-                href="mailto:contato@neural-lab.com" 
+                href={`mailto:${tCommon('email')}`} 
                 className="p-2 text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
               >
                 <Mail className="w-5 h-5" />
@@ -61,10 +62,10 @@ export function Footer() {
             <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-4 transition-colors duration-300">{t('contact')}</h3>
             <ul className="space-y-3">
               <li>
-                <span className="text-sm text-gray-600 dark:text-gray-300 transition-colors duration-300">contato@neural-lab.com</span>
+                <span className="text-sm text-gray-600 dark:text-gray-300 transition-colors duration-300">{tCommon('email')}</span>
               </li>
               <li>
-                <span className="text-sm text-gray-600 dark:text-gray-300 transition-colors duration-300">+55 (31) 9999-9999</span>
+                <span className="text-sm text-gray-600 dark:text-gray-300 transition-colors duration-300">{tCommon('phone')}</span>
               </li>
               <li>
                 <span className="text-sm text-gray-600 dark:text-gray-300 transition-colors duration-300">{t('location')}</span>

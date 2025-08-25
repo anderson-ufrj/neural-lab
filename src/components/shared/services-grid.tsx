@@ -1,6 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { getServices } from '@/lib/content';
 import { Layers, Settings, Cpu, Mountain } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 const serviceIcons = {
   'ai-architecture': Layers,
@@ -11,6 +12,7 @@ const serviceIcons = {
 
 export function ServicesGrid() {
   const services = getServices('pt').sort((a, b) => a.order - b.order);
+  const t = useTranslations('services');
 
   return (
     <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
@@ -37,19 +39,19 @@ export function ServicesGrid() {
                   <ul className="space-y-2">
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-green-500" style={{ borderRadius: '0.125rem 0.375rem 0.125rem 0.375rem' }} />
-                      <span>Arquitetura de sistemas escaláveis</span>
+                      <span>{t('engineering.feature1')}</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-green-500" style={{ borderRadius: '0.125rem 0.375rem 0.125rem 0.375rem' }} />
-                      <span>Desenvolvimento de modelos customizados</span>
+                      <span>{t('engineering.feature2')}</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-green-500" style={{ borderRadius: '0.125rem 0.375rem 0.125rem 0.375rem' }} />
-                      <span>Integração com APIs e serviços</span>
+                      <span>{t('engineering.feature3')}</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-green-500" style={{ borderRadius: '0.125rem 0.375rem 0.125rem 0.375rem' }} />
-                      <span>Otimização de performance</span>
+                      <span>{t('engineering.feature4')}</span>
                     </li>
                   </ul>
                 )}
@@ -57,19 +59,19 @@ export function ServicesGrid() {
                   <ul className="space-y-2">
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-green-500" style={{ borderRadius: '0.125rem 0.375rem 0.125rem 0.375rem' }} />
-                      <span>Pipelines CI/CD automatizados</span>
+                      <span>{t('mlops.feature1')}</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-green-500" style={{ borderRadius: '0.125rem 0.375rem 0.125rem 0.375rem' }} />
-                      <span>Monitoramento e observabilidade</span>
+                      <span>{t('mlops.feature2')}</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-green-500" style={{ borderRadius: '0.125rem 0.375rem 0.125rem 0.375rem' }} />
-                      <span>Versionamento de dados e modelos</span>
+                      <span>{t('mlops.feature3')}</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-green-500" style={{ borderRadius: '0.125rem 0.375rem 0.125rem 0.375rem' }} />
-                      <span>Infraestrutura em cloud</span>
+                      <span>{t('mlops.feature4')}</span>
                     </li>
                   </ul>
                 )}
@@ -77,19 +79,19 @@ export function ServicesGrid() {
                   <ul className="space-y-2">
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-green-500" style={{ borderRadius: '0.125rem 0.375rem 0.125rem 0.375rem' }} />
-                      <span>Sistemas RAG avançados</span>
+                      <span>{t('organic.feature1')}</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-green-500" style={{ borderRadius: '0.125rem 0.375rem 0.125rem 0.375rem' }} />
-                      <span>Agentes inteligentes autônomos</span>
+                      <span>{t('organic.feature2')}</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-green-500" style={{ borderRadius: '0.125rem 0.375rem 0.125rem 0.375rem' }} />
-                      <span>Frameworks de avaliação</span>
+                      <span>{t('organic.feature3')}</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-green-500" style={{ borderRadius: '0.125rem 0.375rem 0.125rem 0.375rem' }} />
-                      <span>Fine-tuning especializado</span>
+                      <span>{t('organic.feature4')}</span>
                     </li>
                   </ul>
                 )}
@@ -97,19 +99,19 @@ export function ServicesGrid() {
                   <ul className="space-y-2">
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-green-500" style={{ borderRadius: '0.125rem 0.375rem 0.125rem 0.375rem' }} />
-                      <span>Avaliação de maturidade em IA</span>
+                      <span>{t('consulting.feature1')}</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-green-500" style={{ borderRadius: '0.125rem 0.375rem 0.125rem 0.375rem' }} />
-                      <span>Roadmap estratégico</span>
+                      <span>{t('consulting.feature2')}</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-green-500" style={{ borderRadius: '0.125rem 0.375rem 0.125rem 0.375rem' }} />
-                      <span>Análise de ROI</span>
+                      <span>{t('consulting.feature3')}</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-green-500" style={{ borderRadius: '0.125rem 0.375rem 0.125rem 0.375rem' }} />
-                      <span>Capacitação de equipes</span>
+                      <span>{t('consulting.feature4')}</span>
                     </li>
                   </ul>
                 )}

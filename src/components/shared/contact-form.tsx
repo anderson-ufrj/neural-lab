@@ -8,18 +8,21 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-
-const contactSchema = z.object({
-  name: z.string().min(2, 'Nome deve ter pelo menos 2 caracteres'),
-  email: z.string().email('E-mail inválido'),
-  message: z.string().min(10, 'Mensagem deve ter pelo menos 10 caracteres'),
-});
-
-type ContactFormData = z.infer<typeof contactSchema>;
+import { useTranslations } from 'next-intl';
 
 export function ContactForm() {
+  const t = useTranslations('contact.form');
+  const tCommon = useTranslations('common');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+
+  const contactSchema = z.object({
+    name: z.string().min(2, t('validation.nameMin')),
+    email: z.string().email(t('validation.emailInvalid')),
+    message: z.string().min(10, t('validation.messageMin')),
+  });
+
+  type ContactFormData = z.infer<typeof contactSchema>;
 
   const {
     register,
@@ -48,24 +51,24 @@ export function ContactForm() {
   return (
     <Card className="w-full max-w-lg mx-auto">
       <CardHeader>
-        <CardTitle className="text-center">Envie uma mensagem</CardTitle>
+        <CardTitle className="text-center">{t('title')}</CardTitle>
       </CardHeader>
       <CardContent>
         {submitted ? (
           <div className="text-center py-8">
             <div className="rounded-lg bg-green-50 p-4 text-green-700">
-              Mensagem enviada com sucesso! Entraremos em contato em breve.
+              {t('success')}
             </div>
           </div>
         ) : (
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
             <div>
               <label htmlFor="name" className="sr-only">
-                Nome
+                {t('name')}
               </label>
               <Input
                 {...register('name')}
-                placeholder="Nome"
+                placeholder={t('name')}
                 className={errors.name ? 'border-red-500' : ''}
                 aria-invalid={errors.name ? 'true' : 'false'}
               />
@@ -78,12 +81,12 @@ export function ContactForm() {
 
             <div>
               <label htmlFor="email" className="sr-only">
-                E-mail
+                {t('email')}
               </label>
               <Input
                 {...register('email')}
                 type="email"
-                placeholder="E-mail"
+                placeholder={t('email')}
                 className={errors.email ? 'border-red-500' : ''}
                 aria-invalid={errors.email ? 'true' : 'false'}
               />
@@ -96,11 +99,11 @@ export function ContactForm() {
 
             <div>
               <label htmlFor="message" className="sr-only">
-                Mensagem
+                {t('message')}
               </label>
               <Textarea
                 {...register('message')}
-                placeholder="Mensagem"
+                placeholder={t('message')}
                 rows={4}
                 className={errors.message ? 'border-red-500' : ''}
                 aria-invalid={errors.message ? 'true' : 'false'}
@@ -117,7 +120,7 @@ export function ContactForm() {
               className="w-full"
               disabled={isSubmitting}
             >
-              {isSubmitting ? 'Enviando...' : 'Enviar mensagem'}
+              {isSubmitting ? tCommon('sending') : t('submit')}
             </Button>
           </form>
         )}

@@ -9,6 +9,7 @@ import { ThemeToggle } from '@/components/ui/theme-toggle-wrapper';
 
 export function Navbar() {
   const t = useTranslations('nav');
+  const tCommon = useTranslations('common');
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -34,7 +35,7 @@ export function Navbar() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex h-16 items-center justify-between">
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5 flex items-center">
-            <span className="text-2xl font-bold text-gray-900 dark:text-white transition-colors">Neural LAB</span>
+            <span className="text-2xl font-bold text-gray-900 dark:text-white transition-colors">{tCommon('brandName')}</span>
           </Link>
         </div>
         
@@ -45,7 +46,7 @@ export function Navbar() {
             className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 dark:text-gray-300"
             onClick={() => setIsOpen(!isOpen)}
           >
-            <span className="sr-only">Open main menu</span>
+            <span className="sr-only">{tCommon('openMenu')}</span>
             {isOpen ? (
               <X className="h-6 w-6" />
             ) : (

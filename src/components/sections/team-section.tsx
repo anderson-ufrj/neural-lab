@@ -3,8 +3,10 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { MapPin, GraduationCap, Award, User, Activity } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 export function TeamSection() {
+  const t = useTranslations('team');
   
   return (
     <div>
@@ -17,7 +19,7 @@ export function TeamSection() {
         viewport={{ once: true }}
       >
         <User className="w-3 h-3" />
-        CREW QUARTERS • ENGINEERING STAFF • ACTIVE
+        {t('header')}
         <Activity className="w-3 h-3 animate-pulse text-green-400" />
       </motion.div>
 
@@ -28,7 +30,7 @@ export function TeamSection() {
         transition={{ duration: 0.6, delay: 0.1 }}
         viewport={{ once: true }}
       >
-        CHIEF ENGINEERING OFFICER
+        {t('chiefOfficer')}
       </motion.h2>
 
       {/* Engineering Profile Grid */}
@@ -47,7 +49,7 @@ export function TeamSection() {
             <div className="w-32 h-32 mx-auto rounded border-4 border-gray-300 dark:border-gray-600 overflow-hidden mb-4">
               <Image
                 src="/assets/anderson-photo.jpeg"
-                alt="Anderson Henrique - CEO"
+                alt={t('andersonAlt')}
                 width={128}
                 height={128}
                 className="w-full h-full object-cover"
@@ -56,20 +58,20 @@ export function TeamSection() {
             </div>
             
             <h3 className="text-xl font-black text-gray-900 dark:text-white mb-2 tracking-tight">
-              ANDERSON HENRIQUE
+              {t('andersonName')}
             </h3>
             <div className="text-sm font-mono text-purple-600 dark:text-purple-400 mb-3 uppercase tracking-wider">
-              FOUNDER & CEO
+              {t('role')}
             </div>
             
             <div className="space-y-2 text-xs text-gray-600 dark:text-gray-400 font-mono">
               <div className="flex items-center justify-center gap-2">
                 <MapPin className="w-3 h-3" />
-                <span>MINAS GERAIS, BRASIL 🇧🇷</span>
+                <span>{t('location')}</span>
               </div>
               <div className="flex items-center justify-center gap-2">
                 <GraduationCap className="w-3 h-3" />
-                <span>COMPUTER SCIENCE & AI</span>
+                <span>{t('computerScience')}</span>
               </div>
             </div>
           </div>
@@ -87,24 +89,24 @@ export function TeamSection() {
           {/* Core Systems */}
           <div>
             <h4 className="text-lg font-black text-gray-900 dark:text-white mb-4 tracking-tight uppercase">
-              CORE SYSTEMS
+              {t('coreSystems')}
             </h4>
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-gray-100 dark:bg-gray-800 p-4 border-l-4 border-blue-500">
-                <div className="font-black text-gray-900 dark:text-white mb-1 text-sm uppercase tracking-wider">AI ENGINEERING</div>
-                <div className="text-xs text-gray-600 dark:text-gray-400 font-mono">LLMs • TRANSFORMERS • MLOPS</div>
+                <div className="font-black text-gray-900 dark:text-white mb-1 text-sm uppercase tracking-wider">{t('aiEngineering')}</div>
+                <div className="text-xs text-gray-600 dark:text-gray-400 font-mono">{t('aiEngineeringDesc')}</div>
               </div>
               <div className="bg-gray-100 dark:bg-gray-800 p-4 border-l-4 border-green-500">
-                <div className="font-black text-gray-900 dark:text-white mb-1 text-sm uppercase tracking-wider">SYSTEM ARCHITECTURE</div>
-                <div className="text-xs text-gray-600 dark:text-gray-400 font-mono">DISTRIBUTED • HIGH PERFORMANCE</div>
+                <div className="font-black text-gray-900 dark:text-white mb-1 text-sm uppercase tracking-wider">{t('systemArchitecture')}</div>
+                <div className="text-xs text-gray-600 dark:text-gray-400 font-mono">{t('systemArchitectureDesc')}</div>
               </div>
               <div className="bg-gray-100 dark:bg-gray-800 p-4 border-l-4 border-orange-500">
-                <div className="font-black text-gray-900 dark:text-white mb-1 text-sm uppercase tracking-wider">FULL-STACK DEV</div>
-                <div className="text-xs text-gray-600 dark:text-gray-400 font-mono">ENTERPRISE APPLICATIONS</div>
+                <div className="font-black text-gray-900 dark:text-white mb-1 text-sm uppercase tracking-wider">{t('fullstackDev')}</div>
+                <div className="text-xs text-gray-600 dark:text-gray-400 font-mono">{t('fullstackDevDesc')}</div>
               </div>
               <div className="bg-gray-100 dark:bg-gray-800 p-4 border-l-4 border-red-500">
-                <div className="font-black text-gray-900 dark:text-white mb-1 text-sm uppercase tracking-wider">DATA SCIENCE</div>
-                <div className="text-xs text-gray-600 dark:text-gray-400 font-mono">ML • ANALYTICS • INSIGHTS</div>
+                <div className="font-black text-gray-900 dark:text-white mb-1 text-sm uppercase tracking-wider">{t('dataScience')}</div>
+                <div className="text-xs text-gray-600 dark:text-gray-400 font-mono">{t('dataScienceDesc')}</div>
               </div>
             </div>
           </div>
@@ -112,14 +114,14 @@ export function TeamSection() {
           {/* Mission Log */}
           <div>
             <h4 className="text-lg font-black text-gray-900 dark:text-white mb-4 tracking-tight uppercase">
-              MISSION LOG
+              {t('missionLog')}
             </h4>
             <div className="space-y-3">
               <div className="flex items-start gap-3 bg-gray-100 dark:bg-gray-800 p-4 border-l-4 border-purple-500">
                 <Award className="w-5 h-5 text-purple-600 dark:text-purple-400 mt-0.5 flex-shrink-0" />
                 <div className="flex-1">
-                  <div className="font-black text-gray-900 dark:text-white text-sm uppercase tracking-wider">NEURAL LAB FOUNDATION</div>
-                  <div className="text-xs text-gray-600 dark:text-gray-400 font-mono mt-1">AI research laboratory • High-level technology and science</div>
+                  <div className="font-black text-gray-900 dark:text-white text-sm uppercase tracking-wider">{t('neuralLabFoundation')}</div>
+                  <div className="text-xs text-gray-600 dark:text-gray-400 font-mono mt-1">{t('neuralLabFoundationDesc')}</div>
                 </div>
                 <div className="text-xs text-gray-500 dark:text-gray-500 font-mono font-bold">2025</div>
               </div>
@@ -127,8 +129,8 @@ export function TeamSection() {
               <div className="flex items-start gap-3 bg-gray-100 dark:bg-gray-800 p-4 border-l-4 border-blue-500">
                 <Award className="w-5 h-5 text-blue-600 dark:text-blue-400 mt-0.5 flex-shrink-0" />
                 <div className="flex-1">
-                  <div className="font-black text-gray-900 dark:text-white text-sm uppercase tracking-wider">CIDADÃO.AI DEPLOYMENT</div>
-                  <div className="text-xs text-gray-600 dark:text-gray-400 font-mono mt-1">Multi-agent AI system • 17+ specialized agents • Public transparency</div>
+                  <div className="font-black text-gray-900 dark:text-white text-sm uppercase tracking-wider">{t('cidadaoDeployment')}</div>
+                  <div className="text-xs text-gray-600 dark:text-gray-400 font-mono mt-1">{t('cidadaoDeploymentDesc')}</div>
                 </div>
                 <div className="text-xs text-gray-500 dark:text-gray-500 font-mono font-bold">2024</div>
               </div>
@@ -137,13 +139,12 @@ export function TeamSection() {
 
           {/* Mission Statement - Industrial Style */}
           <div className="bg-gray-900 dark:bg-gray-800 text-white p-6 border-l-4 border-yellow-500">
-            <div className="text-xs font-mono uppercase tracking-wider text-yellow-400 mb-2">MISSION STATEMENT</div>
+            <div className="text-xs font-mono uppercase tracking-wider text-yellow-400 mb-2">{t('missionStatement')}</div>
             <blockquote className="text-gray-200 font-medium leading-relaxed">
-              &quot;Building AI systems that solve real-world problems with technical excellence, 
-              ethical responsibility, and measurable impact.&quot;
+              {t('missionQuote')}
             </blockquote>
             <cite className="text-xs text-gray-400 font-mono uppercase tracking-wider block mt-3">
-              — ANDERSON HENRIQUE, NEURAL LAB CEO
+              {t('missionAuthor')}
             </cite>
           </div>
           

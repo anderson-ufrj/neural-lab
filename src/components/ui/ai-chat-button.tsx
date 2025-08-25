@@ -14,6 +14,7 @@ interface Message {
 
 export function AIChatButton() {
   const t = useTranslations('chat');
+  const tCommon = useTranslations('common');
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     {
@@ -55,11 +56,11 @@ export function AIChatButton() {
 
   const getAIResponse = (): string => {
     const responses = [
-      "Entendo sua pergunta! No Neural LAB, desenvolvemos soluções de IA personalizadas para empresas. Que tipo de projeto você tem em mente?",
-      "Ótima pergunta! Nossos serviços incluem desenvolvimento de chatbots, análise de dados com IA e automação de processos. Gostaria de saber mais sobre algum específico?",
-      "Ficamos felizes com seu interesse! Podemos agendar uma conversa para discutir como a IA pode transformar seu negócio. Qual o melhor horário para você?",
-      "Excelente! Temos experiência em diversos setores. Conte-me mais sobre sua empresa e os desafios que vocês enfrentam.",
-      "Perfeito! Nossa equipe está pronta para ajudar. Que tal marcarmos uma call para entender melhor suas necessidades?"
+      t('responses.services'),
+      t('responses.capabilities'),
+      t('responses.interest'),
+      t('responses.experience'),
+      t('responses.contact')
     ];
     return responses[Math.floor(Math.random() * responses.length)];
   };
@@ -123,7 +124,7 @@ export function AIChatButton() {
                     <Bot className="w-5 h-5" />
                   </div>
                   <div>
-                    <h3 className="font-semibold">Neural LAB AI</h3>
+                    <h3 className="font-semibold">{t('title')}</h3>
                     <p className="text-sm opacity-90">{t('online')}</p>
                   </div>
                 </div>

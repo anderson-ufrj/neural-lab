@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 interface TechCarouselProps {
   title?: string;
@@ -41,52 +42,53 @@ function TechIcon({ tech }: { tech: Technology }) {
 
 export function TechCarousel({ title, subtitle }: TechCarouselProps) {
   const [isHovered, setIsHovered] = useState(false);
+  const t = useTranslations('techCarousel');
 
   // Technology items with their information
   const technologies: Technology[] = [
     // AI & Machine Learning
-    { name: "Python", icon: "🐍", description: "Backend & AI Development", color: "text-yellow-600", category: 'ai', level: 'Expert', image: "/assets/tech/Python-logo-notext.png", url: "https://python.org" },
-    { name: "TensorFlow", icon: "🧠", description: "ML Framework by Google", color: "text-orange-500", category: 'ai', level: 'Advanced', image: "/assets/tech/tensorflow_logo.png", url: "https://tensorflow.org" },
-    { name: "PyTorch", icon: "🔥", description: "Deep Learning Framework", color: "text-red-500", category: 'ai', level: 'Advanced', image: "/assets/tech/pytorch-logo.png", url: "https://pytorch.org" },
-    { name: "Jupyter", icon: "📓", description: "Interactive Computing", color: "text-orange-500", category: 'ai', level: 'Expert', image: "/assets/tech/jupyter-logo.svg", url: "https://jupyter.org" },
-    { name: "LLMs", icon: "🧠", description: "Large Language Models", color: "text-purple-600", category: 'ai', level: 'Expert', image: "/assets/tech/LLMs.jpeg", url: "https://huggingface.co/models" },
-    { name: "HuggingFace", icon: "🤗", description: "NLP Models & Transformers", color: "text-yellow-500", category: 'ai', level: 'Advanced', image: "/assets/tech/huggingface.png", url: "https://huggingface.co" },
-    { name: "Pandas", icon: "🐼", description: "Data Analysis Library", color: "text-blue-600", category: 'ai', level: 'Expert', image: "/assets/tech/pandas.png", url: "https://pandas.pydata.org" },
-    { name: "Polars", icon: "⚡", description: "Fast DataFrame Library", color: "text-orange-600", category: 'ai', level: 'Advanced', image: "/assets/tech/polars.png", url: "https://pola.rs" },
-    { name: "ChromaDB", icon: "🎨", description: "Vector Database", color: "text-purple-500", category: 'ai', level: 'Advanced', image: "/assets/tech/chromaDB.png", url: "https://trychroma.com" },
-    { name: "OpenAI", icon: "🤖", description: "GPT & AI APIs", color: "text-emerald-600", category: 'ai', level: 'Expert', image: "/assets/tech/openai-logo.png", url: "https://openai.com" },
-    { name: "Langchain", icon: "🔗", description: "LLM Framework", color: "text-purple-600", category: 'ai', level: 'Expert', image: "/assets/tech/langchain-logo.png", url: "https://langchain.com" },
-    { name: "Claude", icon: "🤖", description: "Anthropic AI", color: "text-orange-600", category: 'ai', level: 'Expert', image: "/assets/tech/claude.png", url: "https://claude.ai" },
+    { name: t('python.name'), icon: "🐍", description: t('python.description'), color: "text-yellow-600", category: 'ai', level: 'Expert', image: "/assets/tech/Python-logo-notext.png", url: "https://python.org" },
+    { name: t('tensorflow.name'), icon: "🧠", description: t('tensorflow.description'), color: "text-orange-500", category: 'ai', level: 'Advanced', image: "/assets/tech/tensorflow_logo.png", url: "https://tensorflow.org" },
+    { name: t('pytorch.name'), icon: "🔥", description: t('pytorch.description'), color: "text-red-500", category: 'ai', level: 'Advanced', image: "/assets/tech/pytorch-logo.png", url: "https://pytorch.org" },
+    { name: t('jupyter.name'), icon: "📓", description: t('jupyter.description'), color: "text-orange-500", category: 'ai', level: 'Expert', image: "/assets/tech/jupyter-logo.svg", url: "https://jupyter.org" },
+    { name: t('llms.name'), icon: "🧠", description: t('llms.description'), color: "text-purple-600", category: 'ai', level: 'Expert', image: "/assets/tech/LLMs.jpeg", url: "https://huggingface.co/models" },
+    { name: t('huggingface.name'), icon: "🤗", description: t('huggingface.description'), color: "text-yellow-500", category: 'ai', level: 'Advanced', image: "/assets/tech/huggingface.png", url: "https://huggingface.co" },
+    { name: t('pandas.name'), icon: "🐼", description: t('pandas.description'), color: "text-blue-600", category: 'ai', level: 'Expert', image: "/assets/tech/pandas.png", url: "https://pandas.pydata.org" },
+    { name: t('polars.name'), icon: "⚡", description: t('polars.description'), color: "text-orange-600", category: 'ai', level: 'Advanced', image: "/assets/tech/polars.png", url: "https://pola.rs" },
+    { name: t('chromadb.name'), icon: "🎨", description: t('chromadb.description'), color: "text-purple-500", category: 'ai', level: 'Advanced', image: "/assets/tech/chromaDB.png", url: "https://trychroma.com" },
+    { name: t('openai.name'), icon: "🤖", description: t('openai.description'), color: "text-emerald-600", category: 'ai', level: 'Expert', image: "/assets/tech/openai-logo.png", url: "https://openai.com" },
+    { name: t('langchain.name'), icon: "🔗", description: t('langchain.description'), color: "text-purple-600", category: 'ai', level: 'Expert', image: "/assets/tech/langchain-logo.png", url: "https://langchain.com" },
+    { name: t('claude.name'), icon: "🤖", description: t('claude.description'), color: "text-orange-600", category: 'ai', level: 'Expert', image: "/assets/tech/claude.png", url: "https://claude.ai" },
     
     // Web Development
-    { name: "Next.js", icon: "⚛️", description: "React Framework", color: "text-gray-800", category: 'web', level: 'Expert', image: "/assets/tech/nextjs-icon-dark-background.png", url: "https://nextjs.org" },
-    { name: "React", icon: "⚛️", description: "UI Library", color: "text-blue-400", category: 'web', level: 'Expert', image: "/assets/tech/react-logo.png", url: "https://react.dev" },
-    { name: "TypeScript", icon: "📘", description: "Type-safe JavaScript", color: "text-blue-600", category: 'web', level: 'Advanced', image: "/assets/tech/typescript-logo.png", url: "https://typescriptlang.org" },
-    { name: "TailwindCSS", icon: "🎨", description: "Utility-first CSS", color: "text-cyan-600", category: 'web', level: 'Expert', image: "/assets/tech/tailwind-css.svg", url: "https://tailwindcss.com" },
-    { name: "HTML & CSS", icon: "🌐", description: "Web Fundamentals", color: "text-orange-600", category: 'web', level: 'Expert', image: "/assets/tech/html&TailwindCSS.jpg", url: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
-    { name: "FastAPI", icon: "⚡", description: "Modern Python API", color: "text-green-600", category: 'web', level: 'Expert', image: "/assets/tech/fastapi-logo.png", url: "https://fastapi.tiangolo.com" },
-    { name: "Node.js", icon: "💚", description: "JavaScript Runtime", color: "text-green-500", category: 'web', level: 'Advanced', image: "/assets/tech/node-js.png", url: "https://nodejs.org" },
+    { name: t('nextjs.name'), icon: "⚛️", description: t('nextjs.description'), color: "text-gray-800", category: 'web', level: 'Expert', image: "/assets/tech/nextjs-icon-dark-background.png", url: "https://nextjs.org" },
+    { name: t('react.name'), icon: "⚛️", description: t('react.description'), color: "text-blue-400", category: 'web', level: 'Expert', image: "/assets/tech/react-logo.png", url: "https://react.dev" },
+    { name: t('typescript.name'), icon: "📘", description: t('typescript.description'), color: "text-blue-600", category: 'web', level: 'Advanced', image: "/assets/tech/typescript-logo.png", url: "https://typescriptlang.org" },
+    { name: t('tailwindcss.name'), icon: "🎨", description: t('tailwindcss.description'), color: "text-cyan-600", category: 'web', level: 'Expert', image: "/assets/tech/tailwind-css.svg", url: "https://tailwindcss.com" },
+    { name: t('htmlcss.name'), icon: "🌐", description: t('htmlcss.description'), color: "text-orange-600", category: 'web', level: 'Expert', image: "/assets/tech/html&TailwindCSS.jpg", url: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
+    { name: t('fastapi.name'), icon: "⚡", description: t('fastapi.description'), color: "text-green-600", category: 'web', level: 'Expert', image: "/assets/tech/fastapi-logo.png", url: "https://fastapi.tiangolo.com" },
+    { name: t('nodejs.name'), icon: "💚", description: t('nodejs.description'), color: "text-green-500", category: 'web', level: 'Advanced', image: "/assets/tech/node-js.png", url: "https://nodejs.org" },
     
     // Cloud & DevOps
-    { name: "AWS", icon: "☁️", description: "Cloud Infrastructure", color: "text-orange-600", category: 'cloud', level: 'Advanced', image: "/assets/tech/amazonwebservices.png", url: "https://aws.amazon.com" },
-    { name: "Google Cloud", icon: "🌐", description: "GCP Services", color: "text-blue-500", category: 'cloud', level: 'Advanced', image: "/assets/tech/googlecloudplatform.png", url: "https://cloud.google.com" },
-    { name: "Azure", icon: "🔷", description: "Microsoft Cloud", color: "text-blue-600", category: 'cloud', level: 'Intermediate', image: "/assets/tech/Microsoft_Azure.svg.png", url: "https://azure.microsoft.com" },
-    { name: "Vercel", icon: "▲", description: "Deployment Platform", color: "text-gray-900", category: 'cloud', level: 'Expert', image: "/assets/tech/vercel.png", url: "https://vercel.com" },
-    { name: "Docker", icon: "🐳", description: "Containerization", color: "text-blue-500", category: 'devops', level: 'Expert', image: "/assets/tech/docker.jpg", url: "https://docker.com" },
-    { name: "Kubernetes", icon: "⚓", description: "Container Orchestration", color: "text-blue-700", category: 'devops', level: 'Advanced', image: "/assets/tech/kubernetes.png", url: "https://kubernetes.io" },
-    { name: "Git", icon: "📝", description: "Version Control System", color: "text-orange-600", category: 'devops', level: 'Expert', image: "/assets/tech/git-logo.png", url: "https://git-scm.com" },
-    { name: "GitHub", icon: "🐙", description: "Version Control & CI/CD", color: "text-gray-900", category: 'devops', level: 'Expert', image: "/assets/tech/GitHub.jpg", url: "https://github.com" },
-    { name: "CI/CD", icon: "🔄", description: "Continuous Integration", color: "text-green-600", category: 'devops', level: 'Expert', image: "/assets/tech/CI&CD.png", url: "https://github.com/features/actions" },
-    { name: "Ubuntu", icon: "🐧", description: "Linux Operating System", color: "text-orange-600", category: 'devops', level: 'Expert', image: "/assets/tech/UbuntuCoF.svg.png", url: "https://ubuntu.com" },
+    { name: t('aws.name'), icon: "☁️", description: t('aws.description'), color: "text-orange-600", category: 'cloud', level: 'Advanced', image: "/assets/tech/amazonwebservices.png", url: "https://aws.amazon.com" },
+    { name: t('googlecloud.name'), icon: "🌐", description: t('googlecloud.description'), color: "text-blue-500", category: 'cloud', level: 'Advanced', image: "/assets/tech/googlecloudplatform.png", url: "https://cloud.google.com" },
+    { name: t('azure.name'), icon: "🔷", description: t('azure.description'), color: "text-blue-600", category: 'cloud', level: 'Intermediate', image: "/assets/tech/Microsoft_Azure.svg.png", url: "https://azure.microsoft.com" },
+    { name: t('vercel.name'), icon: "▲", description: t('vercel.description'), color: "text-gray-900", category: 'cloud', level: 'Expert', image: "/assets/tech/vercel.png", url: "https://vercel.com" },
+    { name: t('docker.name'), icon: "🐳", description: t('docker.description'), color: "text-blue-500", category: 'devops', level: 'Expert', image: "/assets/tech/docker.jpg", url: "https://docker.com" },
+    { name: t('kubernetes.name'), icon: "⚓", description: t('kubernetes.description'), color: "text-blue-700", category: 'devops', level: 'Advanced', image: "/assets/tech/kubernetes.png", url: "https://kubernetes.io" },
+    { name: t('git.name'), icon: "📝", description: t('git.description'), color: "text-orange-600", category: 'devops', level: 'Expert', image: "/assets/tech/git-logo.png", url: "https://git-scm.com" },
+    { name: t('github.name'), icon: "🐙", description: t('github.description'), color: "text-gray-900", category: 'devops', level: 'Expert', image: "/assets/tech/GitHub.jpg", url: "https://github.com" },
+    { name: t('cicd.name'), icon: "🔄", description: t('cicd.description'), color: "text-green-600", category: 'devops', level: 'Expert', image: "/assets/tech/CI&CD.png", url: "https://github.com/features/actions" },
+    { name: t('ubuntu.name'), icon: "🐧", description: t('ubuntu.description'), color: "text-orange-600", category: 'devops', level: 'Expert', image: "/assets/tech/UbuntuCoF.svg.png", url: "https://ubuntu.com" },
     
     // Monitoring & Analytics
-    { name: "Prometheus", icon: "📊", description: "Monitoring & Metrics", color: "text-red-600", category: 'devops', level: 'Advanced', image: "/assets/tech/prometheus.png", url: "https://prometheus.io" },
-    { name: "Grafana", icon: "📈", description: "Data Visualization", color: "text-orange-500", category: 'devops', level: 'Advanced', image: "/assets/tech/Grafana_logo.svg.png", url: "https://grafana.com" },
+    { name: t('prometheus.name'), icon: "📊", description: t('prometheus.description'), color: "text-red-600", category: 'devops', level: 'Advanced', image: "/assets/tech/prometheus.png", url: "https://prometheus.io" },
+    { name: t('grafana.name'), icon: "📈", description: t('grafana.description'), color: "text-orange-500", category: 'devops', level: 'Advanced', image: "/assets/tech/Grafana_logo.svg.png", url: "https://grafana.com" },
     
     // Databases
-    { name: "PostgreSQL", icon: "🐘", description: "Relational Database", color: "text-blue-800", category: 'database', level: 'Advanced', image: "/assets/tech/postgresql-logo.png", url: "https://postgresql.org" },
-    { name: "Redis", icon: "🔴", description: "In-memory Cache", color: "text-red-600", category: 'database', level: 'Advanced', image: "/assets/tech/Redis-Logo.png", url: "https://redis.io" },
-    { name: "MongoDB", icon: "🍃", description: "NoSQL Database", color: "text-green-700", category: 'database', level: 'Advanced', image: "/assets/tech/mongodb-logo.png", url: "https://mongodb.com" },
+    { name: t('postgresql.name'), icon: "🐘", description: t('postgresql.description'), color: "text-blue-800", category: 'database', level: 'Advanced', image: "/assets/tech/postgresql-logo.png", url: "https://postgresql.org" },
+    { name: t('redis.name'), icon: "🔴", description: t('redis.description'), color: "text-red-600", category: 'database', level: 'Advanced', image: "/assets/tech/Redis-Logo.png", url: "https://redis.io" },
+    { name: t('mongodb.name'), icon: "🍃", description: t('mongodb.description'), color: "text-green-700", category: 'database', level: 'Advanced', image: "/assets/tech/mongodb-logo.png", url: "https://mongodb.com" },
   ];
 
   // Create duplicated array for seamless infinite scroll
@@ -185,7 +187,7 @@ export function TechCarousel({ title, subtitle }: TechCarouselProps) {
                 <div className="text-gray-600 dark:text-gray-300 text-center mb-1">{tech.description}</div>
                 {tech.url && (
                   <div className="text-xs text-blue-600 dark:text-blue-400 text-center font-medium">
-                    🔗 Clique para visitar
+                    {t('clickToVisit')}
                   </div>
                 )}
                 {/* Tooltip Arrow */}

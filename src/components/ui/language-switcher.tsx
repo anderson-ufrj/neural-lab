@@ -1,11 +1,12 @@
 'use client';
 
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { Globe } from 'lucide-react';
 
 export function LanguageSwitcher() {
   const locale = useLocale();
+  const t = useTranslations('common.language');
   
   return (
     <div className="flex items-center gap-2">
@@ -20,7 +21,7 @@ export function LanguageSwitcher() {
               : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
           }`}
         >
-          PT
+          {t('pt')}
         </Link>
         <Link
           href="/"
@@ -31,7 +32,7 @@ export function LanguageSwitcher() {
               : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
           }`}
         >
-          EN
+          {t('en')}
         </Link>
       </div>
     </div>

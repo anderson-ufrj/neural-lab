@@ -6,11 +6,7 @@ import { ServicesOverview } from '@/components/sections/services-overview';
 import { TeamSection } from '@/components/sections/team-section';
 import { Footer } from '@/components/shared/footer';
 import { ContainerSection } from '@/components/layout/container-section';
-
-export const metadata: Metadata = {
-  title: 'Neural LAB - AI Development Studio from Brazil',
-  description: 'We help founders and business leaders launch new products or transform their workflows with AI. From Brazil to the world.',
-};
+import { AIChatButton } from '@/components/ui/ai-chat-button';
 
 export default function HomePage() {
   return (
@@ -42,6 +38,9 @@ export default function HomePage() {
         
         {/* Footer - Ship's Foundation */}
         <Footer />
+        
+        {/* AI Chat Button */}
+        <AIChatButton />
       </div>
   );
 }

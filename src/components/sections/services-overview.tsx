@@ -5,30 +5,31 @@ import { Brain, Rocket, Cog, Activity, CheckCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export function ServicesOverview() {
-  const t = useTranslations('services');
+  const t = useTranslations('servicesOverview');
+  const tServices = useTranslations('services');
   
   const services = [
     {
       icon: Brain,
-      title: t('ai.title'),
-      description: t('ai.description'),
+      title: tServices('ai.title'),
+      description: tServices('ai.description'),
       features: [
-        t('ai.feature1'),
-        t('ai.feature2'),
-        t('ai.feature3'),
-        t('ai.feature4')
+        tServices('ai.feature1'),
+        tServices('ai.feature2'),
+        tServices('ai.feature3'),
+        tServices('ai.feature4')
       ],
       color: 'border-blue-500'
     },
     {
       icon: Rocket,
-      title: t('product.title'),
-      description: t('product.description'),
+      title: tServices('product.title'),
+      description: tServices('product.description'),
       features: [
-        t('product.feature1'),
-        t('product.feature2'),
-        t('product.feature3'),
-        t('product.feature4')
+        tServices('product.feature1'),
+        tServices('product.feature2'),
+        tServices('product.feature3'),
+        tServices('product.feature4')
       ],
       color: 'border-green-500'
     }
@@ -45,7 +46,7 @@ export function ServicesOverview() {
         viewport={{ once: true }}
       >
         <Cog className="w-3 h-3 animate-spin" />
-        SERVICE BAY • ENGINEERING SOLUTIONS • OPERATIONAL
+        {t('header')}
         <Activity className="w-3 h-3 animate-pulse text-green-400" />
       </motion.div>
 
@@ -56,7 +57,7 @@ export function ServicesOverview() {
         transition={{ duration: 0.6, delay: 0.1 }}
         viewport={{ once: true }}
       >
-        ENGINEERING SERVICES
+        {t('engineeringServices')}
       </motion.h2>
 
       <motion.p 
@@ -66,8 +67,7 @@ export function ServicesOverview() {
         transition={{ duration: 0.6, delay: 0.2 }}
         viewport={{ once: true }}
       >
-        Desenvolvemos sistemas de inteligência artificial personalizados que crescem organicamente 
-        com seus dados e necessidades específicas.
+        {tServices('ai.description')}
       </motion.p>
 
       {/* Service Modules Grid */}
@@ -102,7 +102,7 @@ export function ServicesOverview() {
               {/* Technical Specifications */}
               <div className="space-y-3">
                 <div className="text-sm font-black text-gray-900 dark:text-white uppercase tracking-wider mb-3">
-                  TECHNICAL SPECS:
+                  {t('technicalSpecs')}
                 </div>
                 {service.features.map((feature, featureIndex) => (
                   <motion.div 
@@ -125,12 +125,12 @@ export function ServicesOverview() {
               <div className="mt-6 pt-4 border-t border-gray-300 dark:border-gray-600">
                 <div className="flex items-center justify-between text-xs font-mono">
                   <span className="text-gray-600 dark:text-gray-400 uppercase tracking-wider">
-                    STATUS: ACTIVE
+                    {t('statusActive')}
                   </span>
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                     <span className="text-green-600 dark:text-green-400 uppercase tracking-wider">
-                      OPERATIONAL
+                      {t('operational')}
                     </span>
                   </div>
                 </div>
@@ -150,17 +150,16 @@ export function ServicesOverview() {
       >
         <div className="bg-gray-900 dark:bg-gray-800 text-white p-8 border-l-4 border-yellow-500">
           <div className="text-xs font-mono uppercase tracking-wider text-yellow-400 mb-3">
-            READY TO DEPLOY
+            {t('readyToDeploy')}
           </div>
           <h3 className="text-2xl font-black text-white mb-4 tracking-tight uppercase">
-            INITIATE PROJECT PROTOCOL
+            {t('initiateProject')}
           </h3>
           <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-            Entre em contato para discutir seu projeto de IA. Análise técnica gratuita e 
-            proposta detalhada em 48 horas.
+            {t('projectContact')}
           </p>
           <button className="bg-yellow-500 hover:bg-yellow-400 text-gray-900 px-8 py-4 font-black text-lg tracking-wide transition-colors uppercase">
-            CONTACT ENGINEERING
+            {t('contactEngineering')}
           </button>
         </div>
       </motion.div>

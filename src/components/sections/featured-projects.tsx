@@ -2,15 +2,17 @@
 
 import { ContainerCard } from '@/components/ui/container-card';
 import { ExternalLink, Github, Play } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 export function FeaturedProjects() {
+  const t = useTranslations('featuredProjects');
 
   const projects = [
     {
       id: "cidadao-ai",
-      title: "🇧🇷 Cidadão.AI - Transparency Platform",
-      description: "Multi-agent AI system for government transparency analysis using Brazilian cultural personas",
-      status: "Production",
+      title: t('cidadao.title'),
+      description: t('cidadao.description'),
+      status: t('cidadao.status'),
       tech: ["Python", "FastAPI", "HuggingFace", "Multi-Agent", "Grafana", "Docker"],
       metrics: {
         agents: "15+ AI Agents",
@@ -19,10 +21,10 @@ export function FeaturedProjects() {
         monitoring: "Full Observability"
       },
       highlights: [
-        "Named agents after Brazilian historical figures",
-        "Real-time government data analysis",
-        "Production-ready monitoring stack",
-        "Enterprise-grade security implementation"
+        t('cidadao.highlight1'),
+        t('cidadao.highlight2'),
+        t('cidadao.highlight3'),
+        t('cidadao.highlight4')
       ],
       links: {
         live: "https://neural-thinker-cidadao-ai-backend.hf.space/",
@@ -32,9 +34,9 @@ export function FeaturedProjects() {
     },
     {
       id: "neural-lab",
-      title: "🧠 Neural LAB - AI Development Studio",
-      description: "Modern web platform showcasing AI development capabilities with 3D visualizations",
-      status: "Development",
+      title: t('neuralLab.title'),
+      description: t('neuralLab.description'),
+      status: t('neuralLab.status'),
       tech: ["Next.js", "Three.js", "TypeScript", "TailwindCSS", "Framer Motion"],
       metrics: {
         components: "50+ Components",
@@ -43,10 +45,10 @@ export function FeaturedProjects() {
         responsive: "Mobile First"
       },
       highlights: [
-        "Interactive 3D neural network visualizations",
-        "Container-ship inspired layout system",
-        "Bilingual support (PT/EN)",
-        "Modern engineering aesthetics"
+        t('neuralLab.highlight1'),
+        t('neuralLab.highlight2'),
+        t('neuralLab.highlight3'),
+        t('neuralLab.highlight4')
       ],
       links: {
         live: "https://neural-lab.vercel.app",
@@ -55,9 +57,9 @@ export function FeaturedProjects() {
     },
     {
       id: "ai-automation",
-      title: "⚡ Enterprise AI Automation",
-      description: "Custom AI solutions for workflow automation and business process optimization",
-      status: "Consulting",
+      title: t('enterprise.title'),
+      description: t('enterprise.description'),
+      status: t('enterprise.status'),
       tech: ["LangChain", "OpenAI", "Azure", "Python", "REST APIs", "Webhooks"],
       metrics: {
         efficiency: "70% Time Saved",
@@ -66,10 +68,10 @@ export function FeaturedProjects() {
         integration: "Seamless APIs"
       },
       highlights: [
-        "Document processing automation",
-        "Intelligent decision making systems",
-        "Custom AI model fine-tuning",
-        "Enterprise security compliance"
+        t('enterprise.highlight1'),
+        t('enterprise.highlight2'),
+        t('enterprise.highlight3'),
+        t('enterprise.highlight4')
       ],
       links: {
         contact: "mailto:anderson@neural-lab.ai"
@@ -92,11 +94,10 @@ export function FeaturedProjects() {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            🚀 Featured Projects
+            {t('title')}
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Real-world AI implementations solving complex business challenges. 
-            From government transparency to enterprise automation.
+            {t('subtitle')}
           </p>
         </div>
 
@@ -132,7 +133,7 @@ export function FeaturedProjects() {
                   {/* Tech Stack */}
                   <div className="mb-6">
                     <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
-                      Technology Stack:
+                      {t('techStack')}
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {project.tech.map((tech, techIndex) => (
@@ -149,7 +150,7 @@ export function FeaturedProjects() {
                   {/* Highlights */}
                   <div className="mb-6">
                     <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
-                      Key Highlights:
+                      {t('keyHighlights')}
                     </h4>
                     <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
                       {project.highlights.map((highlight, highlightIndex) => (
@@ -174,7 +175,7 @@ export function FeaturedProjects() {
                         className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm"
                       >
                         <ExternalLink className="w-4 h-4 mr-2" />
-                        Live Demo
+                        {t('liveDemo')}
                       </a>
                     )}
                     {project.links.github && (
@@ -185,7 +186,7 @@ export function FeaturedProjects() {
                         className="inline-flex items-center px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-colors text-sm"
                       >
                         <Github className="w-4 h-4 mr-2" />
-                        Source Code
+                        {t('sourceCode')}
                       </a>
                     )}
                     {project.links.docs && (
@@ -196,7 +197,7 @@ export function FeaturedProjects() {
                         className="inline-flex items-center px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm"
                       >
                         <Play className="w-4 h-4 mr-2" />
-                        Documentation
+                        {t('documentation')}
                       </a>
                     )}
                   </div>
@@ -205,7 +206,7 @@ export function FeaturedProjects() {
                 {/* Metrics */}
                 <div className="lg:col-span-1">
                   <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-4">
-                    Project Metrics:
+                    {t('projectMetrics')}
                   </h4>
                   <div className="space-y-4">
                     {Object.entries(project.metrics).map(([key, value]) => (
@@ -229,13 +230,13 @@ export function FeaturedProjects() {
         <div className="mt-16 text-center">
           <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/30 dark:to-indigo-950/30 rounded-xl p-8">
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-              💡 Have a Project in Mind?
+              {t('haveProject')}
             </h3>
             <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
-              Let&apos;s discuss how we can bring your AI vision to life with the same level of excellence and innovation.
+              {t('discussProject')}
             </p>
             <button className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all">
-              Start Your Project →
+              {t('startProject')}
             </button>
           </div>
         </div>

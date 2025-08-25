@@ -1,9 +1,25 @@
 {
+  "common": {
+    "brandName": "Neural LAB",
+    "email": "contato@neural-lab.com",
+    "phone": "+55 (31) 9999-9999",
+    "loading": "Carregando...",
+    "send": "Enviar",
+    "sending": "Enviando...",
+    "close": "Fechar",
+    "open": "Abrir",
+    "toggleTheme": "Alternar tema",
+    "openMenu": "Abrir menu principal",
+    "language": {
+      "pt": "PT",
+      "en": "EN"
+    }
+  },
   "nav": {
     "about": "Sobre",
     "services": "Serviços",
-    "portfolio": "Portfolio",
-    "contact": "Nosso Time",
+    "portfolio": "Portfólio",
+    "contact": "Contato",
     "cta": "Fale Conosco"
   },
   "hero": {
@@ -12,7 +28,8 @@
     "cta": {
       "primary": "Começar Projeto",
       "secondary": "Conversar"
-    }
+    },
+    "status": "PONTE DE COMANDO • SISTEMAS NEURAL LAB • ONLINE"
   },
   "services": {
     "title": "Como podemos ajudar",
@@ -32,6 +49,30 @@
       "feature2": "Desenvolvimento full-stack escalável",
       "feature3": "Design de experiência do usuário",
       "feature4": "Infraestrutura cloud e DevOps"
+    },
+    "engineering": {
+      "feature1": "Arquitetura de sistemas escaláveis",
+      "feature2": "Desenvolvimento de modelos customizados",
+      "feature3": "Integração com APIs e serviços",
+      "feature4": "Otimização de performance"
+    },
+    "mlops": {
+      "feature1": "Pipelines CI/CD automatizados",
+      "feature2": "Monitoramento e observabilidade",
+      "feature3": "Versionamento de dados e modelos",
+      "feature4": "Infraestrutura em cloud"
+    },
+    "organic": {
+      "feature1": "Sistemas RAG avançados",
+      "feature2": "Agentes inteligentes autônomos",
+      "feature3": "Frameworks de avaliação",
+      "feature4": "Fine-tuning especializado"
+    },
+    "consulting": {
+      "feature1": "Avaliação de maturidade em IA",
+      "feature2": "Roadmap estratégico",
+      "feature3": "Análise de ROI",
+      "feature4": "Capacitação de equipes"
     }
   },
   "cases": {
@@ -84,7 +125,7 @@
   "about": {
     "title": "Nossa História",
     "paragraph1": "A Neural LAB nasceu da frustração com agências tradicionais que tratam projetos de IA como commodities. Vimos muitos projetos falharem não por falta de tecnologia, mas por falta de verdadeiro entendimento das necessidades do cliente.",
-    "paragraph2": "Baseados em Belo Horizonte, no coração das montanhas de Minas Gerais, combinamos a solidez da engenharia brasileira com a inovação da inteligência artificial moderna. Nossa abordagem é diferente: não somos apenas fornecedores, somos parceiros.",
+    "paragraph2": "Baseados em Muzambinho, no coração das montanhas de Minas Gerais, combinamos a solidez da engenharia brasileira com a inovação da inteligência artificial moderna. Nossa abordagem é diferente: não somos apenas fornecedores, somos parceiros.",
     "paragraph3": "Cada projeto é uma oportunidade de criar algo verdadeiramente único. Trabalhamos lado a lado com nossos clientes, entendendo profundamente seus desafios e objetivos antes de escrever a primeira linha de código.",
     "paragraph4": "Se você está procurando uma parceria verdadeira para transformar sua visão em realidade, vamos conversar. Estamos aqui para construir o futuro, um projeto de cada vez.",
     "approach": {
@@ -111,20 +152,28 @@
     "title": "Vamos Conversar",
     "subtitle": "Pronto para transformar sua visão em realidade?",
     "form": {
+      "title": "Envie uma mensagem",
       "name": "Nome",
       "email": "Email",
       "company": "Empresa",
       "message": "Conte-nos sobre seu projeto",
-      "submit": "Enviar Mensagem"
+      "submit": "Enviar Mensagem",
+      "success": "Mensagem enviada com sucesso! Entraremos em contato em breve.",
+      "error": "Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente.",
+      "validation": {
+        "nameMin": "Nome deve ter pelo menos 2 caracteres",
+        "emailInvalid": "E-mail inválido",
+        "messageMin": "Mensagem deve ter pelo menos 10 caracteres"
+      }
     }
   },
   "footer": {
     "description": "Inteligência Artificial que cresce organicamente com seus dados e necessidades.",
     "nav": "Navegação",
     "navServices": "Serviços",
-    "navPortfolio": "Portfolio",
+    "navPortfolio": "Portfólio",
     "navAbout": "Sobre",
-    "navContact": "Nosso Time",
+    "navContact": "Contato",
     "solutions": "Soluções",
     "solution1": "Engenharia de IA",
     "solution2": "Sistemas MLOps",
@@ -137,9 +186,48 @@
     "terms": "Termos de Uso"
   },
   "chat": {
+    "title": "Neural LAB IA",
     "welcome": "Olá! Sou a IA do Neural LAB. Como posso ajudar você hoje? 🤖",
     "placeholder": "Digite sua mensagem...",
-    "online": "Sempre online"
+    "online": "Sempre online",
+    "responses": {
+      "services": "Entendo sua pergunta! No Neural LAB, desenvolvemos soluções de IA personalizadas para empresas. Que tipo de projeto você tem em mente?",
+      "capabilities": "Ótima pergunta! Nossos serviços incluem desenvolvimento de chatbots, análise de dados com IA e automação de processos. Gostaria de saber mais sobre algum específico?",
+      "interest": "Ficamos felizes com seu interesse! Podemos agendar uma conversa para discutir como a IA pode transformar seu negócio. Qual o melhor horário para você?",
+      "experience": "Excelente! Temos experiência em diversos setores. Conte-me mais sobre sua empresa e os desafios que vocês enfrentam.",
+      "contact": "Perfeito! Nossa equipe está pronta para ajudar. Que tal marcarmos uma call para entender melhor suas necessidades?"
+    }
+  },
+  "projects": {
+    "neuralLab": {
+      "title": "🧠 Neural LAB - Estúdio de Desenvolvimento de IA"
+    }
+  },
+  "team": {
+    "computerScience": "CIÊNCIA DA COMPUTAÇÃO & IA",
+    "andersonAlt": "Anderson Henrique - CEO",
+    "header": "ALOJAMENTOS • EQUIPE DE ENGENHARIA • ATIVO",
+    "chiefOfficer": "ENGENHEIRO CHEFE",
+    "andersonName": "ANDERSON HENRIQUE",
+    "role": "FUNDADOR & CEO",
+    "location": "MINAS GERAIS, BRASIL 🇧🇷",
+    "coreSystems": "SISTEMAS PRINCIPAIS",
+    "aiEngineering": "ENGENHARIA DE IA",
+    "aiEngineeringDesc": "LLMs • TRANSFORMERS • MLOPS",
+    "systemArchitecture": "ARQUITETURA DE SISTEMAS",
+    "systemArchitectureDesc": "DISTRIBUÍDA • ALTA PERFORMANCE",
+    "fullstackDev": "DESENVOLVIMENTO FULL-STACK",
+    "fullstackDevDesc": "APLICAÇÕES EMPRESARIAIS",
+    "dataScience": "CIÊNCIA DE DADOS",
+    "dataScienceDesc": "ML • ANÁLISE • INSIGHTS",
+    "missionLog": "REGISTRO DE MISSÃO",
+    "neuralLabFoundation": "FUNDAÇÃO NEURAL LAB",
+    "neuralLabFoundationDesc": "Laboratório de pesquisa em IA • Tecnologia e ciência de alto nível",
+    "cidadaoDeployment": "IMPLANTAÇÃO CIDADÃO.AI",
+    "cidadaoDeploymentDesc": "Sistema multi-agente de IA • 17+ agentes especializados • Transparência pública",
+    "missionStatement": "DECLARAÇÃO DE MISSÃO",
+    "missionQuote": "Construindo sistemas de IA que resolvem problemas do mundo real com excelência técnica, responsabilidade ética e impacto mensurável.",
+    "missionAuthor": "— ANDERSON HENRIQUE, CEO NEURAL LAB"
   },
   "anderson": {
     "title": "Engenheiro de Sistemas de IA",
@@ -165,5 +253,203 @@
       "title": "Início da Jornada em IA",
       "description": "Início dos estudos formais em Ciências da Computação com especialização em Inteligência Artificial e Machine Learning."
     }
+  },
+  "servicesOverview": {
+    "header": "BAÍA DE SERVIÇOS • SOLUÇÕES DE ENGENHARIA • OPERACIONAL",
+    "engineeringServices": "SERVIÇOS DE ENGENHARIA",
+    "technicalSpecs": "ESPECIFICAÇÕES TÉCNICAS:",
+    "statusActive": "STATUS: ATIVO",
+    "operational": "OPERACIONAL",
+    "readyToDeploy": "PRONTO PARA IMPLANTAR",
+    "initiateProject": "INICIAR PROTOCOLO DE PROJETO",
+    "projectContact": "Entre em contato para discutir seu projeto de IA. Análise técnica gratuita e proposta detalhada em 48 horas.",
+    "contactEngineering": "CONTATAR ENGENHARIA"
+  },
+  "technologies": {
+    "header": "SALA DE MÁQUINAS • PILHA TECNOLÓGICA • ATIVO",
+    "coreTitle": "SISTEMAS TECNOLÓGICOS PRINCIPAIS",
+    "description": "Expertise abrangente em IA, Infraestrutura Cloud, Desenvolvimento e DevOps. Prontos para arquitetar e construir soluções escaláveis para seu negócio.",
+    "deployedTechnologies": "TECNOLOGIAS IMPLANTADAS",
+    "techSummary": "33+ tecnologias • Pronto para produção • Alta disponibilidade",
+    "systemStatus": "STATUS DO SISTEMA: TUDO OPERACIONAL",
+    "readyForDeployment": "PRONTO PARA IMPLANTAÇÃO"
+  },
+  "featuredProjects": {
+    "title": "🚀 Projetos em Destaque",
+    "subtitle": "Implementações reais de IA resolvendo desafios empresariais complexos. Da transparência governamental à automação empresarial.",
+    "cidadao": {
+      "title": "🇧🇷 Cidadão.AI - Plataforma de Transparência",
+      "description": "Sistema multi-agente de IA para análise de transparência governamental usando personas culturais brasileiras",
+      "status": "Produção",
+      "highlight1": "Agentes nomeados com figuras históricas brasileiras",
+      "highlight2": "Análise de dados governamentais em tempo real",
+      "highlight3": "Stack de monitoramento pronto para produção",
+      "highlight4": "Implementação de segurança de nível empresarial"
+    },
+    "neuralLab": {
+      "description": "Plataforma web moderna mostrando capacidades de desenvolvimento de IA com visualizações 3D",
+      "status": "Desenvolvimento",
+      "highlight1": "Visualizações 3D interativas de redes neurais",
+      "highlight2": "Sistema de layout inspirado em navio-contêiner",
+      "highlight3": "Suporte bilíngue (PT/EN)",
+      "highlight4": "Estética de engenharia moderna"
+    },
+    "enterprise": {
+      "title": "⚡ Automação IA Empresarial",
+      "description": "Soluções de IA personalizadas para automação de fluxo de trabalho e otimização de processos de negócios",
+      "status": "Consultoria",
+      "highlight1": "Automação de processamento de documentos",
+      "highlight2": "Sistemas inteligentes de tomada de decisão",
+      "highlight3": "Fine-tuning personalizado de modelos de IA",
+      "highlight4": "Conformidade de segurança empresarial"
+    },
+    "techStack": "Pilha Tecnológica:",
+    "keyHighlights": "Destaques Principais:",
+    "liveDemo": "Demo ao Vivo",
+    "sourceCode": "Código Fonte",
+    "documentation": "Documentação",
+    "projectMetrics": "Métricas do Projeto:",
+    "haveProject": "💡 Tem um Projeto em Mente?",
+    "discussProject": "Vamos discutir como podemos dar vida à sua visão de IA com o mesmo nível de excelência e inovação.",
+    "startProject": "Iniciar Seu Projeto →"
+  },
+  "techCarousel": {
+    "python": {
+      "name": "Python",
+      "description": "Backend & Desenvolvimento IA"
+    },
+    "tensorflow": {
+      "name": "TensorFlow",
+      "description": "Framework ML do Google"
+    },
+    "pytorch": {
+      "name": "PyTorch",
+      "description": "Framework Deep Learning"
+    },
+    "jupyter": {
+      "name": "Jupyter",
+      "description": "Computação Interativa"
+    },
+    "llms": {
+      "name": "LLMs",
+      "description": "Modelos de Linguagem"
+    },
+    "huggingface": {
+      "name": "HuggingFace",
+      "description": "Modelos NLP & Transformers"
+    },
+    "pandas": {
+      "name": "Pandas",
+      "description": "Biblioteca de Análise"
+    },
+    "polars": {
+      "name": "Polars",
+      "description": "DataFrame Rápido"
+    },
+    "chromadb": {
+      "name": "ChromaDB",
+      "description": "Banco de Vetores"
+    },
+    "openai": {
+      "name": "OpenAI",
+      "description": "APIs GPT & IA"
+    },
+    "langchain": {
+      "name": "Langchain",
+      "description": "Framework LLM"
+    },
+    "claude": {
+      "name": "Claude",
+      "description": "IA da Anthropic"
+    },
+    "nextjs": {
+      "name": "Next.js",
+      "description": "Framework React"
+    },
+    "react": {
+      "name": "React",
+      "description": "Biblioteca UI"
+    },
+    "typescript": {
+      "name": "TypeScript",
+      "description": "JavaScript Tipado"
+    },
+    "tailwindcss": {
+      "name": "TailwindCSS",
+      "description": "CSS Utilitário"
+    },
+    "htmlcss": {
+      "name": "HTML & CSS",
+      "description": "Fundamentos Web"
+    },
+    "fastapi": {
+      "name": "FastAPI",
+      "description": "API Python Moderna"
+    },
+    "nodejs": {
+      "name": "Node.js",
+      "description": "Runtime JavaScript"
+    },
+    "aws": {
+      "name": "AWS",
+      "description": "Infraestrutura Cloud"
+    },
+    "googlecloud": {
+      "name": "Google Cloud",
+      "description": "Serviços GCP"
+    },
+    "azure": {
+      "name": "Azure",
+      "description": "Cloud Microsoft"
+    },
+    "vercel": {
+      "name": "Vercel",
+      "description": "Plataforma de Deploy"
+    },
+    "docker": {
+      "name": "Docker",
+      "description": "Containerização"
+    },
+    "kubernetes": {
+      "name": "Kubernetes",
+      "description": "Orquestração de Containers"
+    },
+    "git": {
+      "name": "Git",
+      "description": "Controle de Versão"
+    },
+    "github": {
+      "name": "GitHub",
+      "description": "Controle de Versão & CI/CD"
+    },
+    "cicd": {
+      "name": "CI/CD",
+      "description": "Integração Contínua"
+    },
+    "ubuntu": {
+      "name": "Ubuntu",
+      "description": "Sistema Operacional Linux"
+    },
+    "prometheus": {
+      "name": "Prometheus",
+      "description": "Monitoramento & Métricas"
+    },
+    "grafana": {
+      "name": "Grafana",
+      "description": "Visualização de Dados"
+    },
+    "postgresql": {
+      "name": "PostgreSQL",
+      "description": "Banco de Dados Relacional"
+    },
+    "redis": {
+      "name": "Redis",
+      "description": "Cache em Memória"
+    },
+    "mongodb": {
+      "name": "MongoDB",
+      "description": "Banco de Dados NoSQL"
+    },
+    "clickToVisit": "🔗 Clique para visitar"
   }
 }

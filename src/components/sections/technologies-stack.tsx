@@ -3,8 +3,10 @@
 import { TechCarousel } from '@/components/ui/tech-carousel';
 import { motion } from 'framer-motion';
 import { Cpu, Activity, Zap } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 export function TechnologiesStack() {
+  const t = useTranslations('technologies');
 
   return (
     <div>
@@ -17,7 +19,7 @@ export function TechnologiesStack() {
         viewport={{ once: true }}
       >
         <Cpu className="w-3 h-3" />
-        ENGINE ROOM • TECHNOLOGY STACK • ACTIVE
+        {t('header')}
         <Activity className="w-3 h-3 animate-pulse text-green-400" />
       </motion.div>
 
@@ -28,7 +30,7 @@ export function TechnologiesStack() {
         transition={{ duration: 0.6, delay: 0.1 }}
         viewport={{ once: true }}
       >
-        CORE TECHNOLOGY SYSTEMS
+        {t('coreTitle')}
       </motion.h2>
 
       <motion.p 
@@ -38,8 +40,7 @@ export function TechnologiesStack() {
         transition={{ duration: 0.6, delay: 0.2 }}
         viewport={{ once: true }}
       >
-        Comprehensive expertise across AI, Cloud Infrastructure, Development, and DevOps. 
-        Ready to architect and build scalable solutions for your business.
+        {t('description')}
       </motion.p>
 
       {/* Industrial Carousel Container */}
@@ -56,10 +57,10 @@ export function TechnologiesStack() {
           </div>
           <div>
             <h3 className="text-lg font-black text-gray-900 dark:text-white tracking-tight uppercase">
-              DEPLOYED TECHNOLOGIES
+              {t('deployedTechnologies')}
             </h3>
             <p className="text-sm text-gray-600 dark:text-gray-400 font-mono">
-              33+ technologies • Production ready • High availability
+              {t('techSummary')}
             </p>
           </div>
         </div>
@@ -69,12 +70,12 @@ export function TechnologiesStack() {
         {/* System Status */}
         <div className="mt-6 pt-4 border-t border-gray-300 dark:border-gray-600 flex items-center justify-between">
           <div className="text-xs font-mono text-gray-600 dark:text-gray-400 uppercase tracking-wider">
-            SYSTEM STATUS: ALL OPERATIONAL
+            {t('systemStatus')}
           </div>
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
             <span className="text-xs font-mono text-green-600 dark:text-green-400 uppercase tracking-wider">
-              READY FOR DEPLOYMENT
+              {t('readyForDeployment')}
             </span>
           </div>
         </div>

@@ -4,10 +4,12 @@ import { Moon, Sun } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useTheme } from '@/contexts/theme-context';
 import { useEffect, useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 export function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const t = useTranslations('common');
 
   useEffect(() => {
     setMounted(true);
@@ -25,7 +27,7 @@ export function ThemeToggle() {
       className="relative p-2 rounded-full bg-gray-200 dark:bg-gray-700 transition-colors duration-300"
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      aria-label="Toggle theme"
+      aria-label={t('toggleTheme')}
     >
       <motion.div
         className="relative w-6 h-6"

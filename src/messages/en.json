@@ -1,9 +1,25 @@
 {
+  "common": {
+    "brandName": "Neural LAB",
+    "email": "contact@neural-lab.com",
+    "phone": "+55 (31) 9999-9999",
+    "loading": "Loading...",
+    "send": "Send",
+    "sending": "Sending...",
+    "close": "Close",
+    "open": "Open",
+    "toggleTheme": "Toggle theme",
+    "openMenu": "Open main menu",
+    "language": {
+      "pt": "PT",
+      "en": "EN"
+    }
+  },
   "nav": {
     "about": "About",
     "services": "Services",
     "portfolio": "Portfolio",
-    "contact": "Our Team",
+    "contact": "Contact",
     "cta": "Get in Touch"
   },
   "hero": {
@@ -12,7 +28,8 @@
     "cta": {
       "primary": "Start Project",
       "secondary": "Let's Talk"
-    }
+    },
+    "status": "COMMAND BRIDGE • NEURAL LAB SYSTEMS • ONLINE"
   },
   "services": {
     "title": "How we can help",
@@ -32,6 +49,30 @@
       "feature2": "Scalable full-stack development",
       "feature3": "User experience design",
       "feature4": "Cloud infrastructure and DevOps"
+    },
+    "engineering": {
+      "feature1": "Scalable system architecture",
+      "feature2": "Custom model development",
+      "feature3": "API and service integration",
+      "feature4": "Performance optimization"
+    },
+    "mlops": {
+      "feature1": "Automated CI/CD pipelines",
+      "feature2": "Monitoring and observability",
+      "feature3": "Data and model versioning",
+      "feature4": "Cloud infrastructure"
+    },
+    "organic": {
+      "feature1": "Advanced RAG systems",
+      "feature2": "Autonomous intelligent agents",
+      "feature3": "Evaluation frameworks",
+      "feature4": "Specialized fine-tuning"
+    },
+    "consulting": {
+      "feature1": "AI maturity assessment",
+      "feature2": "Strategic roadmap",
+      "feature3": "ROI analysis",
+      "feature4": "Team training"
     }
   },
   "cases": {
@@ -84,7 +125,7 @@
   "about": {
     "title": "Our Story",
     "paragraph1": "Neural LAB was born from frustration with traditional agencies that treat AI projects like commodities. We've seen too many projects fail not due to lack of technology, but lack of true understanding of client needs.",
-    "paragraph2": "Based in Belo Horizonte, in the heart of Minas Gerais mountains, we combine the solidity of Brazilian engineering with modern artificial intelligence innovation. Our approach is different: we're not just suppliers, we're partners.",
+    "paragraph2": "Based in Muzambinho, in the heart of Minas Gerais mountains, we combine the solidity of Brazilian engineering with modern artificial intelligence innovation. Our approach is different: we're not just suppliers, we're partners.",
     "paragraph3": "Each project is an opportunity to create something truly unique. We work side by side with our clients, deeply understanding their challenges and objectives before writing the first line of code.",
     "paragraph4": "If you're looking for a true partnership to transform your vision into reality, let's talk. We're here to build the future, one project at a time.",
     "approach": {
@@ -111,11 +152,19 @@
     "title": "Let's Talk",
     "subtitle": "Ready to transform your vision into reality?",
     "form": {
+      "title": "Send a message",
       "name": "Name",
       "email": "Email",
       "company": "Company",
       "message": "Tell us about your project",
-      "submit": "Send Message"
+      "submit": "Send Message",
+      "success": "Message sent successfully! We'll get in touch soon.",
+      "error": "An error occurred while sending your message. Please try again.",
+      "validation": {
+        "nameMin": "Name must be at least 2 characters",
+        "emailInvalid": "Invalid email",
+        "messageMin": "Message must be at least 10 characters"
+      }
     }
   },
   "footer": {
@@ -124,7 +173,7 @@
     "navServices": "Services",
     "navPortfolio": "Portfolio",
     "navAbout": "About",
-    "navContact": "Our Team",
+    "navContact": "Contact",
     "solutions": "Solutions",
     "solution1": "AI Engineering",
     "solution2": "MLOps Systems",
@@ -137,9 +186,48 @@
     "terms": "Terms of Use"
   },
   "chat": {
+    "title": "Neural LAB AI",
     "welcome": "Hello! I'm Neural LAB's AI. How can I help you today? 🤖",
     "placeholder": "Type your message...",
-    "online": "Always online"
+    "online": "Always online",
+    "responses": {
+      "services": "I understand your question! At Neural LAB, we develop custom AI solutions for businesses. What kind of project do you have in mind?",
+      "capabilities": "Great question! Our services include chatbot development, AI data analysis, and process automation. Would you like to know more about any specific one?",
+      "interest": "We're happy about your interest! We can schedule a conversation to discuss how AI can transform your business. What's the best time for you?",
+      "experience": "Excellent! We have experience in various sectors. Tell me more about your company and the challenges you face.",
+      "contact": "Perfect! Our team is ready to help. How about scheduling a call to better understand your needs?"
+    }
+  },
+  "projects": {
+    "neuralLab": {
+      "title": "🧠 Neural LAB - AI Development Studio"
+    }
+  },
+  "team": {
+    "computerScience": "COMPUTER SCIENCE & AI",
+    "andersonAlt": "Anderson Henrique - CEO",
+    "header": "CREW QUARTERS • ENGINEERING STAFF • ACTIVE",
+    "chiefOfficer": "CHIEF ENGINEERING OFFICER",
+    "andersonName": "ANDERSON HENRIQUE",
+    "role": "FOUNDER & CEO",
+    "location": "MINAS GERAIS, BRASIL 🇧🇷",
+    "coreSystems": "CORE SYSTEMS",
+    "aiEngineering": "AI ENGINEERING",
+    "aiEngineeringDesc": "LLMs • TRANSFORMERS • MLOPS",
+    "systemArchitecture": "SYSTEM ARCHITECTURE",
+    "systemArchitectureDesc": "DISTRIBUTED • HIGH PERFORMANCE",
+    "fullstackDev": "FULL-STACK DEV",
+    "fullstackDevDesc": "ENTERPRISE APPLICATIONS",
+    "dataScience": "DATA SCIENCE",
+    "dataScienceDesc": "ML • ANALYTICS • INSIGHTS",
+    "missionLog": "MISSION LOG",
+    "neuralLabFoundation": "NEURAL LAB FOUNDATION",
+    "neuralLabFoundationDesc": "AI research laboratory • High-level technology and science",
+    "cidadaoDeployment": "CIDADÃO.AI DEPLOYMENT",
+    "cidadaoDeploymentDesc": "Multi-agent AI system • 17+ specialized agents • Public transparency",
+    "missionStatement": "MISSION STATEMENT",
+    "missionQuote": "Building AI systems that solve real-world problems with technical excellence, ethical responsibility, and measurable impact.",
+    "missionAuthor": "— ANDERSON HENRIQUE, NEURAL LAB CEO"
   },
   "anderson": {
     "title": "AI Systems Engineer",
@@ -165,5 +253,203 @@
       "title": "AI Journey Beginning",
       "description": "Started formal studies in Computer Science with specialization in Artificial Intelligence and Machine Learning."
     }
+  },
+  "servicesOverview": {
+    "header": "SERVICE BAY • ENGINEERING SOLUTIONS • OPERATIONAL",
+    "engineeringServices": "ENGINEERING SERVICES",
+    "technicalSpecs": "TECHNICAL SPECS:",
+    "statusActive": "STATUS: ACTIVE",
+    "operational": "OPERATIONAL",
+    "readyToDeploy": "READY TO DEPLOY",
+    "initiateProject": "INITIATE PROJECT PROTOCOL",
+    "projectContact": "Contact us to discuss your AI project. Free technical analysis and detailed proposal within 48 hours.",
+    "contactEngineering": "CONTACT ENGINEERING"
+  },
+  "technologies": {
+    "header": "ENGINE ROOM • TECHNOLOGY STACK • ACTIVE",
+    "coreTitle": "CORE TECHNOLOGY SYSTEMS",
+    "description": "Comprehensive expertise across AI, Cloud Infrastructure, Development, and DevOps. Ready to architect and build scalable solutions for your business.",
+    "deployedTechnologies": "DEPLOYED TECHNOLOGIES",
+    "techSummary": "33+ technologies • Production ready • High availability",
+    "systemStatus": "SYSTEM STATUS: ALL OPERATIONAL",
+    "readyForDeployment": "READY FOR DEPLOYMENT"
+  },
+  "featuredProjects": {
+    "title": "🚀 Featured Projects",
+    "subtitle": "Real-world AI implementations solving complex business challenges. From government transparency to enterprise automation.",
+    "cidadao": {
+      "title": "🇧🇷 Cidadão.AI - Transparency Platform",
+      "description": "Multi-agent AI system for government transparency analysis using Brazilian cultural personas",
+      "status": "Production",
+      "highlight1": "Named agents after Brazilian historical figures",
+      "highlight2": "Real-time government data analysis",
+      "highlight3": "Production-ready monitoring stack",
+      "highlight4": "Enterprise-grade security implementation"
+    },
+    "neuralLab": {
+      "description": "Modern web platform showcasing AI development capabilities with 3D visualizations",
+      "status": "Development",
+      "highlight1": "Interactive 3D neural network visualizations",
+      "highlight2": "Container-ship inspired layout system",
+      "highlight3": "Bilingual support (PT/EN)",
+      "highlight4": "Modern engineering aesthetics"
+    },
+    "enterprise": {
+      "title": "⚡ Enterprise AI Automation",
+      "description": "Custom AI solutions for workflow automation and business process optimization",
+      "status": "Consulting",
+      "highlight1": "Document processing automation",
+      "highlight2": "Intelligent decision making systems",
+      "highlight3": "Custom AI model fine-tuning",
+      "highlight4": "Enterprise security compliance"
+    },
+    "techStack": "Technology Stack:",
+    "keyHighlights": "Key Highlights:",
+    "liveDemo": "Live Demo",
+    "sourceCode": "Source Code",
+    "documentation": "Documentation",
+    "projectMetrics": "Project Metrics:",
+    "haveProject": "💡 Have a Project in Mind?",
+    "discussProject": "Let's discuss how we can bring your AI vision to life with the same level of excellence and innovation.",
+    "startProject": "Start Your Project →"
+  },
+  "techCarousel": {
+    "python": {
+      "name": "Python",
+      "description": "Backend & AI Development"
+    },
+    "tensorflow": {
+      "name": "TensorFlow",
+      "description": "ML Framework by Google"
+    },
+    "pytorch": {
+      "name": "PyTorch",
+      "description": "Deep Learning Framework"
+    },
+    "jupyter": {
+      "name": "Jupyter",
+      "description": "Interactive Computing"
+    },
+    "llms": {
+      "name": "LLMs",
+      "description": "Large Language Models"
+    },
+    "huggingface": {
+      "name": "HuggingFace",
+      "description": "NLP Models & Transformers"
+    },
+    "pandas": {
+      "name": "Pandas",
+      "description": "Data Analysis Library"
+    },
+    "polars": {
+      "name": "Polars",
+      "description": "Fast DataFrame Library"
+    },
+    "chromadb": {
+      "name": "ChromaDB",
+      "description": "Vector Database"
+    },
+    "openai": {
+      "name": "OpenAI",
+      "description": "GPT & AI APIs"
+    },
+    "langchain": {
+      "name": "Langchain",
+      "description": "LLM Framework"
+    },
+    "claude": {
+      "name": "Claude",
+      "description": "Anthropic AI"
+    },
+    "nextjs": {
+      "name": "Next.js",
+      "description": "React Framework"
+    },
+    "react": {
+      "name": "React",
+      "description": "UI Library"
+    },
+    "typescript": {
+      "name": "TypeScript",
+      "description": "Type-safe JavaScript"
+    },
+    "tailwindcss": {
+      "name": "TailwindCSS",
+      "description": "Utility-first CSS"
+    },
+    "htmlcss": {
+      "name": "HTML & CSS",
+      "description": "Web Fundamentals"
+    },
+    "fastapi": {
+      "name": "FastAPI",
+      "description": "Modern Python API"
+    },
+    "nodejs": {
+      "name": "Node.js",
+      "description": "JavaScript Runtime"
+    },
+    "aws": {
+      "name": "AWS",
+      "description": "Cloud Infrastructure"
+    },
+    "googlecloud": {
+      "name": "Google Cloud",
+      "description": "GCP Services"
+    },
+    "azure": {
+      "name": "Azure",
+      "description": "Microsoft Cloud"
+    },
+    "vercel": {
+      "name": "Vercel",
+      "description": "Deployment Platform"
+    },
+    "docker": {
+      "name": "Docker",
+      "description": "Containerization"
+    },
+    "kubernetes": {
+      "name": "Kubernetes",
+      "description": "Container Orchestration"
+    },
+    "git": {
+      "name": "Git",
+      "description": "Version Control System"
+    },
+    "github": {
+      "name": "GitHub",
+      "description": "Version Control & CI/CD"
+    },
+    "cicd": {
+      "name": "CI/CD",
+      "description": "Continuous Integration"
+    },
+    "ubuntu": {
+      "name": "Ubuntu",
+      "description": "Linux Operating System"
+    },
+    "prometheus": {
+      "name": "Prometheus",
+      "description": "Monitoring & Metrics"
+    },
+    "grafana": {
+      "name": "Grafana",
+      "description": "Data Visualization"
+    },
+    "postgresql": {
+      "name": "PostgreSQL",
+      "description": "Relational Database"
+    },
+    "redis": {
+      "name": "Redis",
+      "description": "In-memory Cache"
+    },
+    "mongodb": {
+      "name": "MongoDB",
+      "description": "NoSQL Database"
+    },
+    "clickToVisit": "🔗 Click to visit"
   }
 }

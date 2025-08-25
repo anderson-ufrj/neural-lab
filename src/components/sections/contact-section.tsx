@@ -10,7 +10,9 @@ import { TextReveal } from '@/components/ui/text-reveal';
 import { BreathingCard } from '@/components/ui/breathing-card';
 
 export function ContactSection() {
-  const t = useTranslations('contact'); const tFooter = useTranslations('footer');
+  const t = useTranslations('contact'); 
+  const tFooter = useTranslations('footer');
+  const tCommon = useTranslations('common');
   
   return (
     <section id="contact" className="py-20 relative overflow-hidden">
@@ -102,7 +104,7 @@ export function ContactSection() {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-white">Email</h3>
-                  <p className="text-gray-400">contato@neural-lab.com</p>
+                  <p className="text-gray-400">{tCommon('email')}</p>
                 </div>
               </div>
             </div>
@@ -116,7 +118,7 @@ export function ContactSection() {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-white">Telefone</h3>
-                  <p className="text-gray-400">+55 (31) 9999-9999</p>
+                  <p className="text-gray-400">{tCommon('phone')}</p>
                 </div>
               </div>
             </div>
