@@ -3,15 +3,15 @@
 import { sendGAEvent } from '@next/third-parties/google';
 
 export function useAnalytics() {
-  const trackEvent = (eventName: string, parameters?: Record<string, any>) => {
-    if (typeof window !== 'undefined' && window.gtag) {
+  const trackEvent = (eventName: string, parameters?: Record<string, unknown>) => {
+    if (typeof window !== 'undefined' && (window as any).gtag) {
       sendGAEvent('event', eventName, parameters);
     }
   };
 
   const trackPageView = (url: string) => {
-    if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('config', process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID!, {
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('config', process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID!, {
         page_path: url,
       });
     }

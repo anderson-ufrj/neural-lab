@@ -1,4 +1,3 @@
-import type { Metadata } from 'next';
 import { Navbar } from '@/components/shared/navbar';
 import { HeroSection } from '@/components/sections/hero-section';
 import { TechnologiesStack } from '@/components/sections/technologies-stack';

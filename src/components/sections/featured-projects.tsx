@@ -1,7 +1,7 @@
 'use client';
 
 import { ContainerCard } from '@/components/ui/container-card';
-import { ExternalLink, Github, Play, Info, Zap, Users, Brain } from 'lucide-react';
+import { ExternalLink, Github, Play, Info, Users, Brain } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useLocale } from 'next-intl';
 import Link from 'next/link';
