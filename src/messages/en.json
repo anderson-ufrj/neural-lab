@@ -294,6 +294,15 @@
       "highlight3": "Bilingual support (PT/EN)",
       "highlight4": "Modern engineering aesthetics"
     },
+    "aleAssistant": {
+      "title": "⚡ Alê Assistant - Productivity Assistant",
+      "description": "Intelligent assistant that maximizes productivity through conversational AI, integrating naturally with existing workflows",
+      "status": "Production",
+      "highlight1": "Natural conversational interface with GPT-4",
+      "highlight2": "Smart task and priority management",
+      "highlight3": "Integration with popular tools",
+      "highlight4": "Personal analytics and productivity insights"
+    },
     "enterprise": {
       "title": "⚡ Enterprise AI Automation",
       "description": "Custom AI solutions for workflow automation and business process optimization",
@@ -311,7 +320,8 @@
     "projectMetrics": "Project Metrics:",
     "haveProject": "💡 Have a Project in Mind?",
     "discussProject": "Let's discuss how we can bring your AI vision to life with the same level of excellence and innovation.",
-    "startProject": "Start Your Project →"
+    "startProject": "Start Your Project →",
+    "viewDetails": "View Details"
   },
   "techCarousel": {
     "python": {

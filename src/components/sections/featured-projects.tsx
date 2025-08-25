@@ -1,11 +1,14 @@
 'use client';
 
 import { ContainerCard } from '@/components/ui/container-card';
-import { ExternalLink, Github, Play } from 'lucide-react';
+import { ExternalLink, Github, Play, Info } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import { useLocale } from 'next-intl';
+import Link from 'next/link';
 
 export function FeaturedProjects() {
   const t = useTranslations('featuredProjects');
+  const locale = useLocale();
 
   const projects = [
     {
@@ -29,7 +32,31 @@ export function FeaturedProjects() {
       links: {
         live: "https://neural-thinker-cidadao-ai-backend.hf.space/",
         github: "https://github.com/anderson-ufrj/cidadao.ai-backend",
-        docs: "https://anderson-ufrj.github.io/cidadao.ai-docs/"
+        docs: "https://anderson-ufrj.github.io/cidadao.ai-docs/",
+        details: `/projects/cidadao-ai`
+      }
+    },
+    {
+      id: "ale-assistant",
+      title: t('aleAssistant.title'),
+      description: t('aleAssistant.description'),
+      status: t('aleAssistant.status'),
+      tech: ["Next.js", "GPT-4", "TypeScript", "Vercel AI SDK", "Supabase"],
+      metrics: {
+        productivity: "60% Increase",
+        response: "<2s Response",
+        satisfaction: "95% Satisfaction",
+        integrations: "10+ Tools"
+      },
+      highlights: [
+        t('aleAssistant.highlight1'),
+        t('aleAssistant.highlight2'),
+        t('aleAssistant.highlight3'),
+        t('aleAssistant.highlight4')
+      ],
+      links: {
+        live: `https://ale-assistant.vercel.app/${locale}`,
+        details: `/projects/ale-assistant`
       }
     },
     {
@@ -81,9 +108,12 @@ export function FeaturedProjects() {
 
   const getStatusColor = (status: string) => {
     switch (status) {
-      case 'Production': return 'text-green-700 bg-green-100 dark:bg-green-900/30';
-      case 'Development': return 'text-blue-700 bg-blue-100 dark:bg-blue-900/30';
-      case 'Consulting': return 'text-purple-700 bg-purple-100 dark:bg-purple-900/30';
+      case 'Production':
+      case 'Produção': return 'text-green-700 bg-green-100 dark:bg-green-900/30';
+      case 'Development':
+      case 'Desenvolvimento': return 'text-blue-700 bg-blue-100 dark:bg-blue-900/30';
+      case 'Consulting':
+      case 'Consultoria': return 'text-purple-700 bg-purple-100 dark:bg-purple-900/30';
       default: return 'text-gray-700 bg-gray-100 dark:bg-gray-900/30';
     }
   };
@@ -199,6 +229,15 @@ export function FeaturedProjects() {
                         <Play className="w-4 h-4 mr-2" />
                         {t('documentation')}
                       </a>
+                    )}
+                    {project.links.details && (
+                      <Link
+                        href={`/${locale}${project.links.details}`}
+                        className="inline-flex items-center px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors text-sm"
+                      >
+                        <Info className="w-4 h-4 mr-2" />
+                        {t('viewDetails')}
+                      </Link>
                     )}
                   </div>
                 </div>

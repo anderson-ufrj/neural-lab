@@ -294,6 +294,15 @@
       "highlight3": "Suporte bilíngue (PT/EN)",
       "highlight4": "Estética de engenharia moderna"
     },
+    "aleAssistant": {
+      "title": "⚡ Alê Assistant - Assistente de Produtividade",
+      "description": "Assistente inteligente que maximiza a produtividade através de IA conversacional, integrando-se naturalmente aos fluxos de trabalho",
+      "status": "Produção",
+      "highlight1": "Interface conversacional natural com GPT-4",
+      "highlight2": "Gestão inteligente de tarefas e prioridades",
+      "highlight3": "Integração com ferramentas populares",
+      "highlight4": "Analytics pessoal e insights de produtividade"
+    },
     "enterprise": {
       "title": "⚡ Automação IA Empresarial",
       "description": "Soluções de IA personalizadas para automação de fluxo de trabalho e otimização de processos de negócios",
@@ -311,7 +320,8 @@
     "projectMetrics": "Métricas do Projeto:",
     "haveProject": "💡 Tem um Projeto em Mente?",
     "discussProject": "Vamos discutir como podemos dar vida à sua visão de IA com o mesmo nível de excelência e inovação.",
-    "startProject": "Iniciar Seu Projeto →"
+    "startProject": "Iniciar Seu Projeto →",
+    "viewDetails": "Ver Detalhes"
   },
   "techCarousel": {
     "python": {
