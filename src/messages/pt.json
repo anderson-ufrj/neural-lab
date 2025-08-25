@@ -304,16 +304,16 @@
     "readyForDeployment": "PRONTO PARA IMPLANTAÇÃO"
   },
   "featuredProjects": {
-    "title": "🚀 Projetos em Destaque",
-    "subtitle": "Implementações reais de IA resolvendo desafios empresariais complexos. Da transparência governamental à automação empresarial.",
+    "title": "Portfolio",
+    "subtitle": "Projetos no ar. Resultado de trabalho e algumas ideias boas.",
     "cidadao": {
-      "title": "🇧🇷 Cidadão.AI - Plataforma de Transparência",
-      "description": "Sistema multi-agente de IA para análise de transparência governamental usando personas culturais brasileiras",
+      "title": "🇧🇷 Cidadão.AI",
+      "description": "Transparência pública com IA",
       "status": "Produção",
-      "highlight1": "Agentes nomeados com figuras históricas brasileiras",
-      "highlight2": "Análise de dados governamentais em tempo real",
-      "highlight3": "Stack de monitoramento pronto para produção",
-      "highlight4": "Implementação de segurança de nível empresarial"
+      "highlight1": "Agentes com personalidades históricas",
+      "highlight2": "Análise de dados públicos",
+      "highlight3": "Sistema robusto",
+      "highlight4": "Segurança empresarial"
     },
     "neuralLab": {
       "description": "Plataforma web moderna mostrando capacidades de desenvolvimento de IA com visualizações 3D",
@@ -324,33 +324,33 @@
       "highlight4": "Estética de engenharia moderna"
     },
     "aleAssistant": {
-      "title": "⚡ Alê Assistant - Assistente de Produtividade",
-      "description": "Assistente inteligente que maximiza a produtividade através de IA conversacional, integrando-se naturalmente aos fluxos de trabalho",
+      "title": "⚡ Alê Assistant",
+      "description": "Assistente pessoal que funciona",
       "status": "Produção",
-      "highlight1": "Interface conversacional natural com GPT-4",
-      "highlight2": "Gestão inteligente de tarefas e prioridades",
-      "highlight3": "Integração com ferramentas populares",
-      "highlight4": "Analytics pessoal e insights de produtividade"
+      "highlight1": "Conversa natural",
+      "highlight2": "Organiza suas tarefas",
+      "highlight3": "Se conecta com tudo",
+      "highlight4": "Mostra seus resultados"
     },
     "enterprise": {
-      "title": "⚡ Automação IA Empresarial",
-      "description": "Soluções de IA personalizadas para automação de fluxo de trabalho e otimização de processos de negócios",
+      "title": "⚡ Projetos Empresariais",
+      "description": "Soluções sob medida",
       "status": "Consultoria",
-      "highlight1": "Automação de processamento de documentos",
-      "highlight2": "Sistemas inteligentes de tomada de decisão",
-      "highlight3": "Fine-tuning personalizado de modelos de IA",
-      "highlight4": "Conformidade de segurança empresarial"
+      "highlight1": "Entendemos seu processo",
+      "highlight2": "Criamos a solução",
+      "highlight3": "Automatizamos o que faz sentido",
+      "highlight4": "Integra com o que existe"
     },
-    "techStack": "Pilha Tecnológica:",
-    "keyHighlights": "Destaques Principais:",
-    "liveDemo": "Demo ao Vivo",
-    "sourceCode": "Código Fonte",
-    "documentation": "Documentação",
-    "projectMetrics": "Métricas do Projeto:",
-    "haveProject": "💡 Tem um Projeto em Mente?",
-    "discussProject": "Vamos discutir como podemos dar vida à sua visão de IA com o mesmo nível de excelência e inovação.",
-    "startProject": "Iniciar Seu Projeto →",
-    "viewDetails": "Ver Detalhes"
+    "techStack": "Stack:",
+    "keyHighlights": "Highlights:",
+    "liveDemo": "Ver Live",
+    "sourceCode": "Código",
+    "documentation": "Docs",
+    "projectMetrics": "Números:",
+    "haveProject": "Tem uma ideia?",
+    "discussProject": "Vamos conversar.",
+    "startProject": "Bora",
+    "viewDetails": "Ver Mais"
   },
   "techCarousel": {
     "python": {

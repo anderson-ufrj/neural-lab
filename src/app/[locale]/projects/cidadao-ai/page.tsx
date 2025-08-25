@@ -37,7 +37,7 @@ export default function CidadaoAIPage({ params }: { params: { locale: string } }
               🇧🇷 Cidadão.AI
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300 mb-6">
-              Plataforma de Transparência Governamental com Inteligência Artificial
+              Transparência pública na prática
             </p>
             
             {/* Quick stats */}
@@ -94,13 +94,11 @@ export default function CidadaoAIPage({ params }: { params: { locale: string } }
             <div className="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Sobre o Projeto</h2>
               <p className="text-gray-600 dark:text-gray-300 mb-4">
-                O Cidadão.AI é o primeiro sistema multi-agente de IA do Brasil para transparência governamental. 
-                Utilizamos personas culturais brasileiras para criar agentes especializados que analisam dados públicos 
-                e facilitam o acesso à informação.
+                Sistema multi-agente que analisa dados públicos usando personalidades da história do Brasil. 
+                Zumbi detecta anomalias, Anita analisa dados, Tiradentes gera relatórios.
               </p>
               <p className="text-gray-600 dark:text-gray-300">
-                Cada agente é inspirado em figuras históricas brasileiras, como Zumbi dos Palmares (detector de anomalias), 
-                Anita Garibaldi (analista de dados) e Tiradentes (gerador de relatórios).
+                Está funcionando. Pode testar.
               </p>
             </div>
 

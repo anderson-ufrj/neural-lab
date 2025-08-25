@@ -304,53 +304,54 @@
     "readyForDeployment": "READY FOR DEPLOYMENT"
   },
   "featuredProjects": {
-    "title": "🚀 Featured Projects",
-    "subtitle": "Real-world AI implementations solving complex business challenges. From government transparency to enterprise automation.",
+    "title": "Portfolio",
+    "subtitle": "Live projects. Result of hard work and some good ideas.",
     "cidadao": {
-      "title": "🇧🇷 Cidadão.AI - Transparency Platform",
-      "description": "Multi-agent AI system for government transparency analysis using Brazilian cultural personas",
+      "title": "🇧🇷 Cidadão.AI",
+      "description": "Public transparency with AI",
       "status": "Production",
-      "highlight1": "Named agents after Brazilian historical figures",
-      "highlight2": "Real-time government data analysis",
-      "highlight3": "Production-ready monitoring stack",
-      "highlight4": "Enterprise-grade security implementation"
+      "highlight1": "Agents with historical personalities",
+      "highlight2": "Public data analysis",
+      "highlight3": "Robust system",
+      "highlight4": "Enterprise security"
     },
     "neuralLab": {
-      "description": "Modern web platform showcasing AI development capabilities with 3D visualizations",
-      "status": "Development",
-      "highlight1": "Interactive 3D neural network visualizations",
-      "highlight2": "Container-ship inspired layout system",
-      "highlight3": "Bilingual support (PT/EN)",
-      "highlight4": "Modern engineering aesthetics"
+      "title": "🧠 Neural LAB",
+      "description": "This website. Meta, right?",
+      "status": "You're here",
+      "highlight1": "3D neural networks",
+      "highlight2": "Layout that works",
+      "highlight3": "Portuguese and English",
+      "highlight4": "Actually fast"
     },
     "aleAssistant": {
-      "title": "⚡ Alê Assistant - Productivity Assistant",
-      "description": "Intelligent assistant that maximizes productivity through conversational AI, integrating naturally with existing workflows",
+      "title": "⚡ Alê Assistant",
+      "description": "Personal assistant that works",
       "status": "Production",
-      "highlight1": "Natural conversational interface with GPT-4",
-      "highlight2": "Smart task and priority management",
-      "highlight3": "Integration with popular tools",
-      "highlight4": "Personal analytics and productivity insights"
+      "highlight1": "Natural conversation",
+      "highlight2": "Organizes your tasks",
+      "highlight3": "Connects with everything",
+      "highlight4": "Shows your results"
     },
     "enterprise": {
-      "title": "⚡ Enterprise AI Automation",
-      "description": "Custom AI solutions for workflow automation and business process optimization",
+      "title": "⚡ Enterprise Projects",
+      "description": "Custom solutions for companies",
       "status": "Consulting",
-      "highlight1": "Document processing automation",
-      "highlight2": "Intelligent decision making systems",
-      "highlight3": "Custom AI model fine-tuning",
-      "highlight4": "Enterprise security compliance"
+      "highlight1": "We understand your process",
+      "highlight2": "We create the solution",
+      "highlight3": "We automate what makes sense",
+      "highlight4": "Integrates with what exists"
     },
-    "techStack": "Technology Stack:",
-    "keyHighlights": "Key Highlights:",
-    "liveDemo": "Live Demo",
-    "sourceCode": "Source Code",
-    "documentation": "Documentation",
-    "projectMetrics": "Project Metrics:",
-    "haveProject": "💡 Have a Project in Mind?",
-    "discussProject": "Let's discuss how we can bring your AI vision to life with the same level of excellence and innovation.",
-    "startProject": "Start Your Project →",
-    "viewDetails": "View Details"
+    "techStack": "Stack:",
+    "keyHighlights": "Highlights:",
+    "liveDemo": "See Live",
+    "sourceCode": "Code",
+    "documentation": "Docs",
+    "projectMetrics": "Numbers:",
+    "haveProject": "Got an idea?",
+    "discussProject": "Let's talk.",
+    "startProject": "Let's go",
+    "viewDetails": "See More"
   },
   "techCarousel": {
     "python": {

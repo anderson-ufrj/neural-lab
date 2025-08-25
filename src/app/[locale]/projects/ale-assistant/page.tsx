@@ -40,8 +40,8 @@ export default function AleAssistantPage({ params }: { params: { locale: string 
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300 mb-6">
               {isPortuguese 
-                ? 'Assistente de Produtividade Pessoal com Inteligência Artificial'
-                : 'Personal Productivity Assistant with Artificial Intelligence'}
+                ? 'Assistente pessoal que funciona'
+                : 'Personal assistant that works'}
             </p>
             
             {/* Quick stats */}
@@ -99,13 +99,13 @@ export default function AleAssistantPage({ params }: { params: { locale: string 
               </h2>
               <p className="text-gray-600 dark:text-gray-300 mb-4">
                 {isPortuguese 
-                  ? 'O Alê Assistant é um assistente de produtividade pessoal que utiliza IA conversacional avançada para ajudar profissionais a maximizar sua eficiência no dia a dia.'
-                  : 'Alê Assistant is a personal productivity assistant that uses advanced conversational AI to help professionals maximize their daily efficiency.'}
+                  ? 'Conversa natural, organiza tarefas, se conecta com suas ferramentas. Simples assim.'
+                  : 'Natural conversation, organizes tasks, connects with your tools. Simple as that.'}
               </p>
               <p className="text-gray-600 dark:text-gray-300">
                 {isPortuguese
-                  ? 'Com integração natural aos fluxos de trabalho existentes, o Alê aprende com suas preferências e oferece sugestões personalizadas para otimizar suas tarefas.'
-                  : 'With natural integration into existing workflows, Alê learns from your preferences and offers personalized suggestions to optimize your tasks.'}
+                  ? 'Pode testar no link acima.'
+                  : 'You can test it in the link above.'}
               </p>
             </div>
 
