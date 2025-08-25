@@ -3,6 +3,7 @@ import { Navbar } from '@/components/shared/navbar';
 import { HeroSection } from '@/components/sections/hero-section';
 import { TechnologiesStack } from '@/components/sections/technologies-stack';
 import { ServicesOverview } from '@/components/sections/services-overview';
+import { FeaturedProjects } from '@/components/sections/featured-projects';
 import { TeamSection } from '@/components/sections/team-section';
 import { Footer } from '@/components/shared/footer';
 import { ContainerSection } from '@/components/layout/container-section';
@@ -28,6 +29,11 @@ export default function HomePage() {
           {/* Services Container - Service Bay */}
           <ContainerSection variant="neutral" size="large">
             <ServicesOverview />
+          </ContainerSection>
+          
+          {/* Portfolio Container - Project Gallery */}
+          <ContainerSection variant="primary" size="large" id="portfolio">
+            <FeaturedProjects />
           </ContainerSection>
           
           {/* Team Container - Crew Quarters */}
