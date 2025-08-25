@@ -1,7 +1,7 @@
 'use client';
 
 import { ContainerCard } from '@/components/ui/container-card';
-import { ExternalLink, Github, Play, Info } from 'lucide-react';
+import { ExternalLink, Github, Play, Info, Zap, Users, Brain } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useLocale } from 'next-intl';
 import Link from 'next/link';
@@ -18,13 +18,15 @@ export function FeaturedProjects() {
       title: t('cidadao.title'),
       description: t('cidadao.description'),
       status: t('cidadao.status'),
+      color: "blue",
+      icon: <Users className="w-6 h-6" />,
       tech: ["Python", "FastAPI", "HuggingFace", "Multi-Agent", "Grafana", "Docker"],
-      metrics: {
-        agents: "15+ AI Agents",
-        apis: "Multiple Gov APIs", 
-        deployment: "HF Spaces",
-        monitoring: "Full Observability"
-      },
+      metrics: [
+        { label: "Agentes IA", value: "17+" },
+        { label: "APIs Gov", value: "Multiple" },
+        { label: "Deploy", value: "HF Spaces" },
+        { label: "Monitoring", value: "Full Stack" }
+      ],
       highlights: [
         t('cidadao.highlight1'),
         t('cidadao.highlight2'),
@@ -43,13 +45,15 @@ export function FeaturedProjects() {
       title: t('aleAssistant.title'),
       description: t('aleAssistant.description'),
       status: t('aleAssistant.status'),
+      color: "purple",
+      icon: <Brain className="w-6 h-6" />,
       tech: ["Next.js", "GPT-4", "TypeScript", "Vercel AI SDK", "Supabase"],
-      metrics: {
-        productivity: "60% Increase",
-        response: "<2s Response",
-        satisfaction: "95% Satisfaction",
-        integrations: "10+ Tools"
-      },
+      metrics: [
+        { label: "Produtividade", value: "60%" },
+        { label: "Resposta", value: "<2s" },
+        { label: "Satisfação", value: "95%" },
+        { label: "Integrações", value: "10+" }
+      ],
       highlights: [
         t('aleAssistant.highlight1'),
         t('aleAssistant.highlight2'),
@@ -60,231 +64,203 @@ export function FeaturedProjects() {
         live: `https://ale-assistant.vercel.app/${locale}`,
         details: `/projects/ale-assistant`
       }
-    },
-    {
-      id: "neural-lab",
-      title: t('neuralLab.title'),
-      description: t('neuralLab.description'),
-      status: t('neuralLab.status'),
-      tech: ["Next.js", "Three.js", "TypeScript", "TailwindCSS", "Framer Motion"],
-      metrics: {
-        components: "50+ Components",
-        animations: "3D Neural Networks",
-        performance: "Optimized SSR",
-        responsive: "Mobile First"
-      },
-      highlights: [
-        t('neuralLab.highlight1'),
-        t('neuralLab.highlight2'),
-        t('neuralLab.highlight3'),
-        t('neuralLab.highlight4')
-      ],
-      links: {
-        live: "https://neural-lab.vercel.app",
-        github: "https://github.com/anderson-ufrj/neural-lab"
-      }
-    },
-    {
-      id: "ai-automation",
-      title: t('enterprise.title'),
-      description: t('enterprise.description'),
-      status: t('enterprise.status'),
-      tech: ["LangChain", "OpenAI", "Azure", "Python", "REST APIs", "Webhooks"],
-      metrics: {
-        efficiency: "70% Time Saved",
-        accuracy: "95% Automation Rate",
-        clients: "Multiple Industries",
-        integration: "Seamless APIs"
-      },
-      highlights: [
-        t('enterprise.highlight1'),
-        t('enterprise.highlight2'),
-        t('enterprise.highlight3'),
-        t('enterprise.highlight4')
-      ],
-      links: {
-        contact: "mailto:anderson@neural-lab.ai"
-      }
     }
   ];
 
-  const getStatusColor = (status: string) => {
-    switch (status) {
-      case 'Production':
-      case 'Produção': return 'text-green-700 bg-green-100 dark:bg-green-900/30';
-      case 'Development':
-      case 'Desenvolvimento': return 'text-blue-700 bg-blue-100 dark:bg-blue-900/30';
-      case 'Consulting':
-      case 'Consultoria': return 'text-purple-700 bg-purple-100 dark:bg-purple-900/30';
-      default: return 'text-gray-700 bg-gray-100 dark:bg-gray-900/30';
+  const getColorClasses = (color: string) => {
+    switch (color) {
+      case 'blue':
+        return {
+          border: 'border-blue-500',
+          text: 'text-blue-600 dark:text-blue-400',
+          bg: 'bg-blue-500',
+          button: 'bg-blue-600 hover:bg-blue-700'
+        };
+      case 'purple':
+        return {
+          border: 'border-purple-500', 
+          text: 'text-purple-600 dark:text-purple-400',
+          bg: 'bg-purple-500',
+          button: 'bg-purple-600 hover:bg-purple-700'
+        };
+      default:
+        return {
+          border: 'border-gray-500',
+          text: 'text-gray-600 dark:text-gray-400', 
+          bg: 'bg-gray-500',
+          button: 'bg-gray-600 hover:bg-gray-700'
+        };
     }
   };
 
   return (
-    <section className="py-20">
+    <section className="py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
+        {/* Header Industrial */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <div className="text-xs font-mono uppercase tracking-wider text-gray-500 mb-4">
+            PRODUTOS IMPLANTADOS • SISTEMAS OPERACIONAIS
+          </div>
+          <h2 className="text-4xl font-black text-gray-900 dark:text-white mb-4 uppercase tracking-tight">
             {t('title')}
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 font-mono max-w-2xl mx-auto">
             {t('subtitle')}
           </p>
         </div>
 
-        {/* Projects */}
+        {/* Projects Grid */}
         <div className="space-y-12">
-          {projects.map((project, index) => (
-            <ContainerCard
-              key={project.id}
-              variant={index === 0 ? 'highlighted' : 'default'}
-              size="large"
-              className="overflow-hidden"
-            >
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                {/* Main Info */}
-                <div className="lg:col-span-2">
-                  <div className="flex items-start justify-between mb-4">
-                    <div>
-                      <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+          {projects.map((project, index) => {
+            const colors = getColorClasses(project.color);
+            
+            return (
+              <ContainerCard
+                key={project.id}
+                variant={index === 0 ? 'highlighted' : 'default'}
+                size="large"
+                className="overflow-hidden"
+              >
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                  {/* Main Info */}
+                  <div className="lg:col-span-2">
+                    {/* Project Header */}
+                    <div className={`border-l-4 ${colors.border} pl-6 mb-6`}>
+                      <div className={`flex items-center gap-2 text-xs font-mono uppercase tracking-wider ${colors.text} mb-2`}>
+                        {project.icon}
+                        <span>PROJETO • {project.status.toUpperCase()}</span>
+                      </div>
+                      <h3 className="text-2xl font-black text-gray-900 dark:text-white mb-2 uppercase tracking-tight">
                         {project.title}
                       </h3>
-                      <p className="text-gray-600 dark:text-gray-300 mb-4">
+                      <p className="text-gray-600 dark:text-gray-300 font-mono">
                         {project.description}
                       </p>
                     </div>
-                    <span className={`
-                      px-3 py-1 rounded-full text-xs font-semibold shrink-0
-                      ${getStatusColor(project.status)}
-                    `}>
-                      {project.status}
-                    </span>
-                  </div>
 
-                  {/* Tech Stack */}
-                  <div className="mb-6">
-                    <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
-                      {t('techStack')}
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
-                      {project.tech.map((tech, techIndex) => (
-                        <span
-                          key={techIndex}
-                          className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm"
+                    {/* Tech Stack Industrial */}
+                    <div className="mb-6">
+                      <div className="text-xs font-mono uppercase tracking-wider text-gray-500 mb-3">
+                        {t('techStack')} IMPLANTADO
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        {project.tech.map((tech, techIndex) => (
+                          <div
+                            key={techIndex}
+                            className="px-3 py-1 bg-gray-900 dark:bg-gray-700 text-gray-100 dark:text-gray-300 font-mono text-xs uppercase tracking-wider"
+                          >
+                            {tech}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Highlights Industrial */}
+                    <div className="mb-6">
+                      <div className="text-xs font-mono uppercase tracking-wider text-gray-500 mb-3">
+                        {t('keyHighlights')} SISTEMA
+                      </div>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                        {project.highlights.map((highlight, highlightIndex) => (
+                          <div
+                            key={highlightIndex}
+                            className="flex items-center text-sm text-gray-600 dark:text-gray-400 font-mono"
+                          >
+                            <div className={`w-2 h-2 ${colors.bg} mr-3 flex-shrink-0`}></div>
+                            {highlight}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Action Links Industrial */}
+                    <div className="flex flex-wrap gap-3">
+                      {project.links.live && (
+                        <a
+                          href={project.links.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`inline-flex items-center px-4 py-2 ${colors.button} text-white font-mono font-black text-xs uppercase tracking-wider transition-colors`}
+                          onClick={() => trackClick('project_link', `${project.title}_live_demo`)}
                         >
-                          {tech}
-                        </span>
-                      ))}
+                          <ExternalLink className="w-4 h-4 mr-2" />
+                          {t('liveDemo')}
+                        </a>
+                      )}
+                      {project.links.github && (
+                        <a
+                          href={project.links.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center px-4 py-2 bg-gray-800 text-white hover:bg-gray-900 font-mono font-black text-xs uppercase tracking-wider transition-colors"
+                          onClick={() => trackClick('project_link', `${project.title}_github`)}
+                        >
+                          <Github className="w-4 h-4 mr-2" />
+                          {t('sourceCode')}
+                        </a>
+                      )}
+                      {project.links.docs && (
+                        <a
+                          href={project.links.docs}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center px-4 py-2 bg-green-600 text-white hover:bg-green-700 font-mono font-black text-xs uppercase tracking-wider transition-colors"
+                        >
+                          <Play className="w-4 h-4 mr-2" />
+                          {t('documentation')}
+                        </a>
+                      )}
+                      {project.links.details && (
+                        <Link
+                          href={`/${locale}${project.links.details}`}
+                          className="inline-flex items-center px-4 py-2 bg-gray-700 text-white hover:bg-gray-800 font-mono font-black text-xs uppercase tracking-wider transition-colors"
+                        >
+                          <Info className="w-4 h-4 mr-2" />
+                          {t('viewDetails')}
+                        </Link>
+                      )}
                     </div>
                   </div>
 
-                  {/* Highlights */}
-                  <div className="mb-6">
-                    <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
-                      {t('keyHighlights')}
-                    </h4>
-                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                      {project.highlights.map((highlight, highlightIndex) => (
-                        <li
-                          key={highlightIndex}
-                          className="flex items-center text-sm text-gray-600 dark:text-gray-400"
-                        >
-                          <span className="w-2 h-2 bg-blue-500 rounded-full mr-3 shrink-0"></span>
-                          {highlight}
-                        </li>
+                  {/* Metrics Industrial */}
+                  <div className="lg:col-span-1">
+                    <div className="text-xs font-mono uppercase tracking-wider text-gray-500 mb-4">
+                      {t('projectMetrics')} SISTEMA
+                    </div>
+                    <div className="space-y-3">
+                      {project.metrics.map((metric, metricIndex) => (
+                        <div key={metricIndex} className="p-3 bg-gray-900 dark:bg-gray-700 border-l-4 border-green-500">
+                          <div className="flex justify-between items-center">
+                            <span className="text-xs font-mono uppercase tracking-wider text-gray-400">
+                              {metric.label}:
+                            </span>
+                            <span className="text-sm font-black text-green-400 font-mono">
+                              {metric.value}
+                            </span>
+                          </div>
+                        </div>
                       ))}
-                    </ul>
-                  </div>
-
-                  {/* Links */}
-                  <div className="flex flex-wrap gap-3">
-                    {project.links.live && (
-                      <a
-                        href={project.links.live}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm"
-                        onClick={() => trackClick('project_link', `${project.title}_live_demo`)}
-                      >
-                        <ExternalLink className="w-4 h-4 mr-2" />
-                        {t('liveDemo')}
-                      </a>
-                    )}
-                    {project.links.github && (
-                      <a
-                        href={project.links.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-colors text-sm"
-                        onClick={() => trackClick('project_link', `${project.title}_github`)}
-                      >
-                        <Github className="w-4 h-4 mr-2" />
-                        {t('sourceCode')}
-                      </a>
-                    )}
-                    {project.links.docs && (
-                      <a
-                        href={project.links.docs}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm"
-                      >
-                        <Play className="w-4 h-4 mr-2" />
-                        {t('documentation')}
-                      </a>
-                    )}
-                    {project.links.details && (
-                      <Link
-                        href={`/${locale}${project.links.details}`}
-                        className="inline-flex items-center px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors text-sm"
-                      >
-                        <Info className="w-4 h-4 mr-2" />
-                        {t('viewDetails')}
-                      </Link>
-                    )}
-                  </div>
-                </div>
-
-                {/* Metrics */}
-                <div className="lg:col-span-1">
-                  <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-4">
-                    {t('projectMetrics')}
-                  </h4>
-                  <div className="space-y-4">
-                    {Object.entries(project.metrics).map(([key, value]) => (
-                      <div key={key} className="flex justify-between items-center p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
-                        <span className="text-sm text-gray-600 dark:text-gray-400 capitalize">
-                          {key.replace(/([A-Z])/g, ' $1').trim()}:
-                        </span>
-                        <span className="text-sm font-semibold text-gray-900 dark:text-white">
-                          {value}
-                        </span>
+                      
+                      {/* Status Indicator */}
+                      <div className="mt-4 p-3 bg-gray-900 dark:bg-gray-700 border-l-4 border-green-500">
+                        <div className="flex items-center justify-between">
+                          <span className="text-xs font-mono uppercase tracking-wider text-gray-400">
+                            STATUS:
+                          </span>
+                          <div className="flex items-center gap-2">
+                            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                            <span className="text-xs font-black text-green-400 font-mono uppercase">
+                              OPERACIONAL
+                            </span>
+                          </div>
+                        </div>
                       </div>
-                    ))}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </ContainerCard>
-          ))}
-        </div>
-
-        {/* CTA */}
-        <div className="mt-16 text-center">
-          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/30 dark:to-indigo-950/30 rounded-xl p-8">
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-              {t('haveProject')}
-            </h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
-              {t('discussProject')}
-            </p>
-            <button 
-              className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all"
-              onClick={() => trackClick('cta_button', 'start_project')}
-            >
-              {t('startProject')}
-            </button>
-          </div>
+              </ContainerCard>
+            );
+          })}
         </div>
       </div>
     </section>
